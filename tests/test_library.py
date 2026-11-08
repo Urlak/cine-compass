@@ -1,5 +1,5 @@
 """Тесты чистки/дедупликации библиотеки."""
-from cinecompass.library import clean_items, compact_rows, missing_enrichment
+from cinecompass.library import clean_items, compact_rows, duration, missing_enrichment
 
 
 def _raw(kp_id, title, rating="8", watched="2020-01-01", **extra):
@@ -42,3 +42,9 @@ def test_compact_rows_skips_empty_fields():
     rows = compact_rows(clean_items([_raw(3, "Коро́ль")]))
     assert "Коро́ль" in rows
     assert "  " not in rows and "|" in rows
+
+
+def test_duration_is_minutes_not_seasons_for_series():
+    assert duration({"movieLength": "116"}) == "1 ч 56 мин"
+    assert duration({"seriesLength": 47}) == "сер. 47 мин"
+    assert duration({}) == ""

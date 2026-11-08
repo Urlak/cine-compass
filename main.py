@@ -7,16 +7,14 @@ from pathlib import Path
 
 from cinecompass import config, enrich, library, llm, markdown, prompts
 
-MODE_TITLE = {m: t for m, (t, _) in prompts.RECOMMEND_MODES.items()}
-
 
 def _rows_and_overview():
     items = library.load_library()
     if not items:
         raise SystemExit("Библиотека пуста. Сначала: python main.py import <файл>")
     rows = library.compact_rows(items)
-    overview = markdown.build_catalog(items, include_overview=True).split("### Топ жанров")[0]
-    return items, rows, overview
+    overview = markdown.build_catalog(items).split("### Топ жанров")[0]
+    return rows, overview
 
 
 def cmd_import(args) -> None:
@@ -62,33 +60,28 @@ def cmd_build(_args) -> None:
 
 
 def cmd_stats(_args) -> None:
-    items, rows, overview = _rows_and_overview()
-    _ = items
-    print("Generating stats.md via LLM ...")
+    rows, overview = _rows_and_overview()
     text = llm.generate(prompts.stats_prompt(rows, overview))
     out = llm.write_markdown(config.STATS_FILE, text)
     print(f"Статистика: {out}")
 
 
 def cmd_profile(_args) -> None:
-    items, rows, overview = _rows_and_overview()
-    _ = items
-    print("Generating profile.md via LLM ...")
+    rows, overview = _rows_and_overview()
     text = llm.generate(prompts.profile_prompt(rows, overview))
     out = llm.write_markdown(config.PROFILE_FILE, text)
     print(f"Профайл: {out}")
 
 
 def cmd_recommend(args) -> None:
-    items, rows, overview = _rows_and_overview()
-    _ = items
-    title, mode, prompt = prompts.recommend_prompt(rows, overview, args.mode, args.count)
-    print(f"Generating recommendation ({title}) via LLM ...")
+    rows, overview = _rows_and_overview()
+    title, prompt = prompts.recommend_prompt(rows, overview, args.mode, args.count)
+    print(f"Генерация подборки ({title}) ...")
     text = llm.generate(prompt)
     stamp = datetime.now().strftime("%Y%m%d_%H%M")
-    out = config.RECOMMEND_DIR / f"recommend_{mode}_{stamp}.md"
+    out = config.RECOMMEND_DIR / f"recommend_{args.mode}_{stamp}.md"
     llm.write_markdown(out, f"# {title}\n\n{text}")
-    llm.write_markdown(config.RECOMMEND_DIR / f"recommend_{mode}_latest.md", f"# {title}\n\n{text}")
+    llm.write_markdown(config.RECOMMEND_DIR / f"recommend_{args.mode}_latest.md", f"# {title}\n\n{text}")
     print(f"Рекомендация: {out}")
 
 

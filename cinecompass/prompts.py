@@ -65,7 +65,7 @@ RECOMMEND_MODES = {
 }
 
 
-def recommend_prompt(rows: str, overview: str, mode: str, count: int) -> tuple[str, str, str]:
+def recommend_prompt(rows: str, overview: str, mode: str, count: int) -> tuple[str, str]:
     title, direction = RECOMMEND_MODES[mode]
     prompt = f"""Ты персональный кинокуратор зрителя с 10-летним стажем переписки с ним.
 Его вкус ты знаешь. Ниже — сводка вкуса и вся история оценок.
@@ -88,4 +88,4 @@ def recommend_prompt(rows: str, overview: str, mode: str, count: int) -> tuple[s
 Учти режим: {title}. Объяснение должно быть тёплым, конкретным и смешным по вкусу зрителя, не вычурным.
 
 {STYLE}"""
-    return title, mode, prompt
+    return title, prompt

@@ -79,9 +79,10 @@ def duration(item: dict) -> str:
     if minutes:
         hours, rest = divmod(int(minutes), 60)
         return f"{hours} ч {rest} мин" if rest else f"{hours} ч"
-    seasons = item.get("seriesLength")
-    if seasons:
-        return f"{seasons} сезон(ов)"
+    # seriesLength в kinopoisk.dev — средняя длительность серии, не число сезонов
+    episode = item.get("seriesLength")
+    if episode:
+        return f"сер. {int(episode)} мин"
     return ""
 
 
@@ -115,7 +116,3 @@ def os_rating(item: dict) -> str:
     """Рейтинг Кинопоиска одной строкой, '' если нет."""
     kp = item.get("kpRating")
     return f"КП {float(kp):.1f}" if kp else ""
-
-
-def percent(count: int, total: int) -> int:
-    return round(count * 100 / total) if total else 0

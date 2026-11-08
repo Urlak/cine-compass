@@ -19,7 +19,6 @@ STATS_FILE = DATA_DIR / "stats.md"
 PROFILE_FILE = DATA_DIR / "profile.md"
 
 KINOPOISK_API_KEY = os.getenv("KINOPOISK_API_KEY", "")
-KINOPOISK_API_BASE = os.getenv("KINOPOISK_API_BASE", "https://api.kinopoisk.dev")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 LLM_MODEL = os.getenv("LLM_MODEL", "gemini-2.5-flash")
 

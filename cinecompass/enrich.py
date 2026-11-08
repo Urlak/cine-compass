@@ -8,7 +8,12 @@ import time
 
 import requests
 
-from cinecompass import config
+from cinecompass import config, library
+
+
+# Обе базы kinopoisk.dev отдают одинаковые данные; домен фиксирован,
+# чтобы API-ключ не уводился на произвольный хост через конфиг.
+API_BASE = "https://api.poiskkino.dev"
 
 
 def _load_cache() -> dict:
@@ -50,9 +55,14 @@ def enrich_library(limit: int | None = None) -> dict:
     """Дозаполняет library.json данными API. Возвращает сводку по количеству."""
     if not config.KINOPOISK_API_KEY:
         raise SystemExit("KINOPOISK_API_KEY не задан (см. .env.template)")
-    items = _load_items()
+    if config.ENRICH_INTERVAL < 0:
+        raise SystemExit("ENRICH_INTERVAL должен быть числом >= 0 (см. .env)")
+    items = library.load_library()
     cache = _load_cache()
-    todo = [it for it in items if not it.get("genres") and str(it["kinopoiskId"]) not in cache]
+    todo = [
+        it for it in items
+        if library.missing_enrichment(it) and str(it["kinopoiskId"]) not in cache
+    ]
     if limit:
         todo = todo[:limit]
     session = requests.Session()
@@ -77,7 +87,8 @@ def enrich_library(limit: int | None = None) -> dict:
             cache[str(kp_id)] = detail
             item.update(detail)
             fetched += 1
-        except requests.RequestException as exc:
+        except (requests.RequestException, ValueError) as exc:
+            # ValueError сюда попадает из resp.json() на невалидном теле ответа
             failed += 1
             print(f"[WARN] {kp_id} {item['title']}: {exc}")
         if i % 25 == 0:
@@ -88,22 +99,12 @@ def enrich_library(limit: int | None = None) -> dict:
         time.sleep(config.ENRICH_INTERVAL)
     _save_cache(cache)
     _apply_cache(items, cache)
-    _write_library(items)
+    library.save_library(items)
     return {"fetched": fetched, "failed": failed, "quota_exceeded": quota_exceeded}
-
-
-def _load_items() -> list[dict]:
-    from cinecompass import library
-    return library.load_library()
 
 
 def _apply_cache(items: list[dict], cache: dict) -> None:
     for item in items:
         cached = cache.get(str(item["kinopoiskId"]))
-        if cached and not item.get("genres"):
+        if cached and library.missing_enrichment(item):
             item.update(cached)
-
-
-def _write_library(items: list[dict]) -> None:
-    from cinecompass import library
-    library.save_library(items)

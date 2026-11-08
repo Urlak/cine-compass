@@ -1,7 +1,6 @@
 """Генерация маркдаун-каталога библиотеки + локальная статистика."""
-import tempfile
-import datetime as _dt
 from collections import Counter
+from pathlib import Path
 
 from cinecompass import config, library
 
@@ -43,11 +42,10 @@ _HEADER = (
 )
 
 
-def build_catalog(items: list[dict], *, include_overview: bool = True) -> str:
+def build_catalog(items: list[dict]) -> str:
     lines: list[str] = []
     lines.append("# Кинобиблиотека\n")
-    if include_overview:
-        lines.append(_overview(items))
+    lines.append(_overview(items))
     groups = {name: [] for name, _ in _RATING_TIERS}
     by_rating = {r: [] for r in range(3, 11)}
     for it in items:
@@ -99,7 +97,7 @@ def _overview(items: list[dict]) -> str:
     )
 
 
-def write_catalog(items: list[dict]) -> _dt.datetime:
+def write_catalog(items: list[dict]) -> Path:
     text = build_catalog(items)
     config.CATALOG_FILE.parent.mkdir(parents=True, exist_ok=True)
     config.CATALOG_FILE.write_text(text, encoding="utf-8")
