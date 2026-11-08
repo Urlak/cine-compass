@@ -85,6 +85,15 @@ def cmd_recommend(args) -> None:
     print(f"Рекомендация: {out}")
 
 
+def cmd_predict(args) -> None:
+    rows, overview = _rows_and_overview()
+    title = " ".join(args.title)
+    text = llm.generate(prompts.predict_prompt(rows, overview, title))
+    llm.write_markdown(config.PREDICTION_FILE, text)
+    print(text)
+    print(f"\nСохранено: {config.PREDICTION_FILE}")
+
+
 def main(argv: list[str] | None = None) -> None:
     if sys.platform == "win32":
         sys.stdout.reconfigure(encoding="utf-8")
@@ -105,6 +114,10 @@ def main(argv: list[str] | None = None) -> None:
     sub.add_parser("build", help="собрать маркдаун-каталог data/catalog.md").set_defaults(func=cmd_build)
     sub.add_parser("stats", help="статистика через LLM → data/stats.md").set_defaults(func=cmd_stats)
     sub.add_parser("profile", help="профайл зрителя через LLM → data/profile.md").set_defaults(func=cmd_profile)
+
+    p = sub.add_parser("predict", help="прогноз личной оценки фильма по вашему вкусу (без спойлеров)")
+    p.add_argument("title", nargs="+", help="название фильма или сериала")
+    p.set_defaults(func=cmd_predict)
 
     p = sub.add_parser("recommend", help="персональная подборка «что посмотреть сейчас»")
     p.add_argument("--mode", choices=list(prompts.RECOMMEND_MODES), default="old",
