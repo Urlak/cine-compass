@@ -1,0 +1,51 @@
+# cine-compass
+
+Личная кинобиблиотека из экспорта Кинопоиска: чистка и дедупликация списка,
+каталог в Markdown, статистика и профайл зрителя через LLM (Gemini),
+персональные подборки «что посмотреть сейчас» (любимое старое / свежее / хорошая классика).
+
+## Установка
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+Copy-Item .env.template .env   # и заполнить ключи
+```
+
+Ключи: `GEMINI_API_KEY` (aistudio.google.com) и `KINOPOISK_API_KEY` (бот @kinopoiskdev_bot, демо — 200 запросов/сутки).
+
+## Команды
+
+```powershell
+python main.py import "C:\Users\roman\Downloads\Temp\library_export_1794175310215.json"
+python main.py enrich            # дотянуть жанр/режиссёра/рейтинг (возобновляемо, кэш в data/enrich_cache.json)
+python main.py build             # маркдаун-каталог data/catalog.md
+python main.py stats             # глубокая статистика → data/stats.md
+python main.py profile           # портрет зрителя → data/profile.md
+
+python main.py recommend --mode old      # любимое из старого
+python main.py recommend --mode new      # свежее и новенькое
+python main.py recommend --mode classics # хорошая классика
+python main.py recommend --mode old --count 10
+```
+
+Обогащение на демо-тарифе: 1155 записей ≈ 6 запусков по 200 запросов. Прогресс
+сохраняется после каждой записи, запуск `python main.py enrich` можно повторять день за днём.
+
+## Структура
+
+```
+main.py                 CLI
+cinecompass/
+  config.py             пути, .env, лимиты
+  library.py            загрузка/чистка/дедуп/компактное представление
+  enrich.py             kinopoisk.dev + кэш
+  markdown.py           каталог и локальная статистика
+  llm.py                Gemini (google.genai)
+  prompts.py            промпты
+data/                   библиотека, кэш, все outputs
+tests/                  базовые тесты чистки
+```
+
+`data/` в git не попадает.

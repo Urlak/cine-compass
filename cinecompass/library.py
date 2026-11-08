@@ -1,0 +1,121 @@
+"""Загрузка, нормализация, дедупликация и сохранение библиотеки."""
+import json
+from pathlib import Path
+
+from cinecompass import config
+
+TYPE_LABELS = {"film": "фильм", "series": "сериал"}
+
+
+def load_export(path: Path) -> list[dict]:
+    """Читает JSON-экспорт Kinopoisk и возвращает список записей."""
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    items = data.get("items")
+    if not isinstance(items, list):
+        raise ValueError(f"В файле {path} нет массива 'items'")
+    return items
+
+
+def clean_items(items: list[dict]) -> list[dict]:
+    """Нормализует записи и дедуплицирует по kinopoiskId.
+
+    При повторных просмотрах остаётся запись с самой свежей датой просмотра,
+    количество просмотров считается в rewatchCount.
+    """
+    by_id: dict[int, dict] = {}
+    for raw in items:
+        kp_id = int(raw["kinopoiskId"])
+        item = {
+            "title": raw.get("title", "").strip(),
+            "originalTitle": raw.get("originalTitle", "").strip(),
+            "year": int(raw["year"]) if str(raw.get("year", "")).isdigit() else None,
+            "type": raw.get("type", "film"),
+            "kinopoiskId": kp_id,
+            "kinopoiskUrl": raw.get("kinopoiskUrl", ""),
+            "userRating": int(raw["userRating"]) if str(raw.get("userRating", "")).isdigit() else None,
+            "watchedDate": raw.get("watchedDate", ""),
+            "tmdbId": raw.get("tmdbId", ""),
+            "imdbId": raw.get("imdbId", ""),
+        }
+        existing = by_id.get(kp_id)
+        if existing is None:
+            item["rewatchCount"] = 1
+            by_id[kp_id] = item
+        else:
+            existing["rewatchCount"] += 1
+            if item["watchedDate"] > existing.get("watchedDate", ""):
+                # обновляем оценку, но сохраняем накопленные поля обогащения
+                existing["userRating"] = item["userRating"]
+                existing["watchedDate"] = item["watchedDate"]
+    return [by_id[k] for k in sorted(by_id)]
+
+
+def load_library(path: Path | None = None) -> list[dict]:
+    with open(path or config.LIBRARY_FILE, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_library(items: list[dict], path: Path | None = None) -> Path:
+    path = path or config.LIBRARY_FILE
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(items, f, ensure_ascii=False, indent=2)
+    return path
+
+
+def missing_enrichment(item: dict) -> bool:
+    """True, если базовые поля из API ещё не заполнены."""
+    return not item.get("genres")
+
+
+def type_label(item: dict) -> str:
+    return TYPE_LABELS.get(item.get("type"), item.get("type"))
+
+
+def duration(item: dict) -> str:
+    """Человекочитаемая длительность: минуты или сезоны."""
+    minutes = item.get("movieLength")
+    if minutes:
+        hours, rest = divmod(int(minutes), 60)
+        return f"{hours} ч {rest} мин" if rest else f"{hours} ч"
+    seasons = item.get("seriesLength")
+    if seasons:
+        return f"{seasons} сезон(ов)"
+    return ""
+
+
+def compact_rows(items: list[dict]) -> str:
+    """Компактное представление библиотеки для LLM-промптов (TSV-строки)."""
+    lines = []
+    for it in items:
+        parts = [
+            it["title"],
+            it["originalTitle"] if it["originalTitle"] != it["title"] else "",
+            str(it["year"]) if it.get("year") else "",
+            type_label(it),
+            str(it["userRating"]) if it.get("userRating") is not None else "—",
+            ", ".join(it.get("genres", [])),
+            ", ".join(it["directors"]) if it.get("directors") else "",
+            os_rating(it),
+            duration(it),
+            it["watchedDate"],
+        ]
+        if it.get("rewatchCount", 1) > 1:
+            parts.append(f"пересмотрено x{it['rewatchCount']}")
+        ext = f"IMDb {it['imdbId']}" if it.get("imdbId") else ""
+        row = " | ".join(p for p in parts if p and p != "—")
+        if ext:
+            row += f" | {ext}"
+        lines.append(row)
+    return "\n".join(lines)
+
+
+def os_rating(item: dict) -> str:
+    """Рейтинг Кинопоиска одной строкой, '' если нет."""
+    kp = item.get("kpRating")
+    return f"КП {float(kp):.1f}" if kp else ""
+
+
+def percent(count: int, total: int) -> int:
+    return round(count * 100 / total) if total else 0
