@@ -77,8 +77,8 @@ def enrich_library(limit: int | None = None) -> dict:
                 headers=headers,
                 timeout=20,
             )
-            if resp.status_code == 403:
-                # превышен суточный лимит или страница недоступна тарифу
+            if resp.status_code in (403, 429):
+                # 403 — суточный лимит демо-тарифа, 429 — флуд-ограничение
                 quota_exceeded = True
                 print(f"Лимит API исчерпан на {i}-й записи из {len(todo)}. Прогресс сохранён.")
                 break

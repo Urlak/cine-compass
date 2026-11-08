@@ -16,7 +16,8 @@ _RATING_TIERS = [
 
 
 def _esc(text: str) -> str:
-    return text.replace("|", "/")
+    """Экранирует символы, ломающие маркдаун-таблицы и ссылки."""
+    return text.replace("|", "/").replace("[", "\\[").replace("]", "\\]")
 
 
 def item_row(item: dict) -> str:
