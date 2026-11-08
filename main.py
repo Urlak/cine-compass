@@ -89,8 +89,9 @@ def cmd_predict(args) -> None:
     rows, overview = _rows_and_overview()
     title = " ".join(args.title)
     text = llm.generate(prompts.predict_prompt(rows, overview, title))
-    llm.write_markdown(config.PREDICTION_FILE, text)
-    print(text)
+    doc = f"# Прогноз: {title}\n\n{text}"
+    llm.write_markdown(config.PREDICTION_FILE, doc)
+    print(doc)
     print(f"\nСохранено: {config.PREDICTION_FILE}")
 
 
