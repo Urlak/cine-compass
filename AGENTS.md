@@ -2,7 +2,8 @@
 
 cine-compass: личная кинобиблиотека из экспорта Кинопоиска. CLI (`main.py`): `import`/`clean`,
 `enrich` (обогащение через kinopoisk.dev — эндпоинт `api.poiskkino.dev/v1.5/movie/{id}`),
-`build` (маркдаун-каталог), `stats`/`profile`/`recommend` (Gemini через `google-genai`).
+`build` (маркдаун-каталог), `stats`/`profile`/`recommend`/`predict` (Gemini через `google-genai`,
+модель — `LLM_MODEL` из `.env`, сейчас `gemini-3.8-flash`).
 
 ## Commands
 
@@ -14,7 +15,8 @@ pytest                                             # базовые тесты �
 .\.venv\Scripts\python.exe main.py import <путь к library_export.json>
 .\.venv\Scripts\python.exe main.py enrich [--limit N]   # возобновляемо, кэш в data/enrich_cache.json
 .\.venv\Scripts\python.exe main.py build
-.\.venv\Scripts\python.exe main.py stats | profile | recommend --mode old|new|classics
+.\.venv\Scripts\python.exe main.py stats | profile | predict <название>
+.\.venv\Scripts\python.exe main.py recommend --mode old|new|classics [--count N]
 ```
 
 Данные и все outputs лежат в `data/` и игнорируются гитом; ключи — в `.env` (см. `.env.template`).

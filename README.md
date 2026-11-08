@@ -2,7 +2,8 @@
 
 Личная кинобиблиотека из экспорта Кинопоиска: чистка и дедупликация списка,
 каталог в Markdown, статистика и профайл зрителя через LLM (Gemini),
-персональные подборки «что посмотреть сейчас» (любимое старое / свежее / хорошая классика).
+персональные подборки «что посмотреть сейчас» (любимое старое / свежее / хорошая классика)
+и прогноз личной оценки любого фильма без спойлеров.
 
 ## Установка
 
@@ -14,6 +15,7 @@ Copy-Item .env.template .env   # и заполнить ключи
 ```
 
 Ключи: `GEMINI_API_KEY` (aistudio.google.com) и `KINOPOISK_API_KEY` (бот @kinopoiskdev_bot, демо — 200 запросов/сутки).
+Модель задаётся `LLM_MODEL` (текущая — `gemini-3.8-flash`).
 
 ## Команды
 
@@ -23,6 +25,7 @@ python main.py enrich            # дотянуть жанр/режиссёра/
 python main.py build             # маркдаун-каталог data/catalog.md
 python main.py stats             # глубокая статистика → data/stats.md
 python main.py profile           # портрет зрителя → data/profile.md
+python main.py predict Сталкер   # прогноз личной оценки + почему (без спойлеров) → data/prediction.md
 
 python main.py recommend --mode old      # любимое из старого
 python main.py recommend --mode new      # свежее и новенькое
@@ -40,7 +43,7 @@ main.py                 CLI
 cinecompass/
   config.py             пути, .env, лимиты
   library.py            загрузка/чистка/дедуп/компактное представление
-  enrich.py             kinopoisk.dev + кэш
+  enrich.py             обогащение через api.poiskkino.dev (кинопоиск-прокси kinopoisk.dev) + кэш
   markdown.py           каталог и локальная статистика
   llm.py                Gemini (google.genai)
   prompts.py            промпты
