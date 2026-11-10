@@ -1,5 +1,6 @@
 """Работа с Gemini (google.genai): статистика, профайл, рекомендации."""
 import json
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -15,8 +16,8 @@ def _client() -> genai.Client:
     return genai.Client(api_key=config.GEMINI_API_KEY)
 
 
-def _log_usage(resp, op: str, retry: bool) -> None:
-    """Записывает использование токенов запроса в data/usage.jsonl и в консоль."""
+def _log_usage(resp, op: str, retry: bool, started: float) -> None:
+    """Записывает использование токенов и латентность запроса в data/usage.jsonl и в консоль."""
     u = resp.usage_metadata
     row = {
         "ts": datetime.now().isoformat(timespec="seconds"),
@@ -27,24 +28,28 @@ def _log_usage(resp, op: str, retry: bool) -> None:
         "output_tokens": u.candidates_token_count or 0,
         "cached_tokens": u.cached_content_token_count or 0,
         "retry": retry,
+        "duration_s": round(time.monotonic() - started, 1),
     }
     config.USAGE_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(config.USAGE_FILE, "a", encoding="utf-8") as f:
         f.write(json.dumps(row, ensure_ascii=False) + "\n")
     kind = "ретрай" if retry else "основной"
     print(f"Токены [{op}, {kind}]: prompt {row['prompt_tokens']}, "
-          f"мысли {row['thoughts_tokens']}, output {row['output_tokens']}")
+          f"мысли {row['thoughts_tokens']}, output {row['output_tokens']}, "
+          f"{row['duration_s']} с")
 
 
 def generate(prompt: str, op: str = "llm") -> str:
     """Синхронный вызов Gemini, возвращает markdown-текст."""
     client = _client()
+    started = time.monotonic()
     resp = client.models.generate_content(model=config.LLM_MODEL, contents=prompt)
-    _log_usage(resp, op, retry=False)
+    _log_usage(resp, op, retry=False, started=started)
     if resp.text and resp.text.strip():
         return resp.text.strip()
     # Пустой текст бывает, когда весь лимит вывода ушла на внутренние
     # размышления (thinking) — повторяем с отключённым thinking.
+    started = time.monotonic()
     resp = client.models.generate_content(
         model=config.LLM_MODEL,
         contents=prompt,
@@ -52,7 +57,7 @@ def generate(prompt: str, op: str = "llm") -> str:
             thinking_config=types.ThinkingConfig(thinking_budget=0)
         ),
     )
-    _log_usage(resp, op, retry=True)
+    _log_usage(resp, op, retry=True, started=started)
     text = (resp.text or "").strip()
     if not text:
         reason = resp.candidates[0].finish_reason if resp.candidates else None

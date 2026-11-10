@@ -3,9 +3,8 @@ import argparse
 import shutil
 import sys
 from datetime import datetime
-from pathlib import Path
 
-from cinecompass import config, enrich, library, llm, markdown, prompts
+from cinecompass import benchmark, config, enrich, library, llm, markdown, prompts
 
 
 def _rows_and_overview():
@@ -95,6 +94,12 @@ def cmd_predict(args) -> None:
     print(f"\nСохранено: {config.PREDICTION_FILE}")
 
 
+def cmd_benchmark(args) -> None:
+    summary = benchmark.run(per_rating=args.per_rating, min_history=args.min_history)
+    print(f"MAE: {summary['mae']}, попадания ±1: {summary['hit1_share']}, "
+          f"распарсено: {summary['parsed']}/{summary['answered']} из {summary['targets']}")
+
+
 def main(argv: list[str] | None = None) -> None:
     if sys.platform == "win32":
         sys.stdout.reconfigure(encoding="utf-8")
@@ -119,6 +124,11 @@ def main(argv: list[str] | None = None) -> None:
     p = sub.add_parser("predict", help="прогноз личной оценки фильма по вашему вкусу (без спойлеров)")
     p.add_argument("title", nargs="+", help="название фильма или сериала")
     p.set_defaults(func=cmd_predict)
+
+    p = sub.add_parser("benchmark", help="ретроспективный benchmark predict (Фаза 0)")
+    p.add_argument("--per-rating", type=int, default=3, help="сколько целей на каждый балл 4..10")
+    p.add_argument("--min-history", type=int, default=50, help="минимальный размер истории цели")
+    p.set_defaults(func=cmd_benchmark)
 
     p = sub.add_parser("recommend", help="персональная подборка «что посмотреть сейчас»")
     p.add_argument("--mode", choices=list(prompts.RECOMMEND_MODES), default="old",

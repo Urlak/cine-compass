@@ -62,7 +62,7 @@ def test_log_usage_appends_jsonl_row(tmp_path, monkeypatch):
         candidates_token_count=1230,
         cached_content_token_count=57322,
     )
-    llm._log_usage(SimpleNamespace(usage_metadata=usage), op="predict", retry=False)
+    llm._log_usage(SimpleNamespace(usage_metadata=usage), op="predict", retry=False, started=0.0)
     row = json.loads((tmp_path / "usage.jsonl").read_text(encoding="utf-8").splitlines()[0])
     assert row["op"] == "predict"
     assert row["prompt_tokens"] == 57000
@@ -70,3 +70,4 @@ def test_log_usage_appends_jsonl_row(tmp_path, monkeypatch):
     assert row["output_tokens"] == 1230
     assert row["retry"] is False
     assert row["ts"]
+    assert row["duration_s"] >= 0
