@@ -1,0 +1,64 @@
+{
+  "taxonomy_version": "1.0",
+  "tags": [
+    {"id": "heist", "category": "genre", "label": "Heist", "definition": "The plot centres on planning and executing a robbery or elaborate scheme."},
+    {"id": "buddy", "category": "genre", "label": "Buddy", "definition": "An odd-couple partnership drives the story, with bickering as the engine."},
+    {"id": "dark-comedy", "category": "genre", "label": "Dark Comedy", "definition": "Comedy that treats grim or taboo subject matter with deadpan humour."},
+    {"id": "mockumentary", "category": "genre", "label": "Mockumentary", "definition": "Fiction presented as a fake documentary with talking heads and camera gags."},
+    {"id": "martial-arts", "category": "genre", "label": "Martial Arts", "definition": "Elaborate hand-to-hand combat is a defining spectacle."},
+    {"id": "survival", "category": "genre", "label": "Survival", "definition": "Characters fight to stay alive against nature, wilderness or catastrophe."},
+    {"id": "disaster", "category": "genre", "label": "Disaster", "definition": "A large-scale catastrophe unfolds across an ensemble cast."},
+    {"id": "spy", "category": "genre", "label": "Spy", "definition": "Espionage, agents and intelligence tradecraft drive the plot."},
+    {"id": "apocalypse", "category": "genre", "label": "Apocalypse", "definition": "Set during or right after the collapse of civilisation."},
+    {"id": "prison", "category": "genre", "label": "Prison", "definition": "Life inside confinement and its inmate hierarchies is central."},
+
+    {"id": "uplifting", "category": "mood", "label": "Uplifting", "definition": "The overall emotional tone is warm, hopeful and energising."},
+    {"id": "melancholic", "category": "mood", "label": "Melancholic", "definition": "A sustained sorrowful, wistful emotional tone."},
+    {"id": "bittersweet", "category": "mood", "label": "Bittersweet", "definition": "Joy and sadness are deliberately mixed in the emotional payoff."},
+    {"id": "tense", "category": "mood", "label": "Tense", "definition": "The emotional tone keeps the viewer on edge for long stretches."},
+    {"id": "cozy", "category": "mood", "label": "Cozy", "definition": "A comfortable, low-stakes, comforting viewing warmth."},
+    {"id": "absurd", "category": "mood", "label": "Absurd", "definition": "The tone embraces ridiculous, illogical or surreal comedy."},
+    {"id": "eerie", "category": "mood", "label": "Eerie", "definition": "An unsettling, quietly menacing emotional undercurrent."},
+    {"id": "epic", "category": "mood", "label": "Epic", "definition": "An overwhelming feeling of awe that emotionally sweeps the viewer up, independent of the story's actual scope."},
+
+    {"id": "dreamlike", "category": "atmosphere", "label": "Dreamlike", "definition": "The world feels hazy, associative and oneiric rather than literal."},
+    {"id": "claustrophobic", "category": "atmosphere", "label": "Claustrophobic", "definition": "Enclosed spaces and confinement define the film's physical world."},
+    {"id": "expansive", "category": "atmosphere", "label": "Expansive", "definition": "Vast landscapes, space or open horizons dominate the world of the film."},
+
+    {"id": "urban", "category": "setting", "label": "Urban", "definition": "Dense city life and its textures define the setting's feel."},
+    {"id": "rural", "category": "setting", "label": "Rural", "definition": "Countryside, small settlements and open farmland define the feel."},
+    {"id": "futuristic", "category": "setting", "label": "Futuristic", "definition": "Advanced or imagined future technology shapes the world."},
+    {"id": "wintry", "category": "setting", "label": "Wintry", "definition": "Snow, cold and long winters define the visual world."},
+
+    {"id": "identity", "category": "themes", "label": "Identity", "definition": "A central question of who the character is or wants to be."},
+    {"id": "family", "category": "themes", "label": "Family", "definition": "Family bonds, duties and conflicts drive the dramatic stakes."},
+    {"id": "friendship", "category": "themes", "label": "Friendship", "definition": "Friendship as a key tested value in the story."},
+    {"id": "coming-of-age", "category": "themes", "label": "Coming of Age", "definition": "A young person's transition to maturity is the core arc."},
+    {"id": "death-and-grief", "category": "themes", "label": "Death and Grief", "definition": "Loss of a loved one and mourning shape the narrative."},
+    {"id": "revenge", "category": "themes", "label": "Revenge", "definition": "A vendetta plot structures the major choices."},
+    {"id": "redemption", "category": "themes", "label": "Redemption", "definition": "A character seeks atonement for past wrongdoing."},
+    {"id": "obsession", "category": "themes", "label": "Obsession", "definition": "A single fatal fixation dominates a character's will."},
+    {"id": "corruption", "category": "themes", "label": "Corruption", "definition": "Institutions or individuals rot knowingly under power and money."},
+    {"id": "technology", "category": "themes", "label": "Technology", "definition": "Machines, AI or modernisation challenge the human characters."},
+    {"id": "faith", "category": "themes", "label": "Faith", "definition": "Religious belief, doubt or spiritual searching is subject matter."},
+
+    {"id": "non-linear", "category": "narrative", "label": "Non-linear", "definition": "The story is deliberately told out of chronological order."},
+    {"id": "ensemble", "category": "narrative", "label": "Ensemble", "definition": "Multiple interwoven storylines and points of view carry the plot."},
+    {"id": "unreliable-narrator", "category": "narrative", "label": "Unreliable Narrator", "definition": "The audience is misled by a skewed perspective or narrator."},
+    {"id": "frame-story", "category": "narrative", "label": "Frame Story", "definition": "A story is told inside another story, with a distinct outer layer."},
+    {"id": "single-location", "category": "narrative", "label": "Single Location", "definition": "The plot is confined to essentially one setting."},
+    {"id": "slow-reveal", "category": "narrative", "label": "Slow Reveal", "definition": "Key information is deliberately withheld and disclosed in stages."},
+    {"id": "episodic", "category": "narrative", "label": "Episodic", "definition": "Self-contained episodes accumulate rather than one tight throughline (mainly for series)."},
+
+    {"id": "slow-burn", "category": "pacing", "label": "Slow Burn", "definition": "Tension accumulates patiently through long, deliberate scenes."},
+    {"id": "brisk", "category": "pacing", "label": "Brisk", "definition": "The story moves quickly with little dead air."},
+    {"id": "relentless", "category": "pacing", "label": "Relentless", "definition": "Unbroken pressure with almost no breathing room."},
+
+    {"id": "dialogue-driven", "category": "style", "label": "Dialogue-Driven", "definition": "Long, sharp conversations carry the film more than events."},
+    {"id": "visually-stylized", "category": "style", "label": "Visually Stylized", "definition": "Distinctive, expressive visual design is a defining signature."},
+    {"id": "minimalist", "category": "style", "label": "Minimalist", "definition": "Sparse means, restraint and understatement in presentation."},
+    {"id": "satirical", "category": "style", "label": "Satirical", "definition": "Social or institutional mockery via irony and exaggeration."},
+    {"id": "gritty", "category": "style", "label": "Gritty", "definition": "Grimy, unsentimental realism in texture and tone."},
+    {"id": "poetic", "category": "style", "label": "Poetic", "definition": "Lyrically composed images and narration over plain storytelling."}
+  ]
+}
