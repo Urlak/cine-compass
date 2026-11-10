@@ -67,17 +67,22 @@ Tag dictionary (taxonomy_version {tax['version']}), format "id: definition":
 {tags}
 
 Rules:
-- Use ONLY the information in the provided record. Do NOT use your own knowledge of
-  the film, even if the title is familiar; do NOT reconstruct the plot from memory.
-- Never assign a tag just because it fits known films with this title. When the
-  evidence is lacking, return FEWER tags rather than guessing.
-- A record with only title, year and type means status "insufficient_data" with an
-  empty tags array.
-- A very short description means sparse information: status "partial", and only
+- Base tags ONLY on evidence in the provided record (description, official genres,
+  countries, type, year). Do NOT treat your own knowledge of the film as evidence,
+  even when the title is familiar; do NOT reconstruct plot details from memory.
+- You MAY use general word understanding to interpret what the record states
+  (e.g. a described robbery plot supports "heist"), but any attribute that needs
+  evidence beyond the record stays untagged.
+- Evidence is abundant when the record has a substantial description plus official
+  genres: status "complete" is normal there, and up to about 10 tags too.
+- Sparse evidence (very short or missing description): status "partial"; assign only
   characteristics that the available information actually confirms.
+- Virtually nothing beyond title, year and type: status "insufficient_data" with an
+  empty tags array.
 - type "series" alone does not prove "episodic": assign it only if an episodic
   narrative structure is supported by the record itself.
-- Use ONLY tag ids that exist in the dictionary. Never invent tags.
+- Use ONLY tag ids that exist in the dictionary. Never invent tags. Anywhere from 0
+  to about 10 tags is acceptable; return FEWER tags when evidence is thin, never guess.
 - Official genres are context only: do not assign a tag whose meaning is already fully
   covered by one of them; assign tags that add information beyond them.
 - Assign a tag only when the record clearly supports it; omit unconfirmed attributes.
@@ -191,17 +196,17 @@ def run(ids: list[int] | None = None, repeat_ids: list[int] | None = None) -> di
         repeat_ids = REPEAT_IDS if ids == PILOT_IDS else []
     items = library.load_library()
     by_id = {i["kinopoiskId"]: i for i in items}
-    missing = [i for i in PILOT_IDS if i not in by_id]
+    missing = [i for i in ids if i not in by_id]
     if missing:
         raise SystemExit(f"Записей нет в library.json: {missing}")
     tax = taxonomy.load()
     valid_ids = {t["id"] for t in tax["tags"]}
     results = []
-    total = len(PILOT_IDS) + len(REPEAT_IDS)
-    print(f"Пилот: {len(PILOT_IDS)} фильмов + {len(REPEAT_IDS)} повторов, "
+    total = len(ids) + len(repeat_ids)
+    print(f"Пилот: {len(ids)} фильмов + {len(repeat_ids)} повторов, "
           f"taxonomy {tax['version']}...", flush=True)
     n = 0
-    for kp_id in PILOT_IDS:
+    for kp_id in ids:
         n += 1
         payload = film_payload(by_id[kp_id])
         print(f"[{n}/{total}] Классификация: «{payload['title']}» ({payload['year']}, "
@@ -211,14 +216,14 @@ def run(ids: list[int] | None = None, repeat_ids: list[int] | None = None) -> di
         print(f"        -> {record['status']}: {', '.join(record['tags']) or '—'} "
               f"(попытка {'с ретраем' if record['retry'] else 'одна'})", flush=True)
     repeats = []
-    for kp_id in REPEAT_IDS:
+    for kp_id in repeat_ids:
         n += 1
         payload = film_payload(by_id[kp_id])
         print(f"[{n}/{total}] Повторная классификация тем же промптом: "
               f"«{payload['title']}»...", flush=True)
         record = classify_film(payload, tax, valid_ids)
         results.append(record)
-        first = next(r for r in results[:len(PILOT_IDS)] if r["kinopoiskId"] == kp_id)
+        first = next(r for r in results[:len(ids)] if r["kinopoiskId"] == kp_id)
         overlap = jaccard(first["tags"], record["tags"])
         record["jaccard_with_first"] = overlap
         repeats.append(record)
