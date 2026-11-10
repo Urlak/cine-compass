@@ -10,7 +10,7 @@ import random
 import re
 from datetime import datetime
 
-from cinecompass import config, library, markdown, prompts
+from cinecompass import config, library, llm, markdown, prompts
 
 FIXED_SEED = 42
 
