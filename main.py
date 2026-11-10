@@ -5,7 +5,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from cinecompass import benchmark, config, enrich, library, llm, markdown, prompts
+from cinecompass import benchmark, config, enrich, library, llm, markdown, prompts, semantic
 
 
 def _rows_and_overview():
@@ -125,6 +125,15 @@ def cmd_benchmark(args) -> None:
           f"распарсено: {summary['parsed']}/{summary['answered']} из {summary['targets']}")
 
 
+def cmd_pilot() -> None:
+    summary = semantic.run()
+    print(f"Схема: {summary['schema_first_try']} с первого раза, "
+          f"{summary['schema_with_retry']} с ретраем, {summary['schema_failed']} провал; "
+          f"токены prompt {summary['prompt_tokens']}, output {summary['output_tokens']} "
+          f"(латентность ~{summary['avg_duration_s']} с); "
+          f"Jaccard повторов: {summary['repeat_jaccard']}")
+
+
 def main(argv: list[str] | None = None) -> None:
     if sys.platform == "win32":
         sys.stdout.reconfigure(encoding="utf-8")
@@ -154,6 +163,9 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--per-rating", type=int, default=3, help="сколько целей на каждый балл 4..10")
     p.add_argument("--min-history", type=int, default=50, help="минимальный размер истории цели")
     p.set_defaults(func=cmd_benchmark)
+
+    p = sub.add_parser("pilot", help="пилот семантических тегов: выборка → LLM → отчёт (Этап 2)")
+    p.set_defaults(func=lambda a: cmd_pilot())
 
     p = sub.add_parser("recommend", help="персональная подборка «что посмотреть сейчас»")
     p.add_argument("--mode", choices=list(prompts.RECOMMEND_MODES), default="old",
