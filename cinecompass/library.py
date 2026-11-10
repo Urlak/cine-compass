@@ -116,3 +116,22 @@ def os_rating(item: dict) -> str:
     """Рейтинг Кинопоиска одной строкой, '' если нет."""
     kp = item.get("kpRating")
     return f"КП {float(kp):.1f}" if kp else ""
+
+
+def normalize_title(text: str) -> str:
+    """Нормализует название для нечувствительного к регистру и знакам поиска."""
+    import re
+    return re.sub(r"[^\w\s]", "", (text or "").lower()).strip()
+
+
+def find_item_by_title(items: list[dict], query: str) -> dict | None:
+    """Детерминированный поиск фильма/сериала в библиотеке по названию (RU или EN)."""
+    norm_q = normalize_title(query)
+    if not norm_q:
+        return None
+    for item in items:
+        if normalize_title(item.get("title", "")) == norm_q:
+            return item
+        if normalize_title(item.get("originalTitle", "")) == norm_q:
+            return item
+    return None

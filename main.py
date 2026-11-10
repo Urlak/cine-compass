@@ -13,7 +13,7 @@ def _rows_and_overview():
     if not items:
         raise SystemExit("Библиотека пуста. Сначала: python main.py import <файл>")
     rows = library.compact_rows(items)
-    overview = markdown.build_catalog(items).split("### Топ жанров")[0]
+    overview = markdown._overview(items)
     return rows, overview
 
 
@@ -86,10 +86,34 @@ def cmd_recommend(args) -> None:
 
 
 def cmd_predict(args) -> None:
-    rows, overview = _rows_and_overview()
-    title = " ".join(args.title)
-    text = llm.generate(prompts.predict_prompt(rows, overview, title), op="predict")
-    doc = f"# Прогноз: {title}\n\n{text}"
+    items = library.load_library()
+    query = " ".join(args.title).strip()
+    
+    # A2: Детерминированный поиск перед обращением к LLM (0 токенов при совпадении)
+    found = library.find_item_by_title(items, query)
+    if found:
+        title_ru = found.get("title", "")
+        orig = found.get("originalTitle", "")
+        title_disp = f"«{title_ru}» ({orig})" if orig and orig != title_ru else f"«{title_ru}»"
+        year_str = f", {found['year']}" if found.get("year") else ""
+        rating_str = f"{found['userRating']}/10" if found.get("userRating") is not None else "без оценки"
+        watched = found.get("watchedDate", "не указана")
+        
+        doc = (
+            f"# Прогноз: {query}\n\n"
+            f"Этот фильм уже есть в вашей библиотеке:\n\n"
+            f"* **{title_disp}{year_str}** — личная оценка: **{rating_str}**, дата просмотра: **{watched}**.\n\n"
+            f"*(Ответ сформирован детерминированно из локальной базы, 0 токенов LLM)*"
+        )
+        llm.write_markdown(config.PREDICTION_FILE, doc)
+        print(doc)
+        print(f"\nСохранено: {config.PREDICTION_FILE}")
+        return
+
+    rows = library.compact_rows(items)
+    overview = markdown._overview(items)
+    text = llm.generate(prompts.predict_prompt(rows, overview, query), op="predict")
+    doc = f"# Прогноз: {query}\n\n{text}"
     llm.write_markdown(config.PREDICTION_FILE, doc)
     print(doc)
     print(f"\nСохранено: {config.PREDICTION_FILE}")

@@ -2,7 +2,7 @@
 import json
 from types import SimpleNamespace
 
-from cinecompass.library import clean_items, compact_rows, duration, missing_enrichment
+from cinecompass.library import clean_items, compact_rows, duration, find_item_by_title, missing_enrichment, normalize_title
 
 
 def _raw(kp_id, title, rating="8", watched="2020-01-01", **extra):
@@ -71,3 +71,20 @@ def test_log_usage_appends_jsonl_row(tmp_path, monkeypatch):
     assert row["retry"] is False
     assert row["ts"]
     assert row["duration_s"] >= 0
+
+
+def test_find_item_by_title_matches_case_punctuation_and_original():
+    items = [
+        {"title": "Бойцовский клуб", "originalTitle": "Fight Club", "userRating": 10},
+        {"title": "ВАЛЛ·И", "originalTitle": "WALL·E", "userRating": 9},
+    ]
+    # Поиск по точному названию
+    assert find_item_by_title(items, "Бойцовский клуб")["userRating"] == 10
+    # Поиск без учета регистра и пунктуации
+    assert find_item_by_title(items, "бойцовский клуб!")["userRating"] == 10
+    assert find_item_by_title(items, "валли")["userRating"] == 9
+    # Поиск по оригинальному названию
+    assert find_item_by_title(items, "Fight Club")["userRating"] == 10
+    assert find_item_by_title(items, "wall-e")["userRating"] == 9
+    # Несуществующий
+    assert find_item_by_title(items, "Интерстеллар") is None

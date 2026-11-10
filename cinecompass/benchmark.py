@@ -55,10 +55,13 @@ def run(per_rating: int = 3, min_history: int = 50) -> dict:
     items = library.load_library()
     targets = build_sample(items, per_rating=per_rating)
     results = []
-    for target in targets:
+    total = len(targets)
+    print(f"Запуск бенчмарка: {total} целей (по {per_rating} на каждый балл от 4 до 10)...", flush=True)
+    for idx, target in enumerate(targets, 1):
         history = profile_history(items, target)
+        title_full = target["title"] + (f" ({target['originalTitle']})" if target.get("originalTitle") else "")
         record = {
-            "title": target["title"] + f" ({target['originalTitle']})" if target["originalTitle"] else target["title"],
+            "title": title_full,
             "year": target["year"],
             "watched": target["watchedDate"],
             "truth": target["userRating"],
@@ -72,11 +75,13 @@ def run(per_rating: int = 3, min_history: int = 50) -> dict:
         if len(history) < min_history:
             record["reason"] = f"история короче {min_history}"
             results.append(record)
+            print(f"[{idx}/{total}] Пропуск: «{title_full}» ({target.get('year')}) — история всего {len(history)} (< {min_history})", flush=True)
             continue
+        print(f"[{idx}/{total}] Запрос к LLM: «{title_full}» ({target.get('year')}), факт: {target['userRating']}... (история: {len(history)})", flush=True)
         rows = library.compact_rows(history)
-        # осознанно сохраняем текущую архитектуру (обрезанный overview) как baseline
-        overview = markdown.build_catalog(history).split("### Топ жанров")[0]
-        question = f"{target['title']} ({target['originalTitle']})" if target['originalTitle'] else target["title"]
+        # A1: передаем полную программную сводку вместо обрезанной
+        overview = markdown._overview(history)
+        question = title_full
         prompt = prompts.predict_prompt(rows, overview, question)
         text = llm.generate(prompt, op="benchmark")
         score = parse_score(text)
@@ -86,6 +91,7 @@ def run(per_rating: int = 3, min_history: int = 50) -> dict:
             abs_err=None if score is None else abs(score - target["userRating"]),
             hit1=score is not None and abs(score - target["userRating"]) <= 1,
         )
+        print(f"        -> Прогноз: {score}/10 (факт: {target['userRating']}) | Ошибка: {record['abs_err']}", flush=True)
         results.append(record)
     _write(results)
     return _summary(results)
