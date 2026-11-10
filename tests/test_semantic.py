@@ -11,7 +11,7 @@ def test_classification_prompt_requires_record_only_evidence():
     payload = {"kinopoiskId": 1, "title": "x", "originalTitle": "", "year": 2000,
                "type": "series", "officialGenres": [], "countries": [], "description": None}
     prompt = classification_prompt(payload, tax)
-    assert "own knowledge" in prompt
+    assert "external knowledge" in prompt
     assert "insufficient_data" in prompt  # правило для записи без описания/жанров
     assert "does not prove" in prompt     # type=series сам по себе не доказывает episodic
     assert "partial" in prompt            # правило для короткого описания

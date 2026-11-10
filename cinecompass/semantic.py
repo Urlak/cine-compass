@@ -67,22 +67,25 @@ Tag dictionary (taxonomy_version {tax['version']}), format "id: definition":
 {tags}
 
 Rules:
-- Base tags ONLY on evidence in the provided record (description, official genres,
-  countries, type, year). Do NOT treat your own knowledge of the film as evidence,
-  even when the title is familiar; do NOT reconstruct plot details from memory.
-- You MAY use general word understanding to interpret what the record states
-  (e.g. a described robbery plot supports "heist"), but any attribute that needs
-  evidence beyond the record stays untagged.
-- Evidence is abundant when the record has a substantial description plus official
-  genres: status "complete" is normal there, and up to about 10 tags too.
-- Sparse evidence (very short or missing description): status "partial"; assign only
-  characteristics that the available information actually confirms.
-- Virtually nothing beyond title, year and type: status "insufficient_data" with an
-  empty tags array.
+- Premise counts as evidence: reasonable inferences directly supported by the
+  described setup are fine; a characteristic does not have to appear verbatim.
+- Official genres are valid evidence for characterizing the film, but never
+  duplicate them with semantic tags.
+- Status is independent of tag count: "complete" does not require many tags or every
+  category being populated, only enough information for a reliable, useful
+  classification.
+- No external knowledge: never supplement the record with what you remember about
+  the film, even if it is very well known to you.
+- A multi-sentence plot description combined with official genre metadata should
+  normally qualify as "complete". Use "partial" only when the provided information
+  is genuinely too limited to support a useful characterization, not merely because
+  some categories cannot be populated.
+- Virtually nothing beyond title, year and type: "insufficient_data" with an empty
+  tags array.
 - type "series" alone does not prove "episodic": assign it only if an episodic
   narrative structure is supported by the record itself.
 - Use ONLY tag ids that exist in the dictionary. Never invent tags. Anywhere from 0
-  to about 10 tags is acceptable; return FEWER tags when evidence is thin, never guess.
+  to about 10 tags is acceptable; return fewer tags when evidence is thin, never guess.
 - Official genres are context only: do not assign a tag whose meaning is already fully
   covered by one of them; assign tags that add information beyond them.
 - Assign a tag only when the record clearly supports it; omit unconfirmed attributes.
