@@ -18,6 +18,7 @@ CATALOG_FILE = DATA_DIR / "catalog.md"
 STATS_FILE = DATA_DIR / "stats.md"
 PROFILE_FILE = DATA_DIR / "profile.md"
 PREDICTION_FILE = DATA_DIR / "prediction.md"
+USAGE_FILE = DATA_DIR / "usage.jsonl"
 
 KINOPOISK_API_KEY = os.getenv("KINOPOISK_API_KEY", "")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")

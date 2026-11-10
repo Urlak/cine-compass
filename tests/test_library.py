@@ -1,4 +1,7 @@
 """Тесты чистки/дедупликации библиотеки."""
+import json
+from types import SimpleNamespace
+
 from cinecompass.library import clean_items, compact_rows, duration, missing_enrichment
 
 
@@ -48,3 +51,22 @@ def test_duration_is_minutes_not_seasons_for_series():
     assert duration({"movieLength": "116"}) == "1 ч 56 мин"
     assert duration({"seriesLength": 47}) == "сер. 47 мин"
     assert duration({}) == ""
+
+
+def test_log_usage_appends_jsonl_row(tmp_path, monkeypatch):
+    from cinecompass import config, llm
+    monkeypatch.setattr(config, "USAGE_FILE", tmp_path / "usage.jsonl")
+    usage = SimpleNamespace(
+        prompt_token_count=57000,
+        thoughts_token_count=5468,
+        candidates_token_count=1230,
+        cached_content_token_count=57322,
+    )
+    llm._log_usage(SimpleNamespace(usage_metadata=usage), op="predict", retry=False)
+    row = json.loads((tmp_path / "usage.jsonl").read_text(encoding="utf-8").splitlines()[0])
+    assert row["op"] == "predict"
+    assert row["prompt_tokens"] == 57000
+    assert row["thoughts_tokens"] == 5468
+    assert row["output_tokens"] == 1230
+    assert row["retry"] is False
+    assert row["ts"]

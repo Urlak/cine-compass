@@ -61,14 +61,14 @@ def cmd_build(_args) -> None:
 
 def cmd_stats(_args) -> None:
     rows, overview = _rows_and_overview()
-    text = llm.generate(prompts.stats_prompt(rows, overview))
+    text = llm.generate(prompts.stats_prompt(rows, overview), op="stats")
     out = llm.write_markdown(config.STATS_FILE, text)
     print(f"Статистика: {out}")
 
 
 def cmd_profile(_args) -> None:
     rows, overview = _rows_and_overview()
-    text = llm.generate(prompts.profile_prompt(rows, overview))
+    text = llm.generate(prompts.profile_prompt(rows, overview), op="profile")
     out = llm.write_markdown(config.PROFILE_FILE, text)
     print(f"Профайл: {out}")
 
@@ -77,7 +77,7 @@ def cmd_recommend(args) -> None:
     rows, overview = _rows_and_overview()
     title, prompt = prompts.recommend_prompt(rows, overview, args.mode, args.count)
     print(f"Генерация подборки ({title}) ...")
-    text = llm.generate(prompt)
+    text = llm.generate(prompt, op=f"recommend:{args.mode}")
     stamp = datetime.now().strftime("%Y%m%d_%H%M")
     out = config.RECOMMEND_DIR / f"recommend_{args.mode}_{stamp}.md"
     llm.write_markdown(out, f"# {title}\n\n{text}")
@@ -88,7 +88,7 @@ def cmd_recommend(args) -> None:
 def cmd_predict(args) -> None:
     rows, overview = _rows_and_overview()
     title = " ".join(args.title)
-    text = llm.generate(prompts.predict_prompt(rows, overview, title))
+    text = llm.generate(prompts.predict_prompt(rows, overview, title), op="predict")
     doc = f"# Прогноз: {title}\n\n{text}"
     llm.write_markdown(config.PREDICTION_FILE, doc)
     print(doc)
