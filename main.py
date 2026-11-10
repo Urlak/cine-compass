@@ -3,6 +3,7 @@ import argparse
 import shutil
 import sys
 from datetime import datetime
+from pathlib import Path
 
 from cinecompass import benchmark, config, enrich, library, llm, markdown, prompts
 
