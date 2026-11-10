@@ -73,7 +73,7 @@ def enrich_library(limit: int | None = None) -> dict:
         kp_id = item["kinopoiskId"]
         try:
             resp = session.get(
-                f"{config.KINOPOISK_API_BASE}/v1.5/movie/{kp_id}",
+                f"{API_BASE}/v1.5/movie/{kp_id}",
                 headers=headers,
                 timeout=20,
             )
@@ -94,7 +94,7 @@ def enrich_library(limit: int | None = None) -> dict:
         if i % 25 == 0:
             _save_cache(cache)
             _apply_cache(items, cache)
-            _write_library(items)
+            library.save_library(items)
             print(f"Готово {i}/{len(todo)} (успех: {fetched}, ошибки: {failed})")
         time.sleep(config.ENRICH_INTERVAL)
     _save_cache(cache)
