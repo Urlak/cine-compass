@@ -7,7 +7,6 @@ from pathlib import Path
 
 from cinecompass import benchmark, config, enrich, library, llm, markdown, prompts, semantic
 
-
 def _rows_and_overview():
     items = library.load_library()
     if not items:
@@ -134,6 +133,15 @@ def cmd_pilot(args) -> None:
           f"Jaccard повторов: {summary['repeat_jaccard']}")
 
 
+def cmd_semantic(args) -> None:
+    summary = semantic.run_batch_enrich(limit=args.limit)
+    print(f"Итог: партий {summary['batches']}, LLM {summary['llm_processed']}, "
+          f"голых {summary['auto_insufficient']}, пропущено актуальных {summary['skipped_actual']}, "
+          f"кэш {summary['cache_total']} записей; расход накопленно {summary['spent_total']} "
+          f"(лимит {summary['limit'] or 'не задан'})"
+          + ("; останов по лимиту" if summary["stopped_by_limit"] else ""))
+
+
 def main(argv: list[str] | None = None) -> None:
     if sys.platform == "win32":
         sys.stdout.reconfigure(encoding="utf-8")
@@ -168,6 +176,10 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--ids", type=int, nargs="+", default=None,
                    help="запустить только эти kinopoiskId (мини-пилот, без повторов)")
     p.set_defaults(func=cmd_pilot)
+
+    p = sub.add_parser("semantic", help="пакетная классификация тегами → data/semantic_cache.json (Этап 3)")
+    p.add_argument("--limit", type=int, default=None, help="максимум фильмов через LLM за запуск")
+    p.set_defaults(func=cmd_semantic)
 
     p = sub.add_parser("recommend", help="персональная подборка «что посмотреть сейчас»")
     p.add_argument("--mode", choices=list(prompts.RECOMMEND_MODES), default="old",

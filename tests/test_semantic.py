@@ -1,7 +1,9 @@
 """Тесты пилота классификации (Этап 2): payload, парсер, повторяемость-метрика."""
 import pytest
 
-from cinecompass.semantic import classification_prompt, film_payload, jaccard, parse_classification
+from cinecompass.semantic import (batch_classification_prompt, classification_prompt,
+                                  film_payload, fingerprint, _is_bare_record, jaccard,
+                                  parse_batch, parse_classification)
 
 
 def test_classification_prompt_requires_record_only_evidence():
@@ -79,3 +81,55 @@ def test_jaccard_basic():
     assert jaccard(["a", "b", "c"], ["a", "b", "d"]) == 0.5
     assert jaccard(["a"], ["a"]) == 1.0
     assert jaccard([], []) == 1.0
+
+
+def test_fingerprint_sensitivity():
+    base = {"kinopoiskId": 1, "title": "a", "originalTitle": "", "year": 2000, "type": "film",
+            "officialGenres": ["драма"], "countries": [], "description": "x"}
+    assert fingerprint(base, "1.0") == fingerprint(dict(base), "1.0")
+    assert fingerprint(base, "1.0") != fingerprint({**base, "officialGenres": ["боевик"]}, "1.0")
+    assert fingerprint(base, "1.0") != fingerprint(dict(base), "2.0")
+
+
+def test_is_bare_record():
+    base = {"description": None, "officialGenres": [], "countries": []}
+    assert _is_bare_record(base)
+    assert not _is_bare_record({**base, "description": "Есть."})
+    assert not _is_bare_record({**base, "officialGenres": ["драма"]})
+    assert not _is_bare_record({**base, "countries": ["США"]})
+
+
+def test_parse_batch_ok():
+    text = ('[{"kinopoiskId": 1, "status": "complete", "tags": ["heist"]},'
+            ' {"kinopoiskId": 2, "status": "insufficient_data", "tags": []}]')
+    data = parse_batch(text, [1, 2], {"heist"})
+    assert data[1]["status"] == "complete"
+    assert data[2]["tags"] == []
+
+
+def test_parse_batch_rejects():
+    ok1 = '{"kinopoiskId": 1, "status": "partial", "tags": []}'
+    valid = {"heist"}
+    with pytest.raises(ValueError, match="нет фильмов"):
+        parse_batch(f"[{ok1}]", [1, 2], valid)
+    dup = f"[{ok1}, {ok1}]"
+    with pytest.raises(ValueError, match="дубликат"):
+        parse_batch(dup, [1], valid)
+    with pytest.raises(ValueError, match="посторонний"):
+        parse_batch('[{"kinopoiskId": 9, "status": "partial", "tags": []}]', [1], valid)
+    with pytest.raises(ValueError, match="неизвестный статус"):
+        parse_batch('[{"kinopoiskId": 1, "status": "x", "tags": []}]', [1], valid)
+    with pytest.raises(ValueError, match="лишние ключи"):
+        parse_batch('[{"kinopoiskId": 1, "status": "partial", "tags": [], "note": "x"}]', [1], valid)
+
+
+def test_batch_and_single_prompts_share_r3_rules():
+    payload = {"kinopoiskId": 1, "title": "x", "originalTitle": "", "year": 2000, "type": "film",
+               "officialGenres": [], "countries": [], "description": "Есть завязка."}
+    tax = {"version": "1.0", "tags": [
+        {"id": "heist", "category": "genre", "label": "Heist", "definition": "x"}]}
+    single = classification_prompt(payload, tax)
+    batch = batch_classification_prompt([payload], tax)
+    assert "No external knowledge" in single and "No external knowledge" in batch
+    assert "Premise counts as evidence" in single and "Premise counts as evidence" in batch
+    assert "heist: x" in single and "heist: x" in batch
