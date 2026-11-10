@@ -1,7 +1,20 @@
 """Тесты пилота классификации (Этап 2): payload, парсер, повторяемость-метрика."""
 import pytest
 
-from cinecompass.semantic import film_payload, jaccard, parse_classification
+from cinecompass.semantic import classification_prompt, film_payload, jaccard, parse_classification
+
+
+def test_classification_prompt_requires_record_only_evidence():
+    tax = {"version": "1.0", "tags": [
+        {"id": "heist", "category": "genre", "label": "Heist", "definition": "x"},
+    ]}
+    payload = {"kinopoiskId": 1, "title": "x", "originalTitle": "", "year": 2000,
+               "type": "series", "officialGenres": [], "countries": [], "description": None}
+    prompt = classification_prompt(payload, tax)
+    assert "own knowledge" in prompt
+    assert "insufficient_data" in prompt  # правило для записи без описания/жанров
+    assert "does not prove" in prompt     # type=series сам по себе не доказывает episodic
+    assert "partial" in prompt            # правило для короткого описания
 
 
 def _item(**overrides):

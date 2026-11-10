@@ -125,8 +125,8 @@ def cmd_benchmark(args) -> None:
           f"распарсено: {summary['parsed']}/{summary['answered']} из {summary['targets']}")
 
 
-def cmd_pilot() -> None:
-    summary = semantic.run()
+def cmd_pilot(args) -> None:
+    summary = semantic.run(ids=args.ids)
     print(f"Схема: {summary['schema_first_try']} с первого раза, "
           f"{summary['schema_with_retry']} с ретраем, {summary['schema_failed']} провал; "
           f"токены prompt {summary['prompt_tokens']}, output {summary['output_tokens']} "
@@ -165,7 +165,9 @@ def main(argv: list[str] | None = None) -> None:
     p.set_defaults(func=cmd_benchmark)
 
     p = sub.add_parser("pilot", help="пилот семантических тегов: выборка → LLM → отчёт (Этап 2)")
-    p.set_defaults(func=lambda a: cmd_pilot())
+    p.add_argument("--ids", type=int, nargs="+", default=None,
+                   help="запустить только эти kinopoiskId (мини-пилот, без повторов)")
+    p.set_defaults(func=cmd_pilot)
 
     p = sub.add_parser("recommend", help="персональная подборка «что посмотреть сейчас»")
     p.add_argument("--mode", choices=list(prompts.RECOMMEND_MODES), default="old",

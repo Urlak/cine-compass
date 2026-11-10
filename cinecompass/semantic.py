@@ -11,9 +11,9 @@ from datetime import datetime
 from cinecompass import config, library, llm, taxonomy
 
 STATUS_MEANING = {
-    "complete": "enough information for a full-fledged classification",
-    "partial": "some attributes could be determined, but the information is not enough for a full classification",
-    "insufficient_data": "reliable classification is impossible",
+    "complete": "the provided record contains enough information to classify the film",
+    "partial": "some attributes can be determined, but the information is not enough for a full classification",
+    "insufficient_data": "the information is not enough even for a reliable partial classification",
 }
 ALLOWED_STATUS = set(STATUS_MEANING)
 
@@ -67,6 +67,16 @@ Tag dictionary (taxonomy_version {tax['version']}), format "id: definition":
 {tags}
 
 Rules:
+- Use ONLY the information in the provided record. Do NOT use your own knowledge of
+  the film, even if the title is familiar; do NOT reconstruct the plot from memory.
+- Never assign a tag just because it fits known films with this title. When the
+  evidence is lacking, return FEWER tags rather than guessing.
+- A record with only title, year and type means status "insufficient_data" with an
+  empty tags array.
+- A very short description means sparse information: status "partial", and only
+  characteristics that the available information actually confirms.
+- type "series" alone does not prove "episodic": assign it only if an episodic
+  narrative structure is supported by the record itself.
 - Use ONLY tag ids that exist in the dictionary. Never invent tags.
 - Official genres are context only: do not assign a tag whose meaning is already fully
   covered by one of them; assign tags that add information beyond them.
@@ -174,7 +184,11 @@ def jaccard(a: list[str], b: list[str]) -> float:
     return round(len(sa & sb) / len(sa | sb), 2)
 
 
-def run() -> dict:
+def run(ids: list[int] | None = None, repeat_ids: list[int] | None = None) -> dict:
+    """ids=None и repeat_ids=None — полный пилот; --ids запускает мини-пилот без повторов."""
+    ids = ids or PILOT_IDS
+    if repeat_ids is None:
+        repeat_ids = REPEAT_IDS if ids == PILOT_IDS else []
     items = library.load_library()
     by_id = {i["kinopoiskId"]: i for i in items}
     missing = [i for i in PILOT_IDS if i not in by_id]
@@ -225,7 +239,7 @@ def _summary(results: list[dict], repeats: list[dict], version: str) -> dict:
     return {
         "taxonomy_version": version,
         "classified": len(results),
-        "unique_films": len(PILOT_IDS),
+        "unique_films": len({r["kinopoiskId"] for r in results}),
         "repeats": len(repeats),
         "schema_first_try": first_try,
         "schema_with_retry": with_retry,
