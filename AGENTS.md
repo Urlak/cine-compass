@@ -2,8 +2,15 @@
 
 cine-compass: личная кинобиблиотека из экспорта Кинопоиска. CLI (`main.py`): `import`/`clean`,
 `enrich` (обогащение через kinopoisk.dev — эндпоинт `api.poiskkino.dev/v1.5/movie/{id}`),
-`build` (маркдаун-каталог), `stats`/`profile`/`recommend`/`predict` (Gemini через `google-genai`,
+`build` (маркдаун-каталог), `semantic`/`taste` (семантические теги и Taste Profile, без LLM
+в расчётах профиля), `stats`/`profile`/`recommend`/`predict` (Gemini через `google-genai`,
 модель — `LLM_MODEL` из `.env`, сейчас `gemini-3.8-flash`).
+
+Контексты LLM: `stats`/`profile`/`recommend` получают компактные программные сводки
+(`stats_context`, `taste_profile.md`, Python-кандидаты по режиму), НЕ полную библиотеку;
+`predict` — единственная операция с full context (baseline, осознанно не сокращён — см.
+«Этап 6» в `optimizing-plan-v4.md`). Словарь тегов `taxonomy.json` v1.0 заморожен;
+промпт классификации (PROMPT_VERSION r3) заморожен — правки текста требуют согласования.
 
 ## Commands
 
@@ -11,13 +18,19 @@ cine-compass: личная кинобиблиотека из экспорта К
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
-pytest                                             # базовые тесты чистки, без сети
+pytest                                             # 36 тестов (таксономия, семантика, профиль, библиотека, промпты), без сети
 .\.venv\Scripts\python.exe main.py import <путь к library_export.json>
 .\.venv\Scripts\python.exe main.py enrich [--limit N]   # возобновляемо, кэш в data/enrich_cache.json
 .\.venv\Scripts\python.exe main.py build
+.\.venv\Scripts\python.exe main.py semantic [--limit N] # пакетная классификация тегами → data/semantic_cache.json
+.\.venv\Scripts\python.exe main.py taste                # Taste Profile → data/taste_profile.json/.md
 .\.venv\Scripts\python.exe main.py stats | profile | predict <название>
 .\.venv\Scripts\python.exe main.py recommend --mode old|new|classics [--count N]
+.\.venv\Scripts\python.exe main.py benchmark [--per-rating N]   # ретроспективный тест predict
 ```
+
+После каждого `enrich` (новые описания/жанры меняют fingerprint) запускается `semantic`
+(бюджет `SEMANTIC_ENRICHMENT_MAX_TOKENS` в `.env`), затем `taste` пересчитывает профиль.
 
 Данные и все outputs лежат в `data/` и игнорируются гитом; ключи — в `.env` (см. `.env.template`).
 

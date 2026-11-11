@@ -6,6 +6,20 @@
 
 ---
 
+## 0. Дополнение от 2026-11-11: реализация плана V4
+
+Этот документ отражает состояние на 11.10. По плану `optimizing-plan-v4.md` внедрено:
+
+- **Контролируемый словарь** `taxonomy.json` v1.0 (52 английских тега, 8 категорий) + загрузчик `cinecompass/taxonomy.py`.
+- **Пакетная семантическая классификация** (`cinecompass/semantic.py`, команда `main.py semantic`): fingerprint по всем входам + версиям, отдельный `data/semantic_cache.json`, статусы complete/partial/insufficient_data, атомарное сохранение, бюджет `SEMANTIC_ENRICHMENT_MAX_TOKENS`. Кэш: 1155 записей, 547 с тегами (47 %).
+- **Taste Profile** (`cinecompass/taste.py`, команда `main.py taste`): Python-расчёт, `data/taste_profile.json` + самодостаточный `data/taste_profile.md`, четыре среза, пороги 8–10 / 1–5.
+- **Компактные контексты** (замеры в `data/usage.jsonl`): profile 3 542 prompt-токенов (−94 %), recommend 5 949 (−91 %), stats 4 001 (−94 %) против прежних ~63 580.
+- **predict оставлен без изменений** (full context, baseline MAE 1.06, ±1 = 0.81 на 16 целях): решение и условия пересмотра — в разделе «Этап 6» плана V4.
+
+Разделы 3–5 и таблица инвентаризации промптов ниже устарели в части входов `stats`/`profile`/`recommend` — актуальные описания в `README.md`.
+
+---
+
 ## 1. Executive Summary
 
 cine-compass — личный CLI-сервис кинобиблиотеки: импорт экспорта «Кинопоиска», нормализация
