@@ -66,8 +66,9 @@ def cmd_stats(_args) -> None:
 
 
 def cmd_profile(_args) -> None:
-    rows, overview = _rows_and_overview()
-    text = llm.generate(prompts.profile_prompt(rows, overview), op="profile")
+    profile = taste.build_profile(library.load_library(), semantic.load_cache())
+    context = markdown.taste_profile_markdown(profile)
+    text = llm.generate(prompts.profile_prompt(context), op="profile")
     out = llm.write_markdown(config.PROFILE_FILE, text)
     print(f"Профайл: {out}")
 
