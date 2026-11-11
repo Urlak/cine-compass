@@ -26,7 +26,8 @@ Copy-Item .env.template .env   # и заполнить ключи
 
 ```powershell
 python main.py import "C:\Users\roman\Downloads\Temp\library_export_1794175310215.json"
-python main.py enrich            # дотянуть жанр/режиссёра/рейтинг (возобновляемо, кэш в data/caches/enrich_cache.json)
+python main.py enrich            # дотянуть жанр/режиссёра/рейтинг (возобновляемо, кэш в data/caches/enrich_cache.json;
+                                 # нет ключа или сети — работа продолжается на одном кэше)
 python main.py build             # маркдаун-каталог data/users/me/catalog.md
 
 # семантический слой (цикл после каждого enrich — fingerprint пересчитает изменившиеся записи)

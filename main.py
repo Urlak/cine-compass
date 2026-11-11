@@ -51,6 +51,8 @@ def cmd_enrich(args) -> None:
     print(f"Обогащение завершено. Загружено: {stats['fetched']}, ошибок: {stats['failed']}")
     if stats["quota_exceeded"]:
         print("Суточный лимит kinopoisk.dev исчерпан — запустите ещё раз завтра.")
+    elif stats["failed"] and not stats["fetched"]:
+        print("Проблемы с подключением — применён только кэш; запустите ещё раз позже.")
 
 
 def cmd_build(_args) -> None:

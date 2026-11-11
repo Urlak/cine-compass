@@ -52,13 +52,19 @@ def _extract(data: dict) -> dict:
 
 
 def enrich_library(limit: int | None = None) -> dict:
-    """Дозаполняет library.json данными API. Возвращает сводку по количеству."""
-    if not config.KINOPOISK_API_KEY:
-        raise SystemExit("KINOPOISK_API_KEY не задан (см. .env.template)")
+    """Дозаполняет library.json данными API. Возвращает сводку по количеству.
+
+    Нет ключа или нет подключения — работа продолжается на одном кэше.
+    """
     if config.ENRICH_INTERVAL < 0:
         raise SystemExit("ENRICH_INTERVAL должен быть числом >= 0 (см. .env)")
     items = library.load_library()
     cache = _load_cache()
+    if not config.KINOPOISK_API_KEY:
+        print("KINOPOISK_API_KEY не задан — применяю только кэш, без запросов к API.")
+        _apply_cache(items, cache)
+        library.save_library(items)
+        return {"fetched": 0, "failed": 0, "quota_exceeded": False}
     todo = [
         it for it in items
         if library.missing_enrichment(it) and str(it["kinopoiskId"]) not in cache
@@ -87,6 +93,12 @@ def enrich_library(limit: int | None = None) -> dict:
             cache[str(kp_id)] = detail
             item.update(detail)
             fetched += 1
+        except requests.ConnectionError as exc:
+            # Сеть недоступна целиком — бессмысленно перебирать остальные записи
+            failed += 1
+            print(f"Нет подключения к API ({exc.__class__.__name__}) — "
+                  f"продолжаю только с кэшем; прогресс сохранён.")
+            break
         except (requests.RequestException, ValueError) as exc:
             # ValueError сюда попадает из resp.json() на невалидном теле ответа
             failed += 1
