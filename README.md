@@ -8,6 +8,9 @@
 
 ## Установка
 
+Экспорт библиотеки из Кинопоиска делается на [kino-export.com](https://kino-export.com/)
+— полученный `library_export.json` подаётся команде `import`.
+
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
