@@ -361,7 +361,7 @@ def run(ids: list[int] | None = None, repeat_ids: list[int] | None = None) -> di
 
 
 def run_batch_enrich(limit: int | None = None) -> dict:
-    """Пакетная классификация библиотеки в data/semantic_cache.json (Этап 3).
+    """Пакетная классификация библиотеки в data/caches/semantic_cache.json (Этап 3).
 
     Голые записи (только название/год/тип) классифицируются Python-ом без LLM.
     Останов по лимиту токенов проверяется после каждой партии.

@@ -160,21 +160,23 @@ def main(argv: list[str] | None = None) -> None:
         sys.stdout.reconfigure(encoding="utf-8")
         sys.stderr.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description="cine-compass: кинобиблиотека, профайл и рекомендации")
+    parser.add_argument("--user", default=config.DEFAULT_USER, metavar="NAME",
+                        help=f"пользователь, чьи библиотека и выводы используются (по умолчанию {config.DEFAULT_USER!r})")
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     p = sub.add_parser("import", help="импортировать JSON-экспорт (копия + чистка)")
     p.add_argument("file", help="путь к library_export.json")
     p.set_defaults(func=cmd_import)
 
-    sub.add_parser("clean", help="перечистить data/raw/library_export.json").set_defaults(func=cmd_clean)
+    sub.add_parser("clean", help="перечистить data/users/<user>/raw/library_export.json").set_defaults(func=cmd_clean)
 
     p = sub.add_parser("enrich", help="дотянуть жанры/режиссёра/рейтинг через kinopoisk.dev")
     p.add_argument("--limit", type=int, default=None, help="сколько записей обработать за запуск")
     p.set_defaults(func=cmd_enrich)
 
-    sub.add_parser("build", help="собрать маркдаун-каталог data/catalog.md").set_defaults(func=cmd_build)
-    sub.add_parser("stats", help="статистика через LLM → data/stats.md").set_defaults(func=cmd_stats)
-    sub.add_parser("profile", help="профайл зрителя через LLM → data/profile.md").set_defaults(func=cmd_profile)
+    sub.add_parser("build", help="собрать маркдаун-каталог data/users/<user>/catalog.md").set_defaults(func=cmd_build)
+    sub.add_parser("stats", help="статистика через LLM → data/users/<user>/stats.md").set_defaults(func=cmd_stats)
+    sub.add_parser("profile", help="профайл зрителя через LLM → data/users/<user>/profile.md").set_defaults(func=cmd_profile)
 
     p = sub.add_parser("predict", help="прогноз личной оценки фильма по вашему вкусу (без спойлеров)")
     p.add_argument("title", nargs="+", help="название фильма или сериала")
@@ -190,11 +192,11 @@ def main(argv: list[str] | None = None) -> None:
                    help="запустить только эти kinopoiskId (мини-пилот, без повторов)")
     p.set_defaults(func=cmd_pilot)
 
-    p = sub.add_parser("semantic", help="пакетная классификация тегами → data/semantic_cache.json (Этап 3)")
+    p = sub.add_parser("semantic", help="пакетная классификация тегами → data/caches/semantic_cache.json (Этап 3)")
     p.add_argument("--limit", type=int, default=None, help="максимум фильмов через LLM за запуск")
     p.set_defaults(func=cmd_semantic)
 
-    sub.add_parser("taste", help="Taste Profile из тегов и оценок → data/taste_profile.md/.json (Этап 4)").set_defaults(func=cmd_taste)
+    sub.add_parser("taste", help="Taste Profile из тегов и оценок → data/users/<user>/taste_profile.md/.json (Этап 4)").set_defaults(func=cmd_taste)
 
     p = sub.add_parser("recommend", help="персональная подборка «что посмотреть сейчас»")
     p.add_argument("--mode", choices=list(prompts.RECOMMEND_MODES), default="old",
@@ -203,6 +205,7 @@ def main(argv: list[str] | None = None) -> None:
     p.set_defaults(func=cmd_recommend)
 
     args = parser.parse_args(argv)
+    config.set_user(args.user)
     args.func(args)
 
 

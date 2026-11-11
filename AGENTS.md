@@ -19,20 +19,27 @@ cine-compass: личная кинобиблиотека из экспорта К
 pip install -r requirements.txt
 
 pytest                                             # 36 тестов (таксономия, семантика, профиль, библиотека, промпты), без сети
-.\.venv\Scripts\python.exe main.py import <путь к library_export.json>
-.\.venv\Scripts\python.exe main.py enrich [--limit N]   # возобновляемо, кэш в data/enrich_cache.json
-.\.venv\Scripts\python.exe main.py build
-.\.venv\Scripts\python.exe main.py semantic [--limit N] # пакетная классификация тегами → data/semantic_cache.json
-.\.venv\Scripts\python.exe main.py taste                # Taste Profile → data/taste_profile.json/.md
-.\.venv\Scripts\python.exe main.py stats | profile | predict <название>
-.\.venv\Scripts\python.exe main.py recommend --mode old|new|classics [--count N]
-.\.venv\Scripts\python.exe main.py benchmark [--per-rating N]   # ретроспективный тест predict
+.\.venv\Scripts\python.exe main.py [--user NAME] import <путь к library_export.json>
+.\.venv\Scripts\python.exe main.py [--user NAME] enrich [--limit N]   # возобновляемо, кэш в data/caches/enrich_cache.json
+.\.venv\Scripts\python.exe main.py [--user NAME] build
+.\.venv\Scripts\python.exe main.py [--user NAME] semantic [--limit N] # пакетная классификация тегами → data/caches/semantic_cache.json
+.\.venv\Scripts\python.exe main.py [--user NAME] taste                # Taste Profile → data/users/<NAME>/taste_profile.json/.md
+.\.venv\Scripts\python.exe main.py [--user NAME] stats | profile | predict <название>
+.\.venv\Scripts\python.exe main.py [--user NAME] recommend --mode old|new|classics [--count N]
+.\.venv\Scripts\python.exe main.py [--user NAME] benchmark [--per-rating N]   # ретроспективный тест predict
 ```
+
+`--user NAME` (по умолчанию `me`) выбирает зрителя: библиотека и все выводы —
+в `data/users/<NAME>/`, кэши (`data/caches/`) общие для всех. Опция ставится
+сразу после `main.py`, перед командой.
 
 После каждого `enrich` (новые описания/жанры меняют fingerprint) запускается `semantic`
 (бюджет `SEMANTIC_ENRICHMENT_MAX_TOKENS` в `.env`), затем `taste` пересчитывает профиль.
 
-Данные и все outputs лежат в `data/` и игнорируются гитом; ключи — в `.env` (см. `.env.template`).
+В git коммитятся только кэши (`data/caches/`) — факты о фильмах, без личных
+данных; библиотеки пользователей (`data/users/*/`) и выводы не коммитятся
+(история просмотров и оценки остаются локальными, бэкап — вручную).
+Ключи — в `.env` (см. `.env.template`), в git не попадают.
 
 ## Code Change Principles
 

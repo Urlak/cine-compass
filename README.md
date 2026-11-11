@@ -20,19 +20,23 @@ Copy-Item .env.template .env   # и заполнить ключи
 
 ## Команды
 
+`--user NAME` (по умолчанию `me`) выбирает, чья библиотека обрабатывается; кэши
+обогащения и семантики общие для всех пользователей. Опция ставится сразу после
+`main.py`, перед командой.
+
 ```powershell
 python main.py import "C:\Users\roman\Downloads\Temp\library_export_1794175310215.json"
-python main.py enrich            # дотянуть жанр/режиссёра/рейтинг (возобновляемо, кэш в data/enrich_cache.json)
-python main.py build             # маркдаун-каталог data/catalog.md
+python main.py enrich            # дотянуть жанр/режиссёра/рейтинг (возобновляемо, кэш в data/caches/enrich_cache.json)
+python main.py build             # маркдаун-каталог data/users/me/catalog.md
 
 # семантический слой (цикл после каждого enrich — fingerprint пересчитает изменившиеся записи)
-python main.py semantic          # пакетная классификация тегами → data/semantic_cache.json (бюджет SEMANTIC_ENRICHMENT_MAX_TOKENS)
-python main.py taste             # Taste Profile из тегов и оценок → data/taste_profile.json/.md
+python main.py semantic          # пакетная классификация тегами → data/caches/semantic_cache.json (бюджет SEMANTIC_ENRICHMENT_MAX_TOKENS)
+python main.py taste             # Taste Profile из тегов и оценок → data/users/me/taste_profile.json/.md
 
 # LLM-операции (получают компактные программные контексты, не всю библиотеку)
-python main.py stats             # статистика просмотров → data/stats.md
-python main.py profile           # портрет зрителя по Taste Profile → data/profile.md
-python main.py predict Сталкер   # прогноз личной оценки + почему (без спойлеров) → data/prediction.md
+python main.py stats             # статистика просмотров → data/users/me/stats.md
+python main.py profile           # портрет зрителя по Taste Profile → data/users/me/profile.md
+python main.py predict Сталкер   # прогноз личной оценки + почему (без спойлеров) → data/users/me/prediction.md
 
 python main.py recommend --mode old      # любимое из старого
 python main.py recommend --mode new      # свежее и новенькое
@@ -41,6 +45,15 @@ python main.py recommend --mode old --count 10
 
 python main.py benchmark         # ретроспективный benchmark predict (MAE, ±1, токены)
 python main.py pilot --ids ...   # диагностический пилот классификации тегов
+```
+
+Пример для друга: положите его экспорт куда угодно и укажите другое имя пользователя —
+
+```powershell
+python main.py --user friend import "C:\Downloads\library_export_friend.json"
+python main.py --user friend enrich    # пересекающиеся фильмы уже в кэше — запросов почти не будет
+python main.py --user friend semantic
+python main.py --user friend taste && python main.py --user friend profile
 ```
 
 ## Как это работает
@@ -69,7 +82,7 @@ python main.py pilot --ids ...   # диагностический пилот к�
 main.py                 CLI
 taxonomy.json           контролируемый словарь тегов (v1.0)
 cinecompass/
-  config.py             пути, .env, лимиты
+  config.py             пути, .env, лимиты, выбор пользователя (set_user)
   library.py            загрузка/чистка/дедуп/компактное представление/кандидаты режимов
   enrich.py             обогащение через api.poiskkino.dev (кинопоиск-прокси kinopoisk.dev) + кэш
   taxonomy.py           загрузка и валидация словаря
@@ -79,11 +92,28 @@ cinecompass/
   benchmark.py          ретроспективный benchmark predict
   llm.py                Gemini (google.genai) + лог usage.jsonl
   prompts.py            промпты
-data/                   библиотека, кэши (enrich_cache, semantic_cache), outputs, usage.jsonl
+data/
+  caches/               общие кэши (зависят только от фильма, не от зрителя):
+    enrich_cache.json     жанры/режиссёры/рейтинги — kinopoisk.dev
+    semantic_cache.json   семантические теги — Gemini
+  usage.jsonl           лог расхода LLM-токенов
+  pilot/, benchmark/    диагностические отчёты
+  users/<name>/         всё, что принадлежит конкретному зрителю:
+    raw/                  исходные экспорты Кинопоиска
+    library.json          чистая библиотека
+    catalog.md            каталог
+    taste_profile.json/.md, profile.md, stats.md, prediction.md
+    recommendations/      подборки
 tests/                  тесты таксономии, семантики, профиля, библиотеки, промптов
 ```
 
-`data/` в git не попадает.
+## Что попадает в git
+
+Только `data/caches/`: в кэшах нет личных данных — это факты о фильмах (жанры,
+режиссёры, рейтинги, теги), их можно переиспользовать многократно и для других
+людей. Библиотеки (`data/users/*/`) и сгенерированные выводы в git не попадают —
+там история просмотров и оценки; их бэкап делается вручную (облачная папка,
+копия), а ключи живут в `.env` и в git не попадают.
 
 ## Заметки
 
