@@ -93,7 +93,7 @@ def test_stats_context_aggregates_and_coverage():
     assert "оценено: 2, без оценки: 1" in ctx
     assert "4 — 1, 10 — 1" in ctx                       # распределение по возрастанию
     assert "### Фильмы с оценкой 5 и ниже (1)" in ctx
-    assert "B (4)" in ctx
+    assert "B, 2001 (4)" in ctx
     assert "режиссёры заполнены у **1/3**" in ctx       # coverage, а не «у всех»
     assert "- Нолан — 1" not in ctx                     # меньше 3 оценённых — не в списке
     assert "2011 — 1" in ctx and "2012 — 1" in ctx      # активность по годам
