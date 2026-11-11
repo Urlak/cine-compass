@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-from cinecompass import config
+from cinecompass import config, taste
 
 TYPE_LABELS = {"film": "фильм", "series": "сериал"}
 
@@ -109,6 +109,51 @@ def compact_rows(items: list[dict]) -> str:
         if ext:
             row += f" | {ext}"
         lines.append(row)
+    return "\n".join(lines)
+
+
+NEW_YEAR_MIN = 2020        # режим new: только свежие релизы
+CLASSICS_YEAR_MAX = 2000   # режим classics: только старые тайтлы
+
+
+def mode_candidates(items: list[dict], mode: str) -> list[dict]:
+    """Детерминированный Python-отбор кандидатов по режиму recommend.
+
+    Фильтры только по годам и личным оценкам: фильмы без семантических тегов
+    не исключаются — отсутствие тегов не означает несоответствие вкусу.
+    """
+    if mode == "old":
+        cands = [i for i in items if (i.get("userRating") or 0) >= taste.HIGH_RATING_MIN]
+        cands.sort(key=lambda i: (-i["userRating"], i.get("year") or 0))
+    elif mode == "new":
+        cands = [i for i in items if (i.get("year") or 0) >= NEW_YEAR_MIN]
+        cands.sort(key=lambda i: i["year"], reverse=True)
+    elif mode == "classics":
+        cands = [i for i in items if (i.get("year") or 9999) < CLASSICS_YEAR_MAX
+                 and (i.get("userRating") or 0) < taste.HIGH_RATING_MIN]
+        cands.sort(key=lambda i: i["year"])
+    else:
+        raise ValueError(f"Неизвестный режим: {mode}")
+    return cands
+
+
+def tagged_rows(items: list[dict], tags_by_kid: dict[int, list[str]]) -> str:
+    """Компактные строки кандидатов для recommend: ключевые поля + семантические теги."""
+    lines = []
+    for it in items:
+        parts = [
+            f"{it['title']} ({it['originalTitle']})" if it["originalTitle"] != it["title"] else it["title"],
+            str(it["year"]) if it.get("year") else "",
+            type_label(it),
+            f"{it['userRating']}/10" if it.get("userRating") is not None else "",
+            f"КП {it['kpRating']:.1f}" if it.get("kpRating") else "",
+            ", ".join(it.get("genres", [])),
+            "реж. " + ", ".join(it["directors"]) if it.get("directors") else "",
+        ]
+        tags = tags_by_kid.get(it["kinopoiskId"])
+        if tags:
+            parts.append("теги: " + ", ".join(tags))
+        lines.append(" | ".join(p for p in parts if p))
     return "\n".join(lines)
 
 

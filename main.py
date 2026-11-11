@@ -74,8 +74,12 @@ def cmd_profile(_args) -> None:
 
 
 def cmd_recommend(args) -> None:
-    rows, overview = _rows_and_overview()
-    title, prompt = prompts.recommend_prompt(rows, overview, args.mode, args.count)
+    items = library.load_library()
+    cache = semantic.load_cache()
+    tags_by_kid = {kid: rec["tags"] for kid, rec in cache.items() if rec["tags"]}
+    candidates = library.tagged_rows(library.mode_candidates(items, args.mode), tags_by_kid)
+    profile_md = markdown.taste_profile_markdown(taste.build_profile(items, cache))
+    title, prompt = prompts.recommend_prompt(candidates, profile_md, args.mode, args.count)
     print(f"Генерация подборки ({title}) ...")
     text = llm.generate(prompt, op=f"recommend:{args.mode}")
     stamp = datetime.now().strftime("%Y%m%d_%H%M")

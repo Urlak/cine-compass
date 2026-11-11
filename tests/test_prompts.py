@@ -12,3 +12,12 @@ def test_profile_prompt_embeds_taste_profile_and_cautions():
     assert "Маленькие срезы" in p
     assert "Не придумывай психологические характеристики" in p
     assert "«Русское название» (Original Title)" in p
+
+
+def test_recommend_prompt_embeds_profile_and_cautions():
+    title, p = prompts.recommend_prompt("строки кандидатов", "## Taste Profile", "new", 5)
+    assert title == "Свежее и новенькое"
+    assert "## Taste Profile" in p and "строки кандидатов" in p
+    assert "полноценные участники" in p
+    assert "Не путай распространённость тега" in p
+    assert "массово отсеивать" in p

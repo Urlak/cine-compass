@@ -47,6 +47,31 @@ def test_compact_rows_skips_empty_fields():
     assert "  " not in rows and "|" in rows
 
 
+def test_mode_candidates_filters_by_mode_not_by_tags():
+    from cinecompass.library import mode_candidates
+
+    items = [
+        {"kinopoiskId": 1, "title": "A", "originalTitle": "A", "year": 1995, "type": "film", "userRating": 9},
+        {"kinopoiskId": 2, "title": "B", "originalTitle": "B", "year": 2023, "type": "film", "userRating": 6},
+        {"kinopoiskId": 3, "title": "C", "originalTitle": "C", "year": 1985, "type": "film", "userRating": 4},
+        {"kinopoiskId": 4, "title": "D", "originalTitle": "D", "year": 1970, "type": "film", "userRating": None},
+    ]
+    assert [i["kinopoiskId"] for i in mode_candidates(items, "old")] == [1]
+    assert [i["kinopoiskId"] for i in mode_candidates(items, "new")] == [2]
+    # classics: старое без высокой оценки, включая фильмы без оценки — не исключены
+    assert [i["kinopoiskId"] for i in mode_candidates(items, "classics")] == [4, 3]
+
+
+def test_tagged_rows_appends_tags_only_when_present():
+    from cinecompass.library import tagged_rows
+
+    items = [{"kinopoiskId": 1, "title": "Т", "originalTitle": "O",
+              "year": 2000, "type": "film", "userRating": 8}]
+    row = tagged_rows(items, {1: ["tense", "urban"]})
+    assert "Т (O) | 2000 | фильм | 8/10" in row and "теги: tense, urban" in row
+    assert "теги" not in tagged_rows(items, {})
+
+
 def test_duration_is_minutes_not_seasons_for_series():
     assert duration({"movieLength": "116"}) == "1 ч 56 мин"
     assert duration({"seriesLength": 47}) == "сер. 47 мин"
