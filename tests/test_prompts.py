@@ -21,3 +21,12 @@ def test_recommend_prompt_embeds_profile_and_cautions():
     assert "полноценные участники" in p
     assert "Не путай распространённость тега" in p
     assert "массово отсеивать" in p
+
+
+def test_stats_prompt_embeds_context_and_cautions():
+    p = prompts.stats_prompt("## Общие данные\n\n- Всего записей: **1155**.")
+    assert "## Общие данные" in p
+    assert "Не пересчитывай статистику самостоятельно" in p
+    assert "не выдумывай закономерности" in p.lower()
+    assert "Полнота метаданных" in p
+    assert "Taste Profile" in p

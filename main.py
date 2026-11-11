@@ -59,8 +59,8 @@ def cmd_build(_args) -> None:
 
 
 def cmd_stats(_args) -> None:
-    rows, overview = _rows_and_overview()
-    text = llm.generate(prompts.stats_prompt(rows, overview), op="stats")
+    context = markdown.stats_context(library.load_library())
+    text = llm.generate(prompts.stats_prompt(context), op="stats")
     out = llm.write_markdown(config.STATS_FILE, text)
     print(f"Статистика: {out}")
 

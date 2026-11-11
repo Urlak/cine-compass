@@ -105,6 +105,91 @@ def write_catalog(items: list[dict]) -> Path:
     return config.CATALOG_FILE
 
 
+def stats_context(items: list[dict]) -> str:
+    """Программная сводка поведения зрителя для stats: агрегаты вместо 1155 строк."""
+    rated = [i for i in items if i.get("userRating") is not None]
+    dist = Counter(i["userRating"] for i in rated)
+    avg = sum(i["userRating"] for i in rated) / len(rated) if rated else 0
+    films = [i for i in rated if i["type"] == "film"]
+    series = [i for i in rated if i["type"] == "series"]
+    avg_of = lambda rows: sum(i["userRating"] for i in rows) / len(rows) if rows else 0.0
+
+    tens = sorted((i for i in rated if i["userRating"] == 10), key=lambda i: i["title"])
+    lows = sorted((i for i in rated if i["userRating"] <= 5), key=lambda i: (i["userRating"], i["title"]))
+
+    directors: dict[str, list[int]] = {}
+    for i in rated:
+        for d in i.get("directors", []):
+            directors.setdefault(d, []).append(i["userRating"])
+    dr_lines = []
+    for name, scores in sorted(
+        ((d, s) for d, s in directors.items() if len(s) >= 3),
+        key=lambda kv: (-len(kv[1]), kv[0]),
+    ):
+        dr_lines.append(f"- {name} — {len(scores)} оценённых, средняя {sum(scores) / len(scores):.2f}")
+
+    decades: dict[str, list[int]] = {}
+    for i in rated:
+        if i.get("year"):
+            decades.setdefault(f"{(i['year'] // 10) * 10}-е", []).append(i["userRating"])
+    dec_lines = [
+        f"- {dec} — {len(scores)} (средняя {sum(scores) / len(scores):.2f})"
+        for dec, scores in sorted(decades.items())
+    ]
+
+    by_year: Counter = Counter((i.get("watchedDate") or "?")[:4] for i in rated)
+    year_lines = [f"- {y} — {n}" for y, n in sorted(by_year.items()) if y != "?"]
+
+    countries = Counter(c for i in items for c in i.get("countries", []))
+    genres = Counter(g for i in items for g in i.get("genres", []))
+
+    n_dir = sum(1 for i in items if i.get("directors"))
+    n_cty = sum(1 for i in items if i.get("countries"))
+    lines = [
+        "# Сводка кинобиблиотеки для аналитика",
+        "",
+        "## Общие данные",
+        f"- Всего записей: **{len(items)}** (фильмов: {sum(1 for i in items if i['type'] == 'film')}, "
+        f"сериалов: {sum(1 for i in items if i['type'] == 'series')}); "
+        f"оценено: {len(rated)}, без оценки: {len(items) - len(rated)}.",
+        f"- Средняя личная оценка: **{avg:.2f}** из 10. Пересмотров: "
+        f"{sum(1 for i in items if i.get('rewatchCount', 1) > 1)}.",
+        f"- Полнота метаданных: режиссёры заполнены у **{n_dir}/{len(items)}**, страны у **{n_cty}/{len(items)}**, "
+        f"дата просмотра у {sum(1 for i in items if (i.get('watchedDate') or '').strip())}/{len(items)}. "
+        "Статистика по режиссёрам и странам описывает только заполненную часть библиотеки.",
+        "",
+        "## Распределение личных оценок",
+        ", ".join(f"{r} — {dist[r]}" for r in range(1, 11) if dist[r]),
+        "",
+        f"### Фильмы с оценкой 10 ({len(tens)})",
+        "; ".join(library.title_label(i) for i in tens),
+        "",
+        f"### Фильмы с оценкой 5 и ниже ({len(lows)})",
+        "; ".join(f"{library.title_label(i)} ({i['userRating']})" for i in lows),
+        "",
+        "## Режиссёры (не менее 3 оценённых фильмов)",
+        *dr_lines,
+        "",
+        "## Десятилетия выпуска (оценённые фильмы)",
+        *dec_lines,
+        "",
+        "## Активность по годам просмотра",
+        *year_lines,
+        "",
+        "## Страны (топ-10, только заполненные записи)",
+        ", ".join(f"{c} — {n}" for c, n in countries.most_common(10)),
+        "",
+        f"## Фильмы против сериалов (оценённые): фильмы {len(films)} "
+        f"(средняя {avg_of(films):.2f}), "
+        f"сериалы {len(series)} (средняя {avg_of(series):.2f})",
+        "",
+        "## Топ-15 жанров библиотеки",
+        ", ".join(f"{g} — {n}" for g, n in genres.most_common(15)),
+        "",
+    ]
+    return "\n".join(lines)
+
+
 _SLICE_TITLES = [
     ("library", "Библиотека в целом (все фильмы с семантическими тегами)"),
     ("rated", "Только фильмы с личной оценкой"),

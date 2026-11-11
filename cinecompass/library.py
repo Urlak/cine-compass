@@ -73,6 +73,12 @@ def type_label(item: dict) -> str:
     return TYPE_LABELS.get(item.get("type"), item.get("type"))
 
 
+def title_label(item: dict) -> str:
+    """«Русское название» (Original Title) для LLM-контекстов."""
+    ru, orig = item.get("title", ""), item.get("originalTitle", "")
+    return f"{ru} ({orig})" if orig and orig != ru else ru
+
+
 def duration(item: dict) -> str:
     """Человекочитаемая длительность: минуты или сезоны."""
     minutes = item.get("movieLength")
