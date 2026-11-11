@@ -21,6 +21,8 @@ PREDICTION_FILE = DATA_DIR / "prediction.md"
 USAGE_FILE = DATA_DIR / "usage.jsonl"
 TAXONOMY_FILE = BASE_DIR / "taxonomy.json"
 SEMANTIC_CACHE_FILE = DATA_DIR / "semantic_cache.json"
+TASTE_PROFILE_JSON = DATA_DIR / "taste_profile.json"
+TASTE_PROFILE_MD = DATA_DIR / "taste_profile.md"
 
 KINOPOISK_API_KEY = os.getenv("KINOPOISK_API_KEY", "")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")

@@ -5,7 +5,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from cinecompass import benchmark, config, enrich, library, llm, markdown, prompts, semantic
+from cinecompass import benchmark, config, enrich, library, llm, markdown, prompts, semantic, taste
 
 def _rows_and_overview():
     items = library.load_library()
@@ -142,6 +142,14 @@ def cmd_semantic(args) -> None:
           + ("; останов по лимиту" if summary["stopped_by_limit"] else ""))
 
 
+def cmd_taste(_args) -> None:
+    profile = taste.build_profile(library.load_library(), semantic.load_cache())
+    out = taste.write_profile(profile)
+    llm.write_markdown(config.TASTE_PROFILE_MD, markdown.taste_profile_markdown(profile))
+    print(f"Профиль: {out['json']}, {out['md']} "
+          f"(покрытие {profile['coverage']['with_tags']}/{profile['coverage']['library_total']})")
+
+
 def main(argv: list[str] | None = None) -> None:
     if sys.platform == "win32":
         sys.stdout.reconfigure(encoding="utf-8")
@@ -180,6 +188,8 @@ def main(argv: list[str] | None = None) -> None:
     p = sub.add_parser("semantic", help="пакетная классификация тегами → data/semantic_cache.json (Этап 3)")
     p.add_argument("--limit", type=int, default=None, help="максимум фильмов через LLM за запуск")
     p.set_defaults(func=cmd_semantic)
+
+    sub.add_parser("taste", help="Taste Profile из тегов и оценок → data/taste_profile.md/.json (Этап 4)").set_defaults(func=cmd_taste)
 
     p = sub.add_parser("recommend", help="персональная подборка «что посмотреть сейчас»")
     p.add_argument("--mode", choices=list(prompts.RECOMMEND_MODES), default="old",
