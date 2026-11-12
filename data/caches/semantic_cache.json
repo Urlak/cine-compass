@@ -2413,1632 +2413,2173 @@
  },
  "178579": {
   "kinopoiskId": 178579,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "obsession",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4203ecdf6b2b9436"
+  "fingerprint": "85cc33d6039efeb6"
  },
  "178580": {
   "kinopoiskId": 178580,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "single-location",
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2bbc15fb9796652f"
+  "fingerprint": "39d663c2e52a1735"
  },
  "178710": {
   "kinopoiskId": 178710,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "episodic",
+   "dialogue-driven"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4c2156701eac8937"
+  "fingerprint": "d29c69b79f794c72"
  },
  "178720": {
   "kinopoiskId": 178720,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b373883ecb1613a1"
+  "fingerprint": "fcf3437fba462a52"
  },
  "180577": {
   "kinopoiskId": 180577,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "survival",
+   "technology",
+   "ensemble"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f8e4732cc41b4fa0"
+  "fingerprint": "4739979342bb0994"
  },
  "180609": {
   "kinopoiskId": 180609,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "relentless",
+   "brisk",
+   "revenge",
+   "survival",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2fd3b27d864fc26f"
+  "fingerprint": "3aebaef9141a332b"
  },
  "189651": {
   "kinopoiskId": 189651,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "uplifting",
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "19c72cb3d98ac086"
+  "fingerprint": "14e7390e7c3c186e"
  },
  "195334": {
   "kinopoiskId": 195334,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "obsession",
+   "tense",
+   "slow-reveal"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6151b5eed159722c"
+  "fingerprint": "80df39f8a41e4226"
  },
  "195394": {
   "kinopoiskId": 195394,
   "tags": [],
-  "status": "insufficient_data",
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "10801b72d0f0e4b9"
+  "fingerprint": "cceb51b6e7d67887"
  },
  "195408": {
   "kinopoiskId": 195408,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "580cce4d9a0054af"
+  "fingerprint": "e251efe2efbcf481"
  },
  "195434": {
   "kinopoiskId": 195434,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense",
+   "gritty",
+   "rural",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a769d923123ccf0e"
+  "fingerprint": "f7a27df31c6b0b5a"
  },
  "195460": {
   "kinopoiskId": 195460,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense",
+   "relentless",
+   "brisk",
+   "disaster"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "111b934e4ea5a50b"
+  "fingerprint": "66eccef52804f081"
  },
  "195523": {
   "kinopoiskId": 195523,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "technology",
+   "satirical"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f0cec71b12e6a11d"
+  "fingerprint": "0a7ae761389441a7"
  },
  "195524": {
   "kinopoiskId": 195524,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "survival",
+   "tense",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e8d6140d995f8e6a"
+  "fingerprint": "d2c5d1e21e945521"
  },
  "195563": {
   "kinopoiskId": 195563,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "tense",
+   "single-location",
+   "claustrophobic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8adc8123e8459879"
+  "fingerprint": "52a6f25fc831d969"
  },
  "195608": {
   "kinopoiskId": 195608,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "death-and-grief",
+   "gritty"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "deb2f8dfeda098e3"
+  "fingerprint": "390dcc79e3d5155e"
  },
  "195615": {
   "kinopoiskId": 195615,
   "tags": [],
-  "status": "insufficient_data",
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4c1dd9e9653814bb"
+  "fingerprint": "bb90edc43d006a4f"
  },
  "195718": {
   "kinopoiskId": 195718,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "683fe70fc1299600"
+  "fingerprint": "b43fa82d9749647a"
  },
  "196604": {
   "kinopoiskId": 196604,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "obsession"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3c8f33bb1676a933"
+  "fingerprint": "04c3620b0992345e"
  },
  "196671": {
   "kinopoiskId": 196671,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "spy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4526ddb476af08bb"
+  "fingerprint": "a950043e43f5fc2e"
  },
  "197243": {
   "kinopoiskId": 197243,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "faith"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "56de2429a144c1de"
+  "fingerprint": "73071cd2c1845eeb"
  },
  "197615": {
   "kinopoiskId": 197615,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4e44547d0746e65d"
+  "fingerprint": "add1b76c7f54781a"
  },
  "197863": {
   "kinopoiskId": 197863,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1ebc7adfd968bac5"
+  "fingerprint": "f449e5926af1bf1f"
  },
  "198116": {
   "kinopoiskId": 198116,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b1f818d9680980f2"
+  "fingerprint": "e6aa567b8ab33991"
  },
  "214333": {
   "kinopoiskId": 214333,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "rural"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "52325b18072e9fa8"
+  "fingerprint": "854f860ee4771110"
  },
  "220589": {
   "kinopoiskId": 220589,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4d4414650d303c76"
+  "fingerprint": "3f64bbdb3eb9be39"
  },
  "220934": {
   "kinopoiskId": 220934,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "martial-arts"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "83fa435a00e8e45f"
+  "fingerprint": "09cac03651d880bf"
  },
  "222809": {
   "kinopoiskId": 222809,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "single-location",
+   "claustrophobic",
+   "dialogue-driven",
+   "ensemble"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "61a8f9c3a0e19c11"
+  "fingerprint": "444107847ae00874"
  },
  "230749": {
   "kinopoiskId": 230749,
   "tags": [],
-  "status": "insufficient_data",
+  "status": "partial",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a683ac8c03d02bb3"
+  "fingerprint": "b6c867e03997b4d2"
  },
  "232247": {
   "kinopoiskId": 232247,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "buddy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9a6e423341e3d697"
+  "fingerprint": "1a445bf1a6d31642"
  },
  "243596": {
   "kinopoiskId": 243596,
   "tags": [],
-  "status": "insufficient_data",
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c2d784be6341a0d4"
+  "fingerprint": "4ab126d27e44a318"
  },
  "251613": {
   "kinopoiskId": 251613,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "tense",
+   "claustrophobic",
+   "frame-story"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "679061c705233d60"
+  "fingerprint": "50a5565e01445d35"
  },
  "251702": {
   "kinopoiskId": 251702,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "urban",
+   "revenge"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c918d75e640a9127"
+  "fingerprint": "9351bdf12b85c17f"
  },
  "251733": {
   "kinopoiskId": 251733,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "epic",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7954aa458b10780a"
+  "fingerprint": "4157a5949a3670c9"
  },
  "251879": {
   "kinopoiskId": 251879,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "heist",
+   "ensemble",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "5958f8843190bcfd"
+  "fingerprint": "5949f8f47d14ab4e"
  },
  "252063": {
   "kinopoiskId": 252063,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "urban",
+   "identity",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "cfda2040fa838fe8"
+  "fingerprint": "76ad61d7bb99e949"
  },
  "252089": {
   "kinopoiskId": 252089,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "episodic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4d303fa343b28844"
+  "fingerprint": "7fb3706e775545fb"
  },
  "252626": {
   "kinopoiskId": 252626,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "expansive",
+   "identity",
+   "wintry"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "013415e58e0b1884"
+  "fingerprint": "7f0f78a7876b9314"
  },
  "252641": {
   "kinopoiskId": 252641,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "gritty",
+   "ensemble"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0dc04408fb441398"
+  "fingerprint": "68404d400f6ffc65"
  },
  "252667": {
   "kinopoiskId": 252667,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "futuristic",
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0ce9dca059d6d0da"
+  "fingerprint": "88c3dc0df09fa577"
  },
  "252900": {
   "kinopoiskId": 252900,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "single-location",
+   "dialogue-driven",
+   "minimalist"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "02b746ea09b6248a"
+  "fingerprint": "2ffd95eadc71c918"
  },
  "255129": {
   "kinopoiskId": 255129,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "revenge",
+   "epic",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2cd16e422bc09272"
+  "fingerprint": "d150ab3d3fea2c46"
  },
  "255380": {
   "kinopoiskId": 255380,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "17a593762b9c60dd"
+  "fingerprint": "2628b56085d5402e"
  },
  "255394": {
   "kinopoiskId": 255394,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense",
+   "survival",
+   "gritty"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0d4224ccd905f2a7"
+  "fingerprint": "d6cdbb734538fa02"
  },
  "256079": {
   "kinopoiskId": 256079,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "eerie"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "592fa7f3f925b0c0"
+  "fingerprint": "0a925dde14a37a04"
  },
  "257333": {
   "kinopoiskId": 257333,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "friendship",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "137e17d341edf95d"
+  "fingerprint": "181ed389c6cbd510"
  },
  "257337": {
   "kinopoiskId": 257337,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "redemption",
+   "faith",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d21b3d18446965c4"
+  "fingerprint": "463241ac64e4e30c"
  },
  "257371": {
   "kinopoiskId": 257371,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "identity",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7a8cdd5fafd0d95f"
+  "fingerprint": "6087c4c4f4a06c62"
  },
  "257401": {
   "kinopoiskId": 257401,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "faith",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8a42a6034605c128"
+  "fingerprint": "99b811af9f94abcb"
  },
  "257774": {
   "kinopoiskId": 257774,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ff8ccaf6a9e1a032"
+  "fingerprint": "f602aee7a27106b9"
  },
  "257898": {
   "kinopoiskId": 257898,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a07df99d180749d4"
+  "fingerprint": "38e6f1bceda505c4"
  },
  "258048": {
   "kinopoiskId": 258048,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "prison",
+   "family",
+   "tense",
+   "claustrophobic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d5a0c454f1bb6b2e"
+  "fingerprint": "22d351da6ebe0b79"
  },
  "258070": {
   "kinopoiskId": 258070,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "prison",
+   "gritty",
+   "claustrophobic",
+   "ensemble"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9c9c1c98cba5fc76"
+  "fingerprint": "bab8b00f6a6c023a"
  },
  "258321": {
   "kinopoiskId": 258321,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "single-location",
+   "dialogue-driven",
+   "minimalist"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b7bf00d240277dda"
+  "fingerprint": "1fa63f5dca3b261e"
  },
  "258328": {
   "kinopoiskId": 258328,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2e43c04e20d9f091"
+  "fingerprint": "023f2f16cf84e2b5"
  },
  "258475": {
   "kinopoiskId": 258475,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "revenge"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d518cc9917ced1bc"
+  "fingerprint": "03b06a8946829e77"
  },
  "258478": {
   "kinopoiskId": 258478,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8b0f26c4d1175775"
+  "fingerprint": "b800ebb3be6ba1f9"
  },
  "258687": {
   "kinopoiskId": 258687,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "expansive",
+   "survival",
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "61707275c92c708c"
+  "fingerprint": "2d62b5088273e905"
  },
  "258759": {
   "kinopoiskId": 258759,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "faith",
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "266469a7fb2abb0a"
+  "fingerprint": "e418553547b641d9"
  },
  "258772": {
   "kinopoiskId": 258772,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "revenge"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "aa34b0d017e06b09"
+  "fingerprint": "0bb905e204ea9ff3"
  },
  "258885": {
   "kinopoiskId": 258885,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "friendship",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b6c673b0f7bd3ac4"
+  "fingerprint": "6f63b8168f90a2ca"
  },
  "258941": {
   "kinopoiskId": 258941,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8077fdc93448defd"
+  "fingerprint": "273369c5d23beae2"
  },
  "259849": {
   "kinopoiskId": 259849,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "redemption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "64a6bae2699c97f3"
+  "fingerprint": "610866f5ee8ceaa6"
  },
  "259876": {
   "kinopoiskId": 259876,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "revenge"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e8f798c67cee67ca"
+  "fingerprint": "d5738c960bf9622b"
  },
  "260315": {
   "kinopoiskId": 260315,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "efcf63590d5741bf"
+  "fingerprint": "e0284fc5f7412b08"
  },
  "260991": {
   "kinopoiskId": 260991,
   "tags": [],
-  "status": "insufficient_data",
+  "status": "partial",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "cf2a4cd36418e64b"
+  "fingerprint": "a1d32c31dc88d242"
  },
  "260999": {
   "kinopoiskId": 260999,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "revenge"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e4d2ff37717c44d7"
+  "fingerprint": "6a3591ef29ddd04e"
  },
  "261065": {
   "kinopoiskId": 261065,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "frame-story",
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6e34e3c8eb7ed0ae"
+  "fingerprint": "1b37ab52b7b8ddc0"
  },
  "261127": {
   "kinopoiskId": 261127,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8ab873503788e623"
+  "fingerprint": "c3eb2d838738b244"
  },
  "261191": {
   "kinopoiskId": 261191,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble",
+   "dark-comedy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "91fe246e5f87f171"
+  "fingerprint": "1b53fa395e39eecb"
  },
  "261636": {
   "kinopoiskId": 261636,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "629f01ccba24483a"
+  "fingerprint": "92d046b83240c4f6"
  },
  "262963": {
   "kinopoiskId": 262963,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "technology"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "eb9fe644275d04aa"
+  "fingerprint": "c9dc6a55cfbd4f98"
  },
  "263447": {
   "kinopoiskId": 263447,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f922964b96f62935"
+  "fingerprint": "67a9c183a65f368d"
  },
  "263531": {
   "kinopoiskId": 263531,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble",
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "df988471fb408584"
+  "fingerprint": "861a694ab6b69015"
  },
  "263546": {
   "kinopoiskId": 263546,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "rural",
+   "uplifting",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "cebebe98ae7f28f9"
+  "fingerprint": "a322ae7cfb9021e5"
  },
  "271748": {
   "kinopoiskId": 271748,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0d459188898f6999"
+  "fingerprint": "f6df09162ff37ff3"
  },
  "271806": {
   "kinopoiskId": 271806,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fe1919ee0de1d4ec"
+  "fingerprint": "79354162fed2ca46"
  },
  "273063": {
   "kinopoiskId": 273063,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b7a2f85ced3676d8"
+  "fingerprint": "526914dc9d9313a1"
  },
  "273302": {
   "kinopoiskId": 273302,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "claustrophobic",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "016b49a959a2aba1"
+  "fingerprint": "56ab15cca260768b"
  },
  "274730": {
   "kinopoiskId": 274730,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6968d274f7045793"
+  "fingerprint": "18ee245a699f4979"
  },
  "276261": {
   "kinopoiskId": 276261,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "wintry"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7bf99c1a0ae25d0f"
+  "fingerprint": "c41d629ca01251ff"
  },
  "276268": {
   "kinopoiskId": 276268,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7f82bc2783f23218"
+  "fingerprint": "e71507da1c07be2b"
  },
  "276295": {
   "kinopoiskId": 276295,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "buddy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a184bd83fd39082a"
+  "fingerprint": "5f1fee6489f6d77d"
  },
  "276363": {
   "kinopoiskId": 276363,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "def3b0276ebb67a5"
+  "fingerprint": "63bee8078dc26993"
  },
  "276376": {
   "kinopoiskId": 276376,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b890b43640b3528f"
+  "fingerprint": "2858e68813856848"
  },
  "276478": {
   "kinopoiskId": 276478,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a4cbe86208dbc041"
+  "fingerprint": "6f26b1c6605d5db9"
  },
  "276598": {
   "kinopoiskId": 276598,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "gritty",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "de9131ce85e6ef4c"
+  "fingerprint": "168ca547d9f1dc2e"
  },
  "276762": {
   "kinopoiskId": 276762,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0accb70a3657a14d"
+  "fingerprint": "3e7f5766ed3e24e4"
  },
  "277385": {
   "kinopoiskId": 277385,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "frame-story"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "56181c003210a9a4"
+  "fingerprint": "c23178ec93926de9"
  },
  "277537": {
   "kinopoiskId": 277537,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "cb77a3e617f1bad5"
+  "fingerprint": "b57882798f271673"
  },
  "278024": {
   "kinopoiskId": 278024,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "expansive"
+  ],
+  "status": "partial",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "71205fc78f3cb824"
+  "fingerprint": "ffba7d262ee20bd6"
  },
  "278177": {
   "kinopoiskId": 278177,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic"
+  ],
+  "status": "partial",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "136686426a101758"
+  "fingerprint": "0f289c8d8d7b30c0"
  },
  "278208": {
   "kinopoiskId": 278208,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "absurd",
+   "ensemble"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "98bdde3192cedf79"
+  "fingerprint": "ec903181677c2ae2"
  },
  "278217": {
   "kinopoiskId": 278217,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "identity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "dfe4495be4ee6ff2"
+  "fingerprint": "547dd0a84cbab8af"
  },
  "278273": {
   "kinopoiskId": 278273,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "obsession",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6e0a433274062982"
+  "fingerprint": "af60da2fbe775394"
  },
  "278522": {
   "kinopoiskId": 278522,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "950f90711154d346"
+  "fingerprint": "1a524c0629d82d51"
  },
  "279102": {
   "kinopoiskId": 279102,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "futuristic",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6152fb25401f961e"
+  "fingerprint": "585181f0cf5d6807"
  },
  "279221": {
   "kinopoiskId": 279221,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7c7661e6803e1c33"
+  "fingerprint": "babea2789637c24c"
  },
  "279548": {
   "kinopoiskId": 279548,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "expansive",
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "06e548ed78172237"
+  "fingerprint": "a1ae0b322d93810f"
  },
  "279580": {
   "kinopoiskId": 279580,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "gritty",
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9a49d5ae7c133cc5"
+  "fingerprint": "406f92ae4702ec00"
  },
  "279587": {
   "kinopoiskId": 279587,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e6f7feb4823c1c51"
+  "fingerprint": "e0754eb46b05bf6d"
  },
  "279728": {
   "kinopoiskId": 279728,
   "tags": [],
-  "status": "insufficient_data",
+  "status": "partial",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b79b5e614e0fcd99"
+  "fingerprint": "998bc4f239144bd3"
  },
  "280172": {
   "kinopoiskId": 280172,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e4ad7e28731a81c5"
+  "fingerprint": "19329d6e2877a438"
  },
  "280173": {
   "kinopoiskId": 280173,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "15253e654f4a6e6c"
+  "fingerprint": "9286dd003a31297d"
  },
  "280174": {
   "kinopoiskId": 280174,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c03c9b1047c19455"
+  "fingerprint": "b022cf7d36902cc2"
  },
  "280176": {
   "kinopoiskId": 280176,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1bc3698c4b7873a5"
+  "fingerprint": "9daf1d9b37adc8e0"
  },
  "280826": {
   "kinopoiskId": 280826,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "absurd",
+   "urban",
+   "identity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "208cc53ee117cabf"
+  "fingerprint": "23230e0892324b90"
  },
  "290751": {
   "kinopoiskId": 290751,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "dfbc18576d5b61ba"
+  "fingerprint": "f4449e72543ea980"
  },
  "302069": {
   "kinopoiskId": 302069,
   "tags": [],
-  "status": "insufficient_data",
+  "status": "partial",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fec2ddc0c3ee3178"
+  "fingerprint": "c45254cbe71e08c8"
  },
  "306084": {
   "kinopoiskId": 306084,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ce7e72509cd10382"
+  "fingerprint": "69127e85e4eb090c"
  },
  "309397": {
   "kinopoiskId": 309397,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "expansive",
+   "poetic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1bad36c8aabff335"
+  "fingerprint": "46f9e8c9d6556388"
  },
  "309408": {
   "kinopoiskId": 309408,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "76f4e6b4a5a4ab8d"
+  "fingerprint": "d66e5427213dcae6"
  },
  "316376": {
   "kinopoiskId": 316376,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "gritty",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d5c21bb23d83945e"
+  "fingerprint": "902b27895f9fe287"
  },
  "320032": {
   "kinopoiskId": 320032,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c1002e4880759063"
+  "fingerprint": "81584c1bb84a0579"
  },
  "321842": {
   "kinopoiskId": 321842,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "cb877ac6a0f9fcfb"
+  "fingerprint": "f6c5c175b4c509d3"
  },
  "325381": {
   "kinopoiskId": 325381,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "death-and-grief"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "32d9bd342dff86c1"
+  "fingerprint": "e3a1e1c9394daebc"
  },
  "325393": {
   "kinopoiskId": 325393,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "technology",
+   "survival",
+   "prison"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fed2957b5258034a"
+  "fingerprint": "4083477da346905f"
  },
  "325399": {
   "kinopoiskId": 325399,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "martial-arts",
+   "redemption",
+   "rural"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "822a191e32feb930"
+  "fingerprint": "db178508f50b3c01"
  },
  "354799": {
   "kinopoiskId": 354799,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "friendship",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "aeba4093498c5a1b"
+  "fingerprint": "adcce771d24164d6"
  },
  "368936": {
   "kinopoiskId": 368936,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "urban",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "666d8d25544e5509"
+  "fingerprint": "36ee9d0b9215f5b6"
  },
  "373391": {
   "kinopoiskId": 373391,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "technology"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "605b2098c706f7e6"
+  "fingerprint": "f021e2a865602605"
  },
  "374718": {
   "kinopoiskId": 374718,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "disaster",
+   "survival",
+   "urban",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e656307d91faf7a3"
+  "fingerprint": "da3f0083a56e216a"
  },
  "378140": {
   "kinopoiskId": 378140,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "corruption",
+   "urban",
+   "ensemble",
+   "gritty"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2b3e1ad262cb8fc6"
+  "fingerprint": "c6d35a0bac97c199"
  },
  "387388": {
   "kinopoiskId": 387388,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "63d6d44021444ed7"
+  "fingerprint": "113ea4c39bce71dd"
  },
  "387477": {
   "kinopoiskId": 387477,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense",
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2c26e8c31c4936dd"
+  "fingerprint": "d2c3242eed97d4c7"
  },
  "387556": {
   "kinopoiskId": 387556,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9cf2fb2987911b5d"
+  "fingerprint": "c80df8f81d38de38"
  },
  "390371": {
   "kinopoiskId": 390371,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "absurd",
+   "satirical"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "844b68d8feeb81bb"
+  "fingerprint": "cf4cbd53f86d2d20"
  },
  "391277": {
   "kinopoiskId": 391277,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "technology",
+   "gritty"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "06d03b4c8ef1699f"
+  "fingerprint": "39f6fe381471c880"
  },
  "391729": {
   "kinopoiskId": 391729,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "family",
+   "episodic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6d04966e2d6d23b0"
+  "fingerprint": "e0355462ca17cb7a"
  },
  "391755": {
   "kinopoiskId": 391755,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "redemption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4f0c4feeb8bbed6a"
+  "fingerprint": "c8ff5ef6f616d90c"
  },
  "391772": {
   "kinopoiskId": 391772,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "358dcededa24aef0"
+  "fingerprint": "533d50a665a3b3ca"
  },
  "391815": {
   "kinopoiskId": 391815,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a473c6d5f672c9e1"
+  "fingerprint": "7090a92213759e77"
  },
  "392928": {
   "kinopoiskId": 392928,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "71e9d5f9bd39849a"
+  "fingerprint": "4db03f35c8d15f2a"
  },
  "395058": {
   "kinopoiskId": 395058,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dreamlike"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0dac0635f045205b"
+  "fingerprint": "5eef9f4de1100506"
  },
  "395060": {
   "kinopoiskId": 395060,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fbcf763abe9f7d74"
+  "fingerprint": "36cf005af6626ced"
  },
  "395523": {
   "kinopoiskId": 395523,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "survival",
+   "family",
+   "gritty"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "bf1b2d5977c7be2c"
+  "fingerprint": "e20d984eef480108"
  },
  "395679": {
   "kinopoiskId": 395679,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "obsession",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d17bb2c8b29cc796"
+  "fingerprint": "f987d2dde94b95e5"
  },
  "395690": {
   "kinopoiskId": 395690,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "186f119cff99d814"
+  "fingerprint": "ad87ad4a6ce8954c"
  },
  "395978": {
   "kinopoiskId": 395978,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "urban",
+   "buddy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7a093eec9c098efa"
+  "fingerprint": "9e28d2f791970140"
  },
  "397494": {
   "kinopoiskId": 397494,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "gritty"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e4c25f0eaddb2143"
+  "fingerprint": "63237e92668a75df"
  },
  "397496": {
   "kinopoiskId": 397496,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "technology"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "29cf73cf816ee03a"
+  "fingerprint": "a8b3a540cdae3b80"
  },
  "397541": {
   "kinopoiskId": 397541,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "relentless",
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9cbea2179300a9f2"
+  "fingerprint": "ba94f75f314808ed"
  },
  "397667": {
   "kinopoiskId": 397667,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense",
+   "eerie",
+   "claustrophobic",
+   "slow-reveal"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3cf6e01c099b0d24"
+  "fingerprint": "3171f1764c51eebc"
  },
  "397671": {
   "kinopoiskId": 397671,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "technology",
+   "identity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4621ffc6b05b19a4"
+  "fingerprint": "2bfeed5917d91fba"
  },
  "399959": {
   "kinopoiskId": 399959,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "technology",
+   "futuristic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "5836d0f80241ec15"
+  "fingerprint": "4660e6993706d653"
  },
  "399977": {
   "kinopoiskId": 399977,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "wintry",
+   "claustrophobic",
+   "tense",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "90fd1183f42b4627"
+  "fingerprint": "43d031db3a86dd43"
  },
  "400582": {
   "kinopoiskId": 400582,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense",
+   "claustrophobic",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f7bf9f435f9aff7c"
+  "fingerprint": "8401a45d44878f92"
  },
  "400615": {
   "kinopoiskId": 400615,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "death-and-grief",
+   "family",
+   "eerie",
+   "slow-reveal"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7bc5d565ed70efcb"
+  "fingerprint": "0003faf0d01cdd1b"
  },
  "401177": {
   "kinopoiskId": 401177,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "rural"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "cd206308b26a6481"
+  "fingerprint": "12a1751fe53415f0"
  },
  "401522": {
   "kinopoiskId": 401522,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3cb46954b88e6231"
+  "fingerprint": "5c3f1e229b64c3d1"
  },
  "402099": {
   "kinopoiskId": 402099,
   "tags": [],
-  "status": "insufficient_data",
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "21b3d299b94fa1c1"
+  "fingerprint": "6d4fe3442a561141"
  },
  "402979": {
   "kinopoiskId": 402979,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "single-location",
+   "ensemble",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0d61a53c730e9f81"
+  "fingerprint": "bfb8bf02f3da48a5"
  },
  "403486": {
   "kinopoiskId": 403486,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "faith",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d9cf31a7e821b03b"
+  "fingerprint": "58ddad83fda70015"
  },
  "403986": {
   "kinopoiskId": 403986,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "97349015fe320d8d"
+  "fingerprint": "869135edd4faa812"
  },
  "404366": {
   "kinopoiskId": 404366,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "tense",
+   "single-location"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "80c4e92ea0d9afd0"
+  "fingerprint": "3ffef926b10e922b"
  },
  "404510": {
   "kinopoiskId": 404510,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "rural",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a718607866e36c7c"
+  "fingerprint": "0340ed665c055da8"
  },
  "404900": {
   "kinopoiskId": 404900,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "death-and-grief",
+   "buddy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "024c84431585a50c"
+  "fingerprint": "081f863f707b495f"
  },
  "405608": {
   "kinopoiskId": 405608,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4faa61e153674371"
+  "fingerprint": "65b5d1694a86e112"
  },
  "405609": {
   "kinopoiskId": 405609,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dreamlike",
+   "coming-of-age"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "97ab79e1ee63901c"
+  "fingerprint": "2fd03d29d6bf78a4"
  },
  "406294": {
   "kinopoiskId": 406294,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c08ef6e9c0fbaca8"
+  "fingerprint": "b8846a63ee8f610d"
  },
  "406408": {
   "kinopoiskId": 406408,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "corruption",
+   "death-and-grief"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fbd244661bcf885d"
+  "fingerprint": "f24e81df927882a6"
  },
  "406671": {
   "kinopoiskId": 406671,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "claustrophobic",
+   "single-location",
+   "technology"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "989787d5068c0589"
+  "fingerprint": "72c97f1b21c48deb"
  },
  "407636": {
   "kinopoiskId": 407636,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7429732772469e2f"
+  "fingerprint": "b42c3e21061bf603"
  },
  "408395": {
   "kinopoiskId": 408395,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "death-and-grief",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "65a4d448f7f2737b"
+  "fingerprint": "758244171678bca8"
  },
  "408403": {
   "kinopoiskId": 408403,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "prison",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "79c7118a102f616b"
+  "fingerprint": "eb6d9917ea66504c"
  },
  "408410": {
   "kinopoiskId": 408410,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "death-and-grief"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3222bdf1b8f53b1f"
+  "fingerprint": "48781af063465844"
  },
  "408871": {
   "kinopoiskId": 408871,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "59d960f92e052300"
+  "fingerprint": "521cf9242a54d9bd"
  },
  "408876": {
   "kinopoiskId": 408876,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "40fd2d1bebac40d7"
+  "fingerprint": "1ef18cb98866f426"
  },
  "409013": {
   "kinopoiskId": 409013,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8143f26e128941df"
+  "fingerprint": "569d4fbc8085553c"
  },
  "409118": {
   "kinopoiskId": 409118,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "75f366c5123c0aa1"
+  "fingerprint": "9b3b7917c756c5d7"
  },
  "409151": {
   "kinopoiskId": 409151,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "164432bab7b7ec8a"
+  "fingerprint": "48c4116382a53f6a"
  },
  "409159": {
   "kinopoiskId": 409159,
   "tags": [],
-  "status": "insufficient_data",
+  "status": "partial",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "94f89b0b063ccffd"
+  "fingerprint": "402501b68fb2077f"
  },
  "409179": {
   "kinopoiskId": 409179,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dreamlike",
+   "eerie"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6212bb4e7c1c17b2"
+  "fingerprint": "9ba0fefcdd6f3747"
  },
  "409194": {
   "kinopoiskId": 409194,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "06422fbb2f35c4e2"
+  "fingerprint": "86afd27357102ff3"
  },
  "409295": {
   "kinopoiskId": 409295,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "non-linear",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c5555264fa8d3621"
+  "fingerprint": "e2af2bb58e2ebbe2"
  },
  "409424": {
   "kinopoiskId": 409424,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "expansive",
+   "futuristic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d630d6e10c7ab94a"
+  "fingerprint": "a9f887e84f9d00fb"
  },
  "409507": {
   "kinopoiskId": 409507,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "martial-arts"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "63949c073319cb30"
+  "fingerprint": "557b4e70811fb055"
  },
  "409640": {
   "kinopoiskId": 409640,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "obsession"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4659aa3b6d077a2d"
+  "fingerprint": "0569bf4468692bb0"
  },
  "409776": {
   "kinopoiskId": 409776,
   "tags": [],
-  "status": "insufficient_data",
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "55a79ed39b3dcba9"
+  "fingerprint": "fdb021a166b6072f"
  },
  "410299": {
   "kinopoiskId": 410299,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "friendship",
+   "obsession"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "47d37dd1e8b542b0"
+  "fingerprint": "1be19077999e0e3e"
  },
  "411761": {
   "kinopoiskId": 411761,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "friendship",
+   "revenge"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "51d7a11c5052b8d8"
+  "fingerprint": "8db0879e1dfa41f7"
  },
  "411924": {
   "kinopoiskId": 411924,
@@ -12162,174 +12703,233 @@
  },
  "346": {
   "kinopoiskId": 346,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "single-location",
+   "dialogue-driven",
+   "tense",
+   "claustrophobic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "04e91d64d0588ac7"
+  "fingerprint": "e8954518810b5d3a"
  },
  "402": {
   "kinopoiskId": 402,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8493d0acff9927c6"
+  "fingerprint": "1c72a5f163230822"
  },
  "630": {
   "kinopoiskId": 630,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dreamlike",
+   "eerie",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "01e917e17957a8c7"
+  "fingerprint": "1d85ca883cb9ec11"
  },
  "3608": {
   "kinopoiskId": 3608,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "eerie",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "df1affc3d5d36b09"
+  "fingerprint": "a9d5e88686d3ade8"
  },
  "6129": {
   "kinopoiskId": 6129,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "efe1e0001cdba06f"
+  "fingerprint": "ca4f5efe8ef9f37b"
  },
  "8224": {
   "kinopoiskId": 8224,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "apocalypse",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "210630a9f967470e"
+  "fingerprint": "a723c8f924e51873"
  },
  "35614": {
   "kinopoiskId": 35614,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "39661b63def6db4a"
+  "fingerprint": "563cf3956c1d246e"
  },
  "48356": {
   "kinopoiskId": 48356,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "47eb91e6958031d4"
+  "fingerprint": "5d8fcfb591c564a3"
  },
  "51481": {
   "kinopoiskId": 51481,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e961b31b65fb0c6e"
+  "fingerprint": "b5ec40d4cef8bd40"
  },
  "77044": {
   "kinopoiskId": 77044,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "friendship",
+   "ensemble",
+   "cozy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "5d123578cdf14fa8"
+  "fingerprint": "a86c97ac874cbcaa"
  },
  "77202": {
   "kinopoiskId": 77202,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "gritty",
+   "urban",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "930554acdd79ca18"
+  "fingerprint": "63bcf3cebf2a4e8a"
  },
  "79920": {
   "kinopoiskId": 79920,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "absurd",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2104a7857c306705"
+  "fingerprint": "aaab7fd693157333"
  },
  "86621": {
   "kinopoiskId": 86621,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "rural"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "185b0bbdf56b9b99"
+  "fingerprint": "a224d88d7a66e8ae"
  },
  "89540": {
   "kinopoiskId": 89540,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "553bdc85fd003750"
+  "fingerprint": "b1d3222092f7e876"
  },
  "251568": {
   "kinopoiskId": 251568,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "friendship",
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "36bd4d976ec61204"
+  "fingerprint": "66191f809385e161"
  },
  "257376": {
   "kinopoiskId": 257376,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "gritty",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8edeae7c4200f1f3"
+  "fingerprint": "3e9d280d34f1f514"
  },
  "376727": {
   "kinopoiskId": 376727,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "prison",
+   "absurd",
+   "dark-comedy",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9ca2643c4466c830"
+  "fingerprint": "8ff5ed74e5b316b5"
  },
  "406148": {
   "kinopoiskId": 406148,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "obsession"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d6e8e6ab6aec473c"
+  "fingerprint": "02ff19a25b0a5fb8"
  },
  "409600": {
   "kinopoiskId": 409600,
   "tags": [],
-  "status": "insufficient_data",
+  "status": "complete",
   "taxonomy_version": "1.0",
   "prompt_version": "r3",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d0f1c925eddff9f4"
+  "fingerprint": "b80126f2a10a8792"
  },
  "453397": {
   "kinopoiskId": 453397,
