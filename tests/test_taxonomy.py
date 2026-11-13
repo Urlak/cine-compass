@@ -76,6 +76,6 @@ def test_real_taxonomy_loads():
     counts = {}
     for t in result["tags"]:
         counts[t["category"]] = counts.get(t["category"], 0) + 1
-    assert result["version"] == "1.0"
-    assert len(result["tags"]) == 52
+    assert result["version"] == "1.1"
+    assert len(result["tags"]) == 66
     assert set(counts) == set(taxonomy.VALID_CATEGORIES)

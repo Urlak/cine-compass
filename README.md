@@ -64,7 +64,7 @@ python main.py --user friend taste && python main.py --user friend profile
 
 1. **Factual слой** (kinopoisk.dev): жанры, режиссёры, страны, описания — `enrich`, кэш возобновляемый.
 2. **Семантический слой** (Gemini): каждый фильм классифицируется английскими тегами из
-   `taxonomy.json` (52 тега: жанровые подвиды, mood, atmosphere, themes, narrative, pacing,
+   `taxonomy.json` (66 тегов: жанровые подвиды, mood, atmosphere, themes, narrative, pacing,
    setting, style). Статусы: `complete`/`partial`/`insufficient_data`; bare-записи
    (только название/год/тип) помечаются без LLM. Fingerprint всех входов гарантирует,
    что повторный `semantic` обрабатывает только изменившиеся записи.
@@ -84,7 +84,7 @@ python main.py --user friend taste && python main.py --user friend profile
 
 ```
 main.py                 CLI
-taxonomy.json           контролируемый словарь тегов (v1.0)
+taxonomy.json           контролируемый словарь тегов (v1.1)
 cinecompass/
   config.py             пути, .env, лимиты, выбор пользователя (set_user)
   library.py            загрузка/чистка/дедуп/компактное представление/кандидаты режимов

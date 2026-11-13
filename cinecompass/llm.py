@@ -6,8 +6,30 @@ from pathlib import Path
 
 from google import genai
 from google.genai import types
+import httpx2
 
 from cinecompass import config
+
+# Сетевые обрывы (connection reset by peer) случаются регулярно на длинных
+# проходах; без ретрая падает весь процесс и теряется несохранённая партия.
+_NETWORK_ATTEMPTS = 3
+_NETWORK_BACKOFF_S = 15
+
+
+def _generate_once(client: genai.Client, prompt: str, config_obj=None):
+    last_exc = None
+    for attempt in range(1, _NETWORK_ATTEMPTS + 1):
+        try:
+            return client.models.generate_content(
+                model=config.LLM_MODEL, contents=prompt, config=config_obj)
+        except httpx2.HTTPError as exc:
+            last_exc = exc
+            if attempt < _NETWORK_ATTEMPTS:
+                print(f"[WARN] Сетевая ошибка ({exc.__class__.__name__}), "
+                      f"повтор {attempt + 1}/{_NETWORK_ATTEMPTS} через "
+                      f"{_NETWORK_BACKOFF_S} с...", flush=True)
+                time.sleep(_NETWORK_BACKOFF_S)
+    raise last_exc
 
 
 def _client() -> genai.Client:
@@ -43,17 +65,16 @@ def generate(prompt: str, op: str = "llm") -> str:
     """Синхронный вызов Gemini, возвращает markdown-текст."""
     client = _client()
     started = time.monotonic()
-    resp = client.models.generate_content(model=config.LLM_MODEL, contents=prompt)
+    resp = _generate_once(client, prompt)
     _log_usage(resp, op, retry=False, started=started)
     if resp.text and resp.text.strip():
         return resp.text.strip()
     # Пустой текст бывает, когда весь лимит вывода ушла на внутренние
     # размышления (thinking) — повторяем с отключённым thinking.
     started = time.monotonic()
-    resp = client.models.generate_content(
-        model=config.LLM_MODEL,
-        contents=prompt,
-        config=types.GenerateContentConfig(
+    resp = _generate_once(
+        client, prompt,
+        types.GenerateContentConfig(
             thinking_config=types.ThinkingConfig(thinking_budget=0)
         ),
     )

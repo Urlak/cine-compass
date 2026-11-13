@@ -61,8 +61,10 @@ LLM_MODEL = os.getenv("LLM_MODEL", "gemini-2.5-flash")
 
 # Пауза между запросами к kinopoisk.dev (демо-тариф: 200 запросов/сутки).
 ENRICH_INTERVAL = float(os.getenv("ENRICH_INTERVAL", "0.4"))
-# Объём описания из API, попадающий в данные (остальное режется).
-DESCRIPTION_MAX_CHARS = 300
+# Объём описания из API, попадающий в данные. 2000 символов покрывает
+# практически все описания Кинопоиска целиком — плотная разметка semantic
+# строится на полном тексте, а не на урезанном синопсисе.
+DESCRIPTION_MAX_CHARS = 2000
 
 # Пакетная семантическая классификация (Этап 3). Лимит 0 = не задан.
 SEMANTIC_ENRICHMENT_BATCH_SIZE = int(os.getenv("SEMANTIC_ENRICHMENT_BATCH_SIZE", "15"))

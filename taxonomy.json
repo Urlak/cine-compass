@@ -1,5 +1,5 @@
 {
-  "taxonomy_version": "1.0",
+  "taxonomy_version": "1.1",
   "tags": [
     {"id": "heist", "category": "genre", "label": "Heist", "definition": "The plot centres on planning and executing a robbery or elaborate scheme."},
     {"id": "buddy", "category": "genre", "label": "Buddy", "definition": "An odd-couple partnership drives the story, with bickering as the engine."},
@@ -11,6 +11,7 @@
     {"id": "spy", "category": "genre", "label": "Spy", "definition": "Espionage, agents and intelligence tradecraft drive the plot."},
     {"id": "apocalypse", "category": "genre", "label": "Apocalypse", "definition": "Set during or right after the collapse of civilisation."},
     {"id": "prison", "category": "genre", "label": "Prison", "definition": "Life inside confinement and its inmate hierarchies is central."},
+    {"id": "investigation", "category": "genre", "label": "Investigation", "definition": "An inquiry into a crime or mystery structures the plot: detectives, sleuths or amateur investigators piece together evidence."},
 
     {"id": "uplifting", "category": "mood", "label": "Uplifting", "definition": "The overall emotional tone is warm, hopeful and energising."},
     {"id": "melancholic", "category": "mood", "label": "Melancholic", "definition": "A sustained sorrowful, wistful emotional tone."},
@@ -20,15 +21,19 @@
     {"id": "absurd", "category": "mood", "label": "Absurd", "definition": "The tone embraces ridiculous, illogical or surreal comedy."},
     {"id": "eerie", "category": "mood", "label": "Eerie", "definition": "An unsettling, quietly menacing emotional undercurrent."},
     {"id": "epic", "category": "mood", "label": "Epic", "definition": "An overwhelming feeling of awe that emotionally sweeps the viewer up, independent of the story's actual scope."},
+    {"id": "bleak", "category": "mood", "label": "Bleak", "definition": "A harsh, hopeless emotional register with little warmth, comfort or relief in sight."},
+    {"id": "sentimental", "category": "mood", "label": "Sentimental", "definition": "Deliberately tender, heart-on-sleeve emotional appeal that leans into pathos."},
 
     {"id": "dreamlike", "category": "atmosphere", "label": "Dreamlike", "definition": "The world feels hazy, associative and oneiric rather than literal."},
-    {"id": "claustrophobic", "category": "atmosphere", "label": "Claustrophobic", "definition": "Enclosed spaces and confinement define the film's physical world."},
+    {"id": "claustrophobic", "category": "atmosphere", "label": "Claustrophobic", "definition": "Tight, enclosed physical spaces press on the characters; the world itself feels cramped and airless."},
     {"id": "expansive", "category": "atmosphere", "label": "Expansive", "definition": "Vast landscapes, space or open horizons dominate the world of the film."},
 
     {"id": "urban", "category": "setting", "label": "Urban", "definition": "Dense city life and its textures define the setting's feel."},
     {"id": "rural", "category": "setting", "label": "Rural", "definition": "Countryside, small settlements and open farmland define the feel."},
     {"id": "futuristic", "category": "setting", "label": "Futuristic", "definition": "Advanced or imagined future technology shapes the world."},
     {"id": "wintry", "category": "setting", "label": "Wintry", "definition": "Snow, cold and long winters define the visual world."},
+    {"id": "period", "category": "setting", "label": "Period", "definition": "The texture of a clearly past historical era defines the world, rather than the present day."},
+    {"id": "world-building", "category": "setting", "label": "World-Building", "definition": "An elaborate invented world with its own explicit rules and systems takes centre stage."},
 
     {"id": "identity", "category": "themes", "label": "Identity", "definition": "A central question of who the character is or wants to be."},
     {"id": "family", "category": "themes", "label": "Family", "definition": "Family bonds, duties and conflicts drive the dramatic stakes."},
@@ -41,14 +46,21 @@
     {"id": "corruption", "category": "themes", "label": "Corruption", "definition": "Institutions or individuals rot knowingly under power and money."},
     {"id": "technology", "category": "themes", "label": "Technology", "definition": "Machines, AI or modernisation challenge the human characters."},
     {"id": "faith", "category": "themes", "label": "Faith", "definition": "Religious belief, doubt or spiritual searching is subject matter."},
+    {"id": "philosophical", "category": "themes", "label": "Philosophical", "definition": "The story probes fundamental questions of existence, free will, knowledge or meaning."},
+    {"id": "moral-ambiguity", "category": "themes", "label": "Moral Ambiguity", "definition": "Right and wrong stay deliberately blurred; choices carry no clean answers."},
+    {"id": "class-divide", "category": "themes", "label": "Class Divide", "definition": "Tension between social classes and unequal life chances drives the drama."},
 
     {"id": "non-linear", "category": "narrative", "label": "Non-linear", "definition": "The story is deliberately told out of chronological order."},
     {"id": "ensemble", "category": "narrative", "label": "Ensemble", "definition": "Multiple interwoven storylines and points of view carry the plot."},
     {"id": "unreliable-narrator", "category": "narrative", "label": "Unreliable Narrator", "definition": "The audience is misled by a skewed perspective or narrator."},
     {"id": "frame-story", "category": "narrative", "label": "Frame Story", "definition": "A story is told inside another story, with a distinct outer layer."},
-    {"id": "single-location", "category": "narrative", "label": "Single Location", "definition": "The plot is confined to essentially one setting."},
+    {"id": "single-location", "category": "narrative", "label": "Single Location", "definition": "The entire story unfolds in essentially one place — a scenario constraint, not a matter of visual tightness."},
     {"id": "slow-reveal", "category": "narrative", "label": "Slow Reveal", "definition": "Key information is deliberately withheld and disclosed in stages."},
     {"id": "episodic", "category": "narrative", "label": "Episodic", "definition": "Self-contained episodes accumulate rather than one tight throughline (mainly for series)."},
+    {"id": "character-study", "category": "narrative", "label": "Character Study", "definition": "An in-depth portrait of one character's inner life matters more than plot events."},
+    {"id": "mind-bender", "category": "narrative", "label": "Mind Bender", "definition": "Reality itself is questioned through layered or looping structures that demand decoding."},
+    {"id": "ambiguous-ending", "category": "narrative", "label": "Ambiguous Ending", "definition": "The ending deliberately withholds resolution, leaving key questions open."},
+    {"id": "twist-driven", "category": "narrative", "label": "Twist-Driven", "definition": "Sudden reversals redefine what the viewer thought was happening."},
 
     {"id": "slow-burn", "category": "pacing", "label": "Slow Burn", "definition": "Tension accumulates patiently through long, deliberate scenes."},
     {"id": "brisk", "category": "pacing", "label": "Brisk", "definition": "The story moves quickly with little dead air."},
@@ -59,6 +71,8 @@
     {"id": "minimalist", "category": "style", "label": "Minimalist", "definition": "Sparse means, restraint and understatement in presentation."},
     {"id": "satirical", "category": "style", "label": "Satirical", "definition": "Social or institutional mockery via irony and exaggeration."},
     {"id": "gritty", "category": "style", "label": "Gritty", "definition": "Grimy, unsentimental realism in texture and tone."},
-    {"id": "poetic", "category": "style", "label": "Poetic", "definition": "Lyrically composed images and narration over plain storytelling."}
+    {"id": "poetic", "category": "style", "label": "Poetic", "definition": "Lyrically composed images and narration over plain storytelling."},
+    {"id": "meta-ironic", "category": "style", "label": "Meta-Ironic", "definition": "Self-aware irony about the medium itself and genre conventions."},
+    {"id": "found-footage", "category": "style", "label": "Found Footage", "definition": "Presented as discovered raw recordings, with rough handheld immediacy."}
   ]
 }

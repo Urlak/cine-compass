@@ -13,7 +13,8 @@ def test_classification_prompt_requires_record_only_evidence():
     payload = {"kinopoiskId": 1, "title": "x", "originalTitle": "", "year": 2000,
                "type": "series", "officialGenres": [], "countries": [], "description": None}
     prompt = classification_prompt(payload, tax)
-    assert "external knowledge" in prompt
+    assert "External knowledge" in prompt
+    assert "Never" in prompt and "contradict the record" in prompt
     assert "insufficient_data" in prompt  # правило для записи без описания/жанров
     assert "does not prove" in prompt     # type=series сам по себе не доказывает episodic
     assert "partial" in prompt            # правило для короткого описания
@@ -123,13 +124,14 @@ def test_parse_batch_rejects():
         parse_batch('[{"kinopoiskId": 1, "status": "partial", "tags": [], "note": "x"}]', [1], valid)
 
 
-def test_batch_and_single_prompts_share_r3_rules():
+def test_batch_and_single_prompts_share_r4_rules():
     payload = {"kinopoiskId": 1, "title": "x", "originalTitle": "", "year": 2000, "type": "film",
                "officialGenres": [], "countries": [], "description": "Есть завязка."}
     tax = {"version": "1.0", "tags": [
         {"id": "heist", "category": "genre", "label": "Heist", "definition": "x"}]}
     single = classification_prompt(payload, tax)
     batch = batch_classification_prompt([payload], tax)
-    assert "No external knowledge" in single and "No external knowledge" in batch
+    assert "External knowledge" in single and "External knowledge" in batch
+    assert "4–7 tags" in single and "4–7 tags" in batch  # ориентир плотности разметки
     assert "Premise counts as evidence" in single and "Premise counts as evidence" in batch
     assert "heist: x" in single and "heist: x" in batch

@@ -9,8 +9,8 @@ cine-compass: личная кинобиблиотека из экспорта К
 Контексты LLM: `stats`/`profile`/`recommend` получают компактные программные сводки
 (`stats_context`, `taste_profile.md`, Python-кандидаты по режиму), НЕ полную библиотеку;
 `predict` — единственная операция с full context (baseline, осознанно не сокращён — см.
-«Этап 6» в `optimizing-plan-v4.md`). Словарь тегов `taxonomy.json` v1.0 заморожен;
-промпт классификации (PROMPT_VERSION r3) заморожен — правки текста требуют согласования.
+«Этап 6» в `optimizing-plan-v4.md`). Словарь тегов `taxonomy.json` v1.1 заморожен;
+промпт классификации (PROMPT_VERSION r4) заморожен — правки текста требуют согласования.
 
 ## Commands
 

@@ -11,7 +11,7 @@ from datetime import datetime
 
 from cinecompass import config, library, llm, taxonomy
 
-PROMPT_VERSION = "r3"
+PROMPT_VERSION = "r4"
 
 STATUS_MEANING = {
     "complete": "the provided record contains enough information to classify the film",
@@ -53,8 +53,11 @@ _RULES = """- Premise counts as evidence: reasonable inferences directly support
 - Status is independent of tag count: "complete" does not require many tags or every
   category being populated, only enough information for a reliable, useful
   classification.
-- No external knowledge: never supplement the record with what you remember about
-  the film, even if it is very well known to you.
+- External knowledge is allowed and encouraged when the record clearly identifies a
+  work you know (title, year, director, originalTitle anchor it): you may use what
+  you know about the film itself — its structure, style, tone and themes. Never
+  contradict the record; for works you cannot confidently identify, judge by the
+  description alone.
 - A multi-sentence plot description combined with official genre metadata should
   normally qualify as "complete". Use "partial" only when the provided information
   is genuinely too limited to support a useful characterization, not merely because
@@ -63,12 +66,14 @@ _RULES = """- Premise counts as evidence: reasonable inferences directly support
   tags array.
 - type "series" alone does not prove "episodic": assign it only if an episodic
   narrative structure is supported by the record itself.
-- Use ONLY tag ids that exist in the dictionary. Never invent tags. Anywhere from 0
-  to about 10 tags is acceptable; return fewer tags when evidence is thin, never guess.
+- Use ONLY tag ids that exist in the dictionary. Never invent tags.
+- Target density: for a feature film (type "film") with status "complete", aim for
+  4–7 tags spanning different facets of the film; do not pad with weak guesses,
+  and stay below that for series, "partial" and "insufficient_data" records.
 - Official genres are context only: do not assign a tag whose meaning is already fully
   covered by one of them; assign tags that add information beyond them.
-- Assign a tag only when the record clearly supports it; omit unconfirmed attributes.
-- Do not aim for a fixed number of tags; anywhere from 0 to about 10 is acceptable."""
+- Do not aim for a fixed number of tags; return fewer only when evidence is genuinely
+  thin, never guess."""
 
 
 def _dict_block(tags: list[dict]) -> str:
