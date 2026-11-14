@@ -19,16 +19,19 @@ def _rows_and_overview():
 def cmd_import(args) -> None:
     src = Path(args.file).expanduser().resolve()
     config.RAW_DIR.mkdir(parents=True, exist_ok=True)
-    raw = config.RAW_LIBRARY_FILE
+    raw = config.RAW_DIR / f"library_export{src.suffix.lower() or '.json'}"
     if src.resolve() != raw.resolve():
         shutil.copy2(src, raw)
-    items = _clean(config.RAW_LIBRARY_FILE)
+    items = _clean(raw)
     print(f"Импорт: {src} → {raw}")
     _print_clean_stats(items)
 
 
 def cmd_clean(_args) -> None:
-    _print_clean_stats(_clean(config.RAW_LIBRARY_FILE))
+    raws = sorted(config.RAW_DIR.glob("library_export.*"))
+    if not raws:
+        raise SystemExit(f"В {config.RAW_DIR} нет файла library_export.* — сначала import")
+    _print_clean_stats(_clean(raws[-1]))
 
 
 def _clean(raw: Path) -> list[dict]:

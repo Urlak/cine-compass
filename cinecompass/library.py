@@ -1,4 +1,5 @@
 """Загрузка, нормализация, дедупликация и сохранение библиотеки."""
+import csv
 import json
 from pathlib import Path
 
@@ -8,12 +9,41 @@ TYPE_LABELS = {"film": "фильм", "series": "сериал"}
 
 
 def load_export(path: Path) -> list[dict]:
-    """Читает JSON-экспорт Kinopoisk и возвращает список записей."""
+    """Читает JSON- или CSV-экспорт Kinopoisk и возвращает список записей."""
+    if path.suffix.lower() == ".csv":
+        return _load_export_csv(path)
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
     items = data.get("items")
     if not isinstance(items, list):
         raise ValueError(f"В файле {path} нет массива 'items'")
+    return items
+
+
+def _load_export_csv(path: Path) -> list[dict]:
+    """CSV-экспорт Кинопоиска (dateTime, url, isSeries, name, userVote, tmdbId…)
+    приводится к формату JSON-экспорта; не просмотренные записи пропускаются."""
+    import re
+    items = []
+    with open(path, encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            if (row.get("isWatched") or "").strip() != "да":
+                continue
+            match = re.search(r"/(?:film|series)/(\d+)/", row.get("url") or "")
+            if not match:
+                continue
+            items.append({
+                "title": (row.get("name") or "").strip(),
+                "originalTitle": (row.get("originalName") or "").strip(),
+                "year": int(row["year"]) if row.get("year", "").strip().isdigit() else None,
+                "type": "series" if row.get("isSeries", "").strip() == "да" else "film",
+                "kinopoiskId": int(match.group(1)),
+                "kinopoiskUrl": row.get("url", ""),
+                "userRating": int(row["userVote"]) if row.get("userVote", "").strip().isdigit() else None,
+                "watchedDate": (row.get("dateTime") or "").strip(),
+                "tmdbId": (row.get("tmdbId") or "").strip(),
+                "imdbId": "",
+            })
     return items
 
 

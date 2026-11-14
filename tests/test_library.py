@@ -2,7 +2,7 @@
 import json
 from types import SimpleNamespace
 
-from cinecompass.library import clean_items, compact_rows, duration, find_item_by_title, missing_enrichment, normalize_title
+from cinecompass.library import _load_export_csv, clean_items, compact_rows, duration, find_item_by_title, missing_enrichment, normalize_title
 
 
 def _raw(kp_id, title, rating="8", watched="2020-01-01", **extra):
@@ -135,3 +135,21 @@ def test_find_item_by_title_matches_case_punctuation_and_original():
     assert find_item_by_title(items, "wall-e")["userRating"] == 9
     # Несуществующий
     assert find_item_by_title(items, "Интерстеллар") is None
+
+
+def test_load_export_csv_maps_columns(tmp_path):
+    csv_file = tmp_path / "kinopoisk_export.csv"
+    csv_file.write_text(
+        "dateTime,url,isSeries,name,originalName,year,isWatched,userVote,tmdbId\n"
+        "2026-11-07,https://www.kinopoisk.ru/series/9349321/,да,Штольня,The Cellar,2026,да,6,278178\n"
+        "2026-11-04,https://www.kinopoisk.ru/film/14067013/,нет,Dustfall,,2026,да,,307176\n"
+        "2026-11-01,https://www.kinopoisk.ru/film/1/,нет,Не смотрел,,2026,нет,5,\n",
+        encoding="utf-8",
+    )
+    items = _load_export_csv(csv_file)
+    assert len(items) == 2          # непросмотренное пропущено
+    assert items[0]["kinopoiskId"] == 9349321 and items[0]["type"] == "series"
+    assert items[0]["userRating"] == 6 and items[0]["tmdbId"] == "278178"
+    assert items[0]["watchedDate"] == "2026-11-07"
+    assert items[1]["userRating"] is None and items[1]["year"] == 2026
+    assert clean_items(items)[0]["rewatchCount"] == 1
