@@ -90,10 +90,10 @@ def test_niche_and_pairs():
 
 def test_facts_aggregates():
     items = [
-        _item(1, rating=10, year=1994, type="film", directors=["Иванов"], kpRating=7.0, movieLength=90),
-        _item(2, rating=9, year=1994, type="film", directors=["Иванов"], kpRating=8.0, movieLength=120),
-        _item(3, rating=4, year=2004, type="film", directors=["Иванов"], kpRating=8.5, movieLength=160),
-        _item(4, rating=8, year=2004, type="series", directors=["Петров"]),
+        _item(1, rating=10, year=1994, type="film", directors=["Иванов"], kpRating=7.0, movieLength=90, tmdbVotes=1000),
+        _item(2, rating=9, year=1994, type="film", directors=["Иванов"], kpRating=8.0, movieLength=120, tmdbVotes=100),
+        _item(3, rating=4, year=2004, type="film", directors=["Иванов"], kpRating=8.5, movieLength=160, tmdbVotes=10),
+        _item(4, rating=8, year=2004, type="series", directors=["Петров"], tmdbRating=7.0, tmdbVotes=1),
     ]
     profile = taste.build_profile(items, {k: _rec(["t"]) for k in range(1, 5)})
     facts = profile["facts"]
@@ -101,11 +101,17 @@ def test_facts_aggregates():
     assert facts["directors"][0]["director"] == "Иванов" and facts["directors"][0]["avg_rating"] == 7.67
     # Петров: 1 фильм — в списке режиссёров отсутствует
     assert all(r["director"] != "Петров" for r in facts["directors"])
-    assert facts["kp_delta"]["underrated"][0]["delta"] == 3.0    # 10 − 7
-    assert facts["kp_delta"]["overrated"][0]["delta"] == -4.5    # 4 − 8.5
+    # КП-рейтинг имеет приоритет; у записи без КП берётся TMDB
+    assert facts["consensus_delta"]["underrated"][0]["delta"] == 3.0    # 10 − 7
+    assert facts["consensus_delta"]["overrated"][0]["delta"] == -4.5    # 4 − 8.5
+    tmdb_row = next(r for r in facts["consensus_delta"]["underrated"] if r["consensus_source"] == "tmdb")
+    assert tmdb_row["delta"] == 1.0 and tmdb_row["consensus_rating"] == 7.0   # 8 − 7 (TMDB)
     assert facts["format"]["films"]["n"] == 3 and facts["format"]["series"]["n"] == 1
     buckets = {r["bucket"]: r["n"] for r in facts["format"]["length"]}
     assert buckets == {"<100": 1, "100-140": 1, ">140": 1}
+    # Квартили голосов: отсортированы по возрастанию, по записи в каждом
+    assert [r["votes_range"] for r in facts["votes"]] == ["1–1", "10–10", "100–100", "1000–1000"]
+    assert sum(r["n"] for r in facts["votes"]) == 4
 
 
 def test_markdown_self_contained():

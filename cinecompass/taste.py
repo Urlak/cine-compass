@@ -206,11 +206,17 @@ def _facts(items: list[dict]) -> dict:
     } for name, scores in directors.items() if len(scores) >= 3]
     director_rows.sort(key=lambda r: (-r["avg_rating"], -r["n"]))
 
-    deltas = [
-        {"title": film_label(i), "user_rating": i["userRating"], "kp_rating": round(i["kpRating"], 1),
-         "delta": round(i["userRating"] - i["kpRating"], 1)}
-        for i in rated if i.get("kpRating")
-    ]
+    deltas = []
+    for i in rated:
+        consensus = i.get("kpRating") or i.get("tmdbRating")
+        if not consensus:
+            continue
+        deltas.append({
+            "title": film_label(i), "user_rating": i["userRating"],
+            "consensus_rating": round(consensus, 1),
+            "consensus_source": "kp" if i.get("kpRating") else "tmdb",
+            "delta": round(i["userRating"] - consensus, 1),
+        })
     underrated = sorted(deltas, key=lambda r: -r["delta"])[:10]
     overrated = sorted(deltas, key=lambda r: r["delta"])[:10]
 
@@ -228,12 +234,24 @@ def _facts(items: list[dict]) -> dict:
         rows = [i for i in films_rated if i.get("movieLength") and lo <= i["movieLength"] < hi]
         length_rows.append({"bucket": label, **_bucket(rows)})
 
+    votes_rated = sorted((i for i in rated if i.get("tmdbVotes")), key=lambda i: i["tmdbVotes"])
+    vote_rows = []
+    if votes_rated:
+        n = len(votes_rated)
+        for rows in (votes_rated[i * n // 4:(i + 1) * n // 4] for i in range(4)):
+            if rows:
+                vote_rows.append({
+                    "votes_range": f"{rows[0]['tmdbVotes']}–{rows[-1]['tmdbVotes']}",
+                    "n": len(rows), **_bucket(rows),
+                })
+
     return {
         "decades": decade_rows,
         "directors": director_rows,
-        "kp_delta": {"underrated": underrated, "overrated": overrated},
+        "consensus_delta": {"underrated": underrated, "overrated": overrated},
         "format": {"films": _bucket(films_rated), "series": _bucket(series_rated),
                    "length": length_rows},
+        "votes": vote_rows,
     }
 
 

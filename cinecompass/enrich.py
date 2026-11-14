@@ -56,6 +56,9 @@ def enrich_library(limit: int | None = None) -> dict:
 
     Основной источник — TMDB (tmdbId уже есть в экспорте, суточной квоты нет);
     kinopoisk.dev остаётся фолбэком для записей без tmdbId или при промахе TMDB.
+    Записи, у которых в кэше нет tmdbRating (обогащённые раньше появления
+    TMDB-рейтинга), до-обходятся: кэш мержится — данные kinopoisk.dev
+    (КП/IMDb) не затираются, жанры объединяются.
     """
     if config.ENRICH_INTERVAL < 0:
         raise SystemExit("ENRICH_INTERVAL должен быть числом >= 0 (см. .env)")
@@ -63,7 +66,8 @@ def enrich_library(limit: int | None = None) -> dict:
     cache = _load_cache()
     todo = [
         it for it in items
-        if library.missing_enrichment(it) and str(it["kinopoiskId"]) not in cache
+        if (library.missing_enrichment(it) and str(it["kinopoiskId"]) not in cache)
+        or (it.get("tmdbId") and "tmdbRating" not in cache.get(str(it["kinopoiskId"]), {}))
     ]
     if limit:
         todo = todo[:limit]
@@ -75,6 +79,12 @@ def enrich_library(limit: int | None = None) -> dict:
         kp_id = item["kinopoiskId"]
         detail = tmdb.detail(item)
         if detail is not None:
+            cached = cache.get(str(kp_id))
+            if cached:
+                cached["tmdbRating"] = detail["tmdbRating"]
+                cached["tmdbVotes"] = detail["tmdbVotes"]
+                cached["genres"] += [g for g in detail["genres"] if g not in cached["genres"]]
+                detail = cached
             cache[str(kp_id)] = detail
             item.update(detail)
             fetched += 1

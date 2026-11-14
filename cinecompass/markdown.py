@@ -282,14 +282,28 @@ def taste_profile_markdown(profile: dict) -> str:
                      f"| {_esc(r['example'])} |")
     lines += ["", "### Режиссёры (не менее 3 оценённых фильмов, по средней оценке)", ""]
     lines += [f"- {r['director']} — {r['n']} фильм(ов), средняя {r['avg_rating']:.2f}" for r in facts["directors"][:15]]
-    kd = facts["kp_delta"]
+    kd = facts["consensus_delta"]
     lines += [
         "",
-        "### Расхождение с рейтингом Кинопоиска (личная − КП)",
+        "### Расхождение с зрительским консенсусом (КП или TMDB; личная − консенсус)",
         "",
-        "Недооценённые рынком (+Δ): " + "; ".join(f"{r['title']} (КП {r['kp_rating']})" for r in kd["underrated"][:8]),
+        "Недооценённые рынком (+Δ): " + "; ".join(
+            f"{r['title']} ({'КП' if r['consensus_source'] == 'kp' else 'TMDB'} {r['consensus_rating']})"
+            for r in kd["underrated"][:8]),
         "",
-        "Переоценённые лично (−Δ): " + "; ".join(f"{r['title']} (КП {r['kp_rating']})" for r in kd["overrated"][:8]),
+        "Переоценённые лично (−Δ): " + "; ".join(
+            f"{r['title']} ({'КП' if r['consensus_source'] == 'kp' else 'TMDB'} {r['consensus_rating']})"
+            for r in kd["overrated"][:8]),
+        "",
+        "### Мейнстримность: одобрение по квартилям числа голосов TMDB", "",
+    ]
+    if facts["votes"]:
+        lines += ["| Голосов (диапазон квартиля) | n | 8–10 | 9–10 |", "| --- | --- | --- | --- |"]
+        lines += [f"| {r['votes_range']} | {r['n']} | {_apct(r['approval_8_10'])} | {_apct(r['approval_9_10'])} |"
+                  for r in facts["votes"]]
+    else:
+        lines.append("— (нет записей с числом голосов TMDB).")
+    lines += [
         "",
         "### Формат и хронометраж",
         "",

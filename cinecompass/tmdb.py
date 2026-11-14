@@ -57,6 +57,8 @@ def detail(item: dict) -> dict | None:
         "directors": [d for d in directors if d],
         "kpRating": None,
         "imdbRating": None,
+        "tmdbRating": round(data["vote_average"], 1) if data.get("vote_average") else None,
+        "tmdbVotes": data.get("vote_count"),
         "movieLength": length,
         "seriesLength": series_length,
         "ageRating": None,
