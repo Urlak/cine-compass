@@ -6455,2856 +6455,4577 @@
  },
  "455194": {
   "kinopoiskId": 455194,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "investigation",
+   "tense",
+   "bleak",
+   "moral-ambiguity",
+   "obsession",
+   "slow-burn"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d416ef7d688d28eb"
+  "fingerprint": "7c4230c14f7dbba8"
  },
  "455218": {
   "kinopoiskId": 455218,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "martial-arts",
+   "buddy",
+   "survival",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "07557bf0bda4f6bb"
+  "fingerprint": "5473d931a211dd5f"
  },
  "455338": {
   "kinopoiskId": 455338,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "investigation",
+   "absurd",
+   "urban",
+   "ensemble",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c8eb26b41251c512"
+  "fingerprint": "47aabddeba6ad7bd"
  },
  "455767": {
   "kinopoiskId": 455767,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "futuristic",
+   "expansive",
+   "gritty",
+   "revenge"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ffd36ccba25f555a"
+  "fingerprint": "da3f23a1d502c03a"
  },
  "455773": {
   "kinopoiskId": 455773,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "period",
+   "friendship",
+   "futuristic",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c7e1d28846700f42"
+  "fingerprint": "e7b8847a04dfc8ac"
  },
  "460523": {
   "kinopoiskId": 460523,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "ensemble",
+   "tense",
+   "gritty"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "54d8981515c046ec"
+  "fingerprint": "d83beccb5175b0fb"
  },
  "460586": {
   "kinopoiskId": 460586,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "dark-comedy",
+   "corruption",
+   "gritty",
+   "meta-ironic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fb279d1e06a6bfe1"
+  "fingerprint": "3a0db1367f7e6a5f"
  },
  "460589": {
   "kinopoiskId": 460589,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "dialogue-driven",
+   "episodic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "180455aa7740755f"
+  "fingerprint": "f489597c6c9622a2"
  },
  "461958": {
   "kinopoiskId": 461958,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "ensemble",
+   "epic",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0e06b724ed82ae4e"
+  "fingerprint": "41c03220b3b6c168"
  },
  "461972": {
   "kinopoiskId": 461972,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "rural",
+   "gritty",
+   "family",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "db7656b635db0720"
+  "fingerprint": "ee5d64b136b4b269"
  },
  "461981": {
   "kinopoiskId": 461981,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "buddy",
+   "frame-story",
+   "corruption",
+   "revenge"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "342a98aab86e25d5"
+  "fingerprint": "aeb0a9422275bb81"
  },
  "462059": {
   "kinopoiskId": 462059,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "buddy",
+   "expansive",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "293fd50b7a43287f"
+  "fingerprint": "e7a387102103f58e"
  },
  "462247": {
   "kinopoiskId": 462247,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "uplifting",
+   "visually-stylized",
+   "coming-of-age",
+   "death-and-grief"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8376b10addfff97e"
+  "fingerprint": "92752bef42016f12"
  },
  "462342": {
   "kinopoiskId": 462342,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "frame-story",
+   "death-and-grief",
+   "class-divide"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "80a5342420d5cd91"
+  "fingerprint": "6bddb2b193780096"
  },
  "462358": {
   "kinopoiskId": 462358,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "friendship",
+   "revenge",
+   "ensemble",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "da6b9c15d266e100"
+  "fingerprint": "d095c1f4063acd55"
  },
  "462360": {
   "kinopoiskId": 462360,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "meta-ironic",
+   "dark-comedy",
+   "revenge",
+   "non-linear",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "430d247fb7a7f964"
+  "fingerprint": "6e9ad32d8dcc5999"
  },
  "462453": {
   "kinopoiskId": 462453,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "world-building",
+   "expansive",
+   "class-divide"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3dd6e78b0469e86c"
+  "fingerprint": "e38d962acd960916"
  },
  "462514": {
   "kinopoiskId": 462514,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "absurd",
+   "meta-ironic",
+   "single-location",
+   "dark-comedy",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a9511eba089747ea"
+  "fingerprint": "cd566690655f0759"
  },
  "462515": {
   "kinopoiskId": 462515,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "bittersweet",
+   "friendship",
+   "death-and-grief",
+   "dark-comedy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "65adf36237e2acb5"
+  "fingerprint": "f4f89e07ea9b3b15"
  },
  "462606": {
   "kinopoiskId": 462606,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "urban",
+   "visually-stylized",
+   "obsession",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "705e716d457e622c"
+  "fingerprint": "5540446d13878e45"
  },
  "462662": {
   "kinopoiskId": 462662,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "investigation"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8117a6900003016e"
+  "fingerprint": "79b7ce2e9d409101"
  },
  "462669": {
   "kinopoiskId": 462669,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "claustrophobic",
+   "tense",
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "65174f423f0a445d"
+  "fingerprint": "e6598364e6e60d7a"
  },
  "462682": {
   "kinopoiskId": 462682,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "dark-comedy",
+   "unreliable-narrator",
+   "character-study",
+   "corruption",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "935e76003974fb4b"
+  "fingerprint": "1aba27baaea27b48"
  },
  "462754": {
   "kinopoiskId": 462754,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "martial-arts",
+   "identity",
+   "death-and-grief"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3a18bf5e31281a54"
+  "fingerprint": "369ca95e7d269b95"
  },
  "462762": {
   "kinopoiskId": 462762,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "twist-driven",
+   "technology"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a6b760a582db7700"
+  "fingerprint": "2b06afa496d632de"
  },
  "462938": {
   "kinopoiskId": 462938,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "uplifting",
+   "dialogue-driven",
+   "family",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ff7f3bd7f53142b1"
+  "fingerprint": "eca521f540ddbd2a"
  },
  "463135": {
   "kinopoiskId": 463135,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "twist-driven",
+   "tense",
+   "slow-reveal",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "777ecfb053731717"
+  "fingerprint": "34ce868d3d6de3dd"
  },
  "463354": {
   "kinopoiskId": 463354,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "mind-bender",
+   "moral-ambiguity",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7e87cf09832a27e4"
+  "fingerprint": "5939181fc1187e61"
  },
  "463686": {
   "kinopoiskId": 463686,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "prison",
+   "buddy",
+   "claustrophobic",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d379de7c3b959ea8"
+  "fingerprint": "487054c83d26ac72"
  },
  "463738": {
   "kinopoiskId": 463738,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "technology",
+   "family",
+   "moral-ambiguity",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6c869a622b40e693"
+  "fingerprint": "1b5864249f69f565"
  },
  "464020": {
   "kinopoiskId": 464020,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "investigation",
+   "gritty",
+   "urban",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b642fab5846b71e0"
+  "fingerprint": "f3ce4f0654caabc0"
  },
  "464130": {
   "kinopoiskId": 464130,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "character-study",
+   "bittersweet",
+   "dialogue-driven",
+   "identity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1733067c1c43473d"
+  "fingerprint": "9d0b3778326e933b"
  },
  "464282": {
   "kinopoiskId": 464282,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "absurd",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8e7d285ddbbafae1"
+  "fingerprint": "25937beb1a643de9"
  },
  "464413": {
   "kinopoiskId": 464413,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "death-and-grief",
+   "uplifting",
+   "sentimental",
+   "rural"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b52b9c7ad414e951"
+  "fingerprint": "f1c764a1f6deb606"
  },
  "464484": {
   "kinopoiskId": 464484,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble",
+   "non-linear",
+   "philosophical",
+   "epic",
+   "futuristic",
+   "period"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "cb723032ee0a3dd2"
+  "fingerprint": "6061e4b109944db8"
  },
  "464963": {
   "kinopoiskId": 464963,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "world-building",
+   "ensemble",
+   "corruption",
+   "moral-ambiguity",
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "bbd0bddb9df71a86"
+  "fingerprint": "94c31d409a5aef79"
  },
  "465673": {
   "kinopoiskId": 465673,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "dark-comedy",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7670c354a9bb2254"
+  "fingerprint": "eb2c3d8104637a9d"
  },
  "466581": {
   "kinopoiskId": 466581,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "uplifting",
+   "identity",
+   "visually-stylized",
+   "wintry"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "70f222cbf6eb5c67"
+  "fingerprint": "af174ff554cd007a"
  },
  "467099": {
   "kinopoiskId": 467099,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "philosophical",
+   "eerie",
+   "survival",
+   "slow-reveal"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c9c0214e6d184520"
+  "fingerprint": "017a1a96ffe7747a"
  },
  "467118": {
   "kinopoiskId": 467118,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "tense",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f978ddc0463ed155"
+  "fingerprint": "3ebad32528442de8"
  },
  "467553": {
   "kinopoiskId": 467553,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "corruption",
+   "visually-stylized",
+   "meta-ironic",
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e593eb4eda921ac1"
+  "fingerprint": "6e0a6be9e21d6f46"
  },
  "468102": {
   "kinopoiskId": 468102,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dialogue-driven",
+   "friendship",
+   "meta-ironic",
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b436389f5827a202"
+  "fingerprint": "c0e4ca6fcbc49ec3"
  },
  "468466": {
   "kinopoiskId": 468466,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "tense",
+   "relentless",
+   "expansive",
+   "claustrophobic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e555646c34c6e8b2"
+  "fingerprint": "c3d398f764f92d14"
  },
  "468551": {
   "kinopoiskId": 468551,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "visually-stylized",
+   "revenge",
+   "spy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3c07e0703cbca222"
+  "fingerprint": "b5e282026d6ff6bb"
  },
  "468581": {
   "kinopoiskId": 468581,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "world-building",
+   "class-divide",
+   "tense",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a4b438ab5a9790d3"
+  "fingerprint": "1ccaf941a8cd7599"
  },
  "468872": {
   "kinopoiskId": 468872,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "coming-of-age",
+   "rural",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c434cf2b9a353e8a"
+  "fingerprint": "945c1295f2b8963b"
  },
  "468904": {
   "kinopoiskId": 468904,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "friendship",
+   "uplifting",
+   "world-building"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9ee4163ffaed847a"
+  "fingerprint": "82449c948096a06a"
  },
  "468958": {
   "kinopoiskId": 468958,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "tense",
+   "prison",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f126686d951a6ea8"
+  "fingerprint": "b7c272e1b56a6e91"
  },
  "468994": {
   "kinopoiskId": 468994,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "investigation",
+   "eerie",
+   "tense",
+   "period",
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c805f3710e4e8875"
+  "fingerprint": "49302bf9959ba5ff"
  },
  "469563": {
   "kinopoiskId": 469563,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "world-building",
+   "satirical",
+   "absurd",
+   "redemption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "449aa8eb0a23c54e"
+  "fingerprint": "5ae9ad6efb990807"
  },
  "470185": {
   "kinopoiskId": 470185,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "futuristic",
+   "twist-driven",
+   "identity",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "afcef3063a20a51c"
+  "fingerprint": "69568d076058c3e5"
  },
  "470268": {
   "kinopoiskId": 470268,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "investigation",
+   "tense",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "786fd1fc61304809"
+  "fingerprint": "0074141572341a8b"
  },
  "470656": {
   "kinopoiskId": 470656,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "claustrophobic",
+   "single-location",
+   "tense",
+   "survival",
+   "minimalist"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "cc0c5793343c8aa4"
+  "fingerprint": "cf94bfa10991f09b"
  },
  "471628": {
   "kinopoiskId": 471628,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "friendship",
+   "revenge",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9bb7dd7d03d8e69b"
+  "fingerprint": "204567331d6dd7b7"
  },
  "472362": {
   "kinopoiskId": 472362,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "relentless",
+   "tense",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ceb3a601c99a87c8"
+  "fingerprint": "e910a60b80f3ab2a"
  },
  "472368": {
   "kinopoiskId": 472368,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "family",
+   "relentless",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "40cd56faaff8ff9a"
+  "fingerprint": "114386b641819445"
  },
  "474521": {
   "kinopoiskId": 474521,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "character-study",
+   "melancholic",
+   "family",
+   "identity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "eda0463a207710e8"
+  "fingerprint": "91689689a9db98e2"
  },
  "474752": {
   "kinopoiskId": 474752,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "friendship",
+   "brisk",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e1bb340d8dabe164"
+  "fingerprint": "e8039e333746ae9e"
  },
  "474953": {
   "kinopoiskId": 474953,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "buddy",
+   "investigation",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d6af2bcfcf0d90d5"
+  "fingerprint": "10192d1ff6de8f25"
  },
  "477366": {
   "kinopoiskId": 477366,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "technology",
+   "eerie",
+   "bleak",
+   "futuristic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "26320e29ace3a692"
+  "fingerprint": "fc5f97012ec5ab95"
  },
  "478052": {
   "kinopoiskId": 478052,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "visually-stylized",
+   "meta-ironic",
+   "satirical",
+   "identity",
+   "philosophical",
+   "world-building"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2d0ed7cd3d1dc48a"
+  "fingerprint": "76df9f3406866304"
  },
  "484438": {
   "kinopoiskId": 484438,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense",
+   "relentless",
+   "claustrophobic",
+   "gritty",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3a676ae8864acf12"
+  "fingerprint": "b04eaef1b07eb8cc"
  },
  "484439": {
   "kinopoiskId": 484439,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "martial-arts",
+   "redemption",
+   "faith",
+   "period",
+   "death-and-grief"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "63e5ce9d9a47a537"
+  "fingerprint": "ca3db85822ebd854"
  },
  "484470": {
   "kinopoiskId": 484470,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "heist",
+   "single-location",
+   "twist-driven",
+   "investigation"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1e0225234373ed9d"
+  "fingerprint": "bcc70a7f0d46309b"
  },
  "484474": {
   "kinopoiskId": 484474,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "buddy",
+   "rural",
+   "corruption",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3491eb8b3af3ea9b"
+  "fingerprint": "bd827a9b3c197a9f"
  },
  "484488": {
   "kinopoiskId": 484488,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "melancholic",
+   "disaster",
+   "philosophical",
+   "visually-stylized",
+   "slow-burn",
+   "bleak"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "bdeb0e8b760a9d6b"
+  "fingerprint": "18fc7517390f91d9"
  },
  "484559": {
   "kinopoiskId": 484559,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "uplifting",
+   "absurd",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "00dc438967a56ac8"
+  "fingerprint": "ad3590695827b67f"
  },
  "484878": {
   "kinopoiskId": 484878,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "claustrophobic",
+   "character-study",
+   "single-location",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "04cd6b884976ee87"
+  "fingerprint": "b24f005724d39809"
  },
  "485261": {
   "kinopoiskId": 485261,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "meta-ironic",
+   "dark-comedy",
+   "rural",
+   "friendship",
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4a3d09784f00f91b"
+  "fingerprint": "d8c1c072fc48d01c"
  },
  "485311": {
   "kinopoiskId": 485311,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "uplifting",
+   "friendship",
+   "character-study",
+   "dialogue-driven"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f13a3164c75c88d1"
+  "fingerprint": "90ef164814d1eda8"
  },
  "485542": {
   "kinopoiskId": 485542,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "ensemble",
+   "episodic",
+   "gritty",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "154df6ea047475f2"
+  "fingerprint": "ec06d6b95b6fefae"
  },
  "487409": {
   "kinopoiskId": 487409,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "class-divide",
+   "gritty",
+   "relentless",
+   "technology"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f5dac673fbbf16d3"
+  "fingerprint": "b79feea7a6147e34"
  },
  "489415": {
   "kinopoiskId": 489415,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "brisk",
+   "urban",
+   "relentless",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ad8d61a778022a20"
+  "fingerprint": "20097475b7293534"
  },
  "489439": {
   "kinopoiskId": 489439,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "rural",
+   "brisk",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d0edd0202029b114"
+  "fingerprint": "b9a3af808209b23d"
  },
  "490121": {
   "kinopoiskId": 490121,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "survival",
+   "bleak",
+   "gritty",
+   "coming-of-age"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c1bc921946f2c793"
+  "fingerprint": "77b44108fc6f233d"
  },
  "491724": {
   "kinopoiskId": 491724,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "wintry",
+   "slow-burn",
+   "gritty",
+   "corruption",
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "58241434cc1a345b"
+  "fingerprint": "cfaaec3277a13702"
  },
  "492171": {
   "kinopoiskId": 492171,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "prison",
+   "gritty",
+   "brisk",
+   "revenge",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d20c2f2640e9ac36"
+  "fingerprint": "7ef93c136f622ccf"
  },
  "492366": {
   "kinopoiskId": 492366,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "cozy",
+   "friendship",
+   "coming-of-age",
+   "bittersweet",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fae2e9d480a73ce7"
+  "fingerprint": "5de8ca4a983e75cc"
  },
  "493222": {
   "kinopoiskId": 493222,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "heist",
+   "tense",
+   "twist-driven",
+   "urban",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "62b2abc5492c7816"
+  "fingerprint": "dad417d03356eeab"
  },
  "493223": {
   "kinopoiskId": 493223,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "disaster",
+   "claustrophobic",
+   "bleak"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "505bd6f137945f04"
+  "fingerprint": "471298456cbed6ce"
  },
  "493768": {
   "kinopoiskId": 493768,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble",
+   "wintry",
+   "uplifting",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6ff242a090ec9ffd"
+  "fingerprint": "01422ca55c8ea83e"
  },
  "495892": {
   "kinopoiskId": 495892,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "family",
+   "slow-reveal",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "61f4f8f83162670d"
+  "fingerprint": "67915f7efa294561"
  },
  "496745": {
   "kinopoiskId": 496745,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "uplifting",
+   "faith",
+   "survival",
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4b710bdc1ba55751"
+  "fingerprint": "95bfe260a1268c94"
  },
  "496849": {
   "kinopoiskId": 496849,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "redemption",
+   "revenge",
+   "world-building",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1af97d750a2c39e1"
+  "fingerprint": "73a4f3fae4c6f6a1"
  },
  "496888": {
   "kinopoiskId": 496888,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "prison",
+   "futuristic",
+   "brisk",
+   "claustrophobic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "52a5ef1e951a82ad"
+  "fingerprint": "b9ae3182894cf84a"
  },
  "496943": {
   "kinopoiskId": 496943,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "heist",
+   "relentless",
+   "family",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1e84090d284c6b8d"
+  "fingerprint": "a73c4704f77745f3"
  },
  "497077": {
   "kinopoiskId": 497077,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "dark-comedy",
+   "uplifting",
+   "identity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "53f5455cab6858bb"
+  "fingerprint": "9e8f7cb33acbaf50"
  },
  "501821": {
   "kinopoiskId": 501821,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "disaster",
+   "ensemble",
+   "tense",
+   "bleak",
+   "slow-burn"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "5b0a1b1e6f4fbc75"
+  "fingerprint": "656e94469098e0b9"
  },
  "501998": {
   "kinopoiskId": 501998,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "episodic",
+   "satirical"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fa876723ecfd9661"
+  "fingerprint": "b885d2ce71984391"
  },
  "502733": {
   "kinopoiskId": 502733,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dialogue-driven",
+   "friendship",
+   "wintry",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ca972620255f93f6"
+  "fingerprint": "f72247c19ca0d618"
  },
  "502838": {
   "kinopoiskId": 502838,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "investigation",
+   "buddy",
+   "urban",
+   "episodic",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "5db7882aee5fb78c"
+  "fingerprint": "c6a47f0d51595f7a"
  },
  "503578": {
   "kinopoiskId": 503578,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "rural",
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b437c49a724e5bc0"
+  "fingerprint": "34a6487eb49d1c77"
  },
  "503853": {
   "kinopoiskId": 503853,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "bleak",
+   "wintry",
+   "death-and-grief",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "557cda8fcf4c88cb"
+  "fingerprint": "5326d05107c593bd"
  },
  "505851": {
   "kinopoiskId": 505851,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "mind-bender",
+   "futuristic",
+   "relentless",
+   "survival",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a537abecc4bb3d2a"
+  "fingerprint": "3222c7aae8dcb817"
  },
  "505898": {
   "kinopoiskId": 505898,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "family",
+   "world-building",
+   "futuristic",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "583af8a7e5107d61"
+  "fingerprint": "74c0b3b816ac11d1"
  },
  "506133": {
   "kinopoiskId": 506133,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "heist",
+   "friendship",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "85a5fc9e4b1951a4"
+  "fingerprint": "b9b1c20d81503320"
  },
  "507440": {
   "kinopoiskId": 507440,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "found-footage",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "462b4af025a0a603"
+  "fingerprint": "e04a5bf5ac2fd202"
  },
  "507676": {
   "kinopoiskId": 507676,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "satirical",
+   "absurd",
+   "redemption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "779d90d4d5086668"
+  "fingerprint": "2a5ac2b454b326e1"
  },
  "507817": {
   "kinopoiskId": 507817,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "friendship",
+   "coming-of-age",
+   "absurd",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9467e1d176b3c59b"
+  "fingerprint": "afa97172cbe8f239"
  },
  "507818": {
   "kinopoiskId": 507818,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "tense",
+   "gritty",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "375c97b1cda73393"
+  "fingerprint": "52409031e859dc46"
  },
  "508161": {
   "kinopoiskId": 508161,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "survival",
+   "bleak",
+   "gritty",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e908ddd6057e3c4c"
+  "fingerprint": "0ecd24368380bc94"
  },
  "512883": {
   "kinopoiskId": 512883,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "family",
+   "friendship",
+   "world-building",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "72642daa4aaca946"
+  "fingerprint": "cc9ca3fd70ce6bf0"
  },
  "516472": {
   "kinopoiskId": 516472,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "slow-burn",
+   "eerie",
+   "bleak",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2b30f089058dc4b2"
+  "fingerprint": "584d06ce7160def7"
  },
  "517433": {
   "kinopoiskId": 517433,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "investigation",
+   "coming-of-age",
+   "friendship",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0a34699f4260a0c5"
+  "fingerprint": "8c59d9da3d80a704"
  },
  "517988": {
   "kinopoiskId": 517988,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "class-divide",
+   "futuristic",
+   "world-building",
+   "tense",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f5145b6af7e260b6"
+  "fingerprint": "9f4b2163e24dfa01"
  },
  "522892": {
   "kinopoiskId": 522892,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "heist",
+   "twist-driven",
+   "ensemble",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1d397b50ac623fdc"
+  "fingerprint": "07441cf21ae7d89f"
  },
  "522941": {
   "kinopoiskId": 522941,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "revenge",
+   "wintry",
+   "expansive",
+   "gritty",
+   "bleak"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e6f47164da7b03ae"
+  "fingerprint": "73dc5e4e9f5dab5d"
  },
  "523057": {
   "kinopoiskId": 523057,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "martial-arts",
+   "urban",
+   "corruption",
+   "gritty",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "96352762fa580d6b"
+  "fingerprint": "c0d439216695cff7"
  },
  "523122": {
   "kinopoiskId": 523122,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "death-and-grief",
+   "gritty",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7ebe4ad738aa9348"
+  "fingerprint": "caf80465eaec09ee"
  },
  "535341": {
   "kinopoiskId": 535341,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "uplifting",
+   "class-divide",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "af4ab7d546c42d9a"
+  "fingerprint": "4b2c70a300951d4c"
  },
  "535390": {
   "kinopoiskId": 535390,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "visually-stylized",
+   "coming-of-age",
+   "rural"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d23e68b81f3be1bb"
+  "fingerprint": "3854c9b5dcc9cbea"
  },
  "538225": {
   "kinopoiskId": 538225,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "world-building",
+   "technology",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "36842fbc15cf6e01"
+  "fingerprint": "1cc3ca7e3088aeee"
  },
  "542302": {
   "kinopoiskId": 542302,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "family",
+   "expansive",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fd48d44e9974b413"
+  "fingerprint": "ba691a16dc1deccc"
  },
  "542581": {
   "kinopoiskId": 542581,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dialogue-driven",
+   "urban",
+   "dark-comedy",
+   "character-study"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c570234c1fbfc411"
+  "fingerprint": "273d1c18eb0fe77d"
  },
  "542668": {
   "kinopoiskId": 542668,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "eerie",
+   "slow-burn",
+   "twist-driven"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "24c25f2c13be2359"
+  "fingerprint": "fe6062308e80ca7b"
  },
  "546244": {
   "kinopoiskId": 546244,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "expansive",
+   "uplifting",
+   "sentimental"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "47691c04e6135af5"
+  "fingerprint": "e99b7a03ee2aef52"
  },
  "546915": {
   "kinopoiskId": 546915,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "epic",
+   "visually-stylized",
+   "apocalypse"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "bcfe36e95f0f7186"
+  "fingerprint": "1d4c6793fdb16a9a"
  },
  "549198": {
   "kinopoiskId": 549198,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "absurd",
+   "meta-ironic",
+   "coming-of-age"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3a3bb64d9b9022ed"
+  "fingerprint": "e3c34d481693ef40"
  },
  "550910": {
   "kinopoiskId": 550910,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "family",
+   "brisk",
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "757088109d992a46"
+  "fingerprint": "60856cf77dd02623"
  },
  "565819": {
   "kinopoiskId": 565819,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "melancholic",
+   "philosophical",
+   "slow-burn",
+   "visually-stylized",
+   "poetic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d8e305b54e1d59d5"
+  "fingerprint": "cab7f22678fb1567"
  },
  "566283": {
   "kinopoiskId": 566283,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "class-divide",
+   "claustrophobic",
+   "wintry",
+   "tense",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3f290c0d3f8f0c54"
+  "fingerprint": "964a49e0dc5c2618"
  },
  "566602": {
   "kinopoiskId": 566602,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "episodic",
+   "buddy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1b80a8f83a62ebb0"
+  "fingerprint": "3cb70513ee1f0ff5"
  },
  "568289": {
   "kinopoiskId": 568289,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "period",
+   "uplifting",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "daf8e8904d9ce680"
+  "fingerprint": "9bc5de7870258486"
  },
  "568687": {
   "kinopoiskId": 568687,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "coming-of-age",
+   "moral-ambiguity",
+   "twist-driven",
+   "world-building"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "117ed283a247e14e"
+  "fingerprint": "174027091f25a3c2"
  },
  "571288": {
   "kinopoiskId": 571288,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble",
+   "revenge",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "00b24eb6133feac8"
+  "fingerprint": "9eccd7211534d052"
  },
  "571892": {
   "kinopoiskId": 571892,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "visually-stylized",
+   "coming-of-age",
+   "period",
+   "sentimental",
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f415df10249d874a"
+  "fingerprint": "ff983393f82e2ae7"
  },
  "572032": {
   "kinopoiskId": 572032,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "death-and-grief",
+   "redemption",
+   "tense",
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8cab6091051d02b8"
+  "fingerprint": "24e930a48421ae17"
  },
  "573759": {
   "kinopoiskId": 573759,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "meta-ironic",
+   "visually-stylized",
+   "satirical",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "51e9cece9314b157"
+  "fingerprint": "cfc1e342a1f45cde"
  },
  "573817": {
   "kinopoiskId": 573817,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble",
+   "wintry",
+   "sentimental",
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ff6286db4636fe85"
+  "fingerprint": "685671627cfcb977"
  },
  "574497": {
   "kinopoiskId": 574497,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "investigation",
+   "slow-burn",
+   "gritty",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "070488a79891f85f"
+  "fingerprint": "27010c55bfd99302"
  },
  "575613": {
   "kinopoiskId": 575613,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "claustrophobic",
+   "slow-reveal",
+   "coming-of-age",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0dc6db9a80c07c8f"
+  "fingerprint": "e37149749ae88045"
  },
  "577488": {
   "kinopoiskId": 577488,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "technology",
+   "melancholic",
+   "philosophical",
+   "character-study",
+   "futuristic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f71da7d40a95d449"
+  "fingerprint": "5eeed8381a1f4b41"
  },
  "582100": {
   "kinopoiskId": 582100,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a235b07dbceaa9b8"
+  "fingerprint": "6172ab34000a6316"
  },
  "582159": {
   "kinopoiskId": 582159,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "ensemble",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "5aec98b8f765780b"
+  "fingerprint": "b02ee5376f21c102"
  },
  "583738": {
   "kinopoiskId": 583738,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "meta-ironic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0d9aac211de396da"
+  "fingerprint": "d96b85c79d15c20b"
  },
  "585353": {
   "kinopoiskId": 585353,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "poetic",
+   "visually-stylized",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1f782a2f26d43c71"
+  "fingerprint": "98b9a5e50fdafc0a"
  },
  "586260": {
   "kinopoiskId": 586260,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "world-building",
+   "friendship",
+   "uplifting",
+   "meta-ironic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "eefe1b4de3b8de96"
+  "fingerprint": "5987fd00cb225d57"
  },
  "586397": {
   "kinopoiskId": 586397,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "period",
+   "buddy",
+   "dark-comedy",
+   "dialogue-driven",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c0ffa832cd08c046"
+  "fingerprint": "bbd0c529039cee80"
  },
  "586399": {
   "kinopoiskId": 586399,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "heist",
+   "mind-bender",
+   "twist-driven",
+   "unreliable-narrator",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c787aad816da587c"
+  "fingerprint": "72a2aeb5b8adb3b8"
  },
  "586584": {
   "kinopoiskId": 586584,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "meta-ironic",
+   "dialogue-driven",
+   "ensemble",
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "64f7313aa3bacd4d"
+  "fingerprint": "2780a5226864113c"
  },
  "589167": {
   "kinopoiskId": 589167,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "tense",
+   "ensemble",
+   "episodic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0e72a85cf8ab04d9"
+  "fingerprint": "171a243d8646c0ba"
  },
  "589290": {
   "kinopoiskId": 589290,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "investigation",
+   "identity",
+   "philosophical",
+   "visually-stylized",
+   "slow-burn",
+   "melancholic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "52ac43c6807e8a98"
+  "fingerprint": "b26d93762420c5ed"
  },
  "590022": {
   "kinopoiskId": 590022,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "tense",
+   "found-footage",
+   "slow-burn",
+   "obsession"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "129bc0b3502f2aa5"
+  "fingerprint": "338c467886a3eb0a"
  },
  "590286": {
   "kinopoiskId": 590286,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "urban",
+   "gritty",
+   "corruption",
+   "slow-burn",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "23714da8e166f9f4"
+  "fingerprint": "db2b453ac5f31ea5"
  },
  "591929": {
   "kinopoiskId": 591929,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "episodic",
+   "coming-of-age",
+   "eerie"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a6b09020f089153a"
+  "fingerprint": "65b3f2d1644edbca"
  },
  "592203": {
   "kinopoiskId": 592203,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "character-study",
+   "moral-ambiguity",
+   "redemption",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ee5fc5ed84c235f1"
+  "fingerprint": "ad6c1c1321081d88"
  },
  "594736": {
   "kinopoiskId": 594736,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "ensemble",
+   "heist",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ce11bdc0f40180b1"
+  "fingerprint": "1e664827695e28bf"
  },
  "595938": {
   "kinopoiskId": 595938,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "expansive",
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d23dd892d7c80970"
+  "fingerprint": "85bf764c69798424"
  },
  "596125": {
   "kinopoiskId": 596125,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "obsession",
+   "tense",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d7ac005845983dd0"
+  "fingerprint": "52670b296ba520aa"
  },
  "597687": {
   "kinopoiskId": 597687,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "futuristic",
+   "period",
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7a41821e921ee94f"
+  "fingerprint": "1c99b2ba32e8674b"
  },
  "602373": {
   "kinopoiskId": 602373,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "world-building",
+   "class-divide",
+   "tense",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "45314e17f12e214f"
+  "fingerprint": "80716828cfecf127"
  },
  "605269": {
   "kinopoiskId": 605269,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "tense",
+   "family",
+   "death-and-grief"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "148ef0abfb5614ca"
+  "fingerprint": "b66d977664f5d948"
  },
  "606826": {
   "kinopoiskId": 606826,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "single-location",
+   "claustrophobic",
+   "tense",
+   "twist-driven"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "48579d3391908a0d"
+  "fingerprint": "9c3afedfad9eac1f"
  },
  "623744": {
   "kinopoiskId": 623744,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "twist-driven",
+   "slow-reveal",
+   "moral-ambiguity",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "eb2a076780987344"
+  "fingerprint": "d401172a9f814cc6"
  },
  "635772": {
   "kinopoiskId": 635772,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "spy",
+   "identity",
+   "melancholic",
+   "character-study"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "24023491da6203c2"
+  "fingerprint": "600feb46557779b3"
  },
  "645118": {
   "kinopoiskId": 645118,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "bittersweet",
+   "visually-stylized",
+   "world-building"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c0fd4ea173a04179"
+  "fingerprint": "341b22e9f8a12db6"
  },
  "651857": {
   "kinopoiskId": 651857,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "technology",
+   "epic",
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e511a634145d8e69"
+  "fingerprint": "5316c12ad56c04e2"
  },
  "653696": {
   "kinopoiskId": 653696,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "character-study",
+   "melancholic",
+   "bittersweet",
+   "gritty"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e06ed49263feedf4"
+  "fingerprint": "c0bed95e827f5f24"
  },
  "655800": {
   "kinopoiskId": 655800,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "episodic",
+   "technology",
+   "futuristic",
+   "satirical",
+   "bleak"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ac18fff28e1a47eb"
+  "fingerprint": "184941d6a1b6dc8f"
  },
  "656294": {
   "kinopoiskId": 656294,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "bittersweet",
+   "death-and-grief",
+   "family",
+   "dialogue-driven"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "328043513e67a065"
+  "fingerprint": "7b6f967ac50fb4c0"
  },
  "676266": {
   "kinopoiskId": 676266,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "corruption",
+   "friendship",
+   "martial-arts"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e6d7e20042f52599"
+  "fingerprint": "56b21458aa333a5b"
  },
  "679486": {
   "kinopoiskId": 679486,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "death-and-grief",
+   "visually-stylized",
+   "bittersweet",
+   "world-building"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7255af1d9084c879"
+  "fingerprint": "007cf97abf9215f8"
  },
  "681831": {
   "kinopoiskId": 681831,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "gritty",
+   "bleak",
+   "slow-burn",
+   "non-linear",
+   "philosophical"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ad0e7a4beea9764a"
+  "fingerprint": "b54df6e1f6a8919d"
  },
  "681849": {
   "kinopoiskId": 681849,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "heist",
+   "obsession",
+   "slow-burn",
+   "slow-reveal",
+   "twist-driven"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "83dacd898167807f"
+  "fingerprint": "70524dfa17fd452a"
  },
  "682255": {
   "kinopoiskId": 682255,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "epic",
+   "gritty",
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9b4d367eb9b03cfa"
+  "fingerprint": "8481a6b4e4f1faba"
  },
  "682468": {
   "kinopoiskId": 682468,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "investigation",
+   "eerie",
+   "visually-stylized",
+   "obsession",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "01d63fbf6f7f1172"
+  "fingerprint": "ba50be9660608559"
  },
  "682716": {
   "kinopoiskId": 682716,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "investigation",
+   "urban",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f6972fcbd821aa12"
+  "fingerprint": "539d3a5d4aca9607"
  },
  "683999": {
   "kinopoiskId": 683999,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "visually-stylized",
+   "period",
+   "frame-story",
+   "heist",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "26ad8e0f608a4786"
+  "fingerprint": "1b7c7e98d86b57c5"
  },
  "684618": {
   "kinopoiskId": 684618,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "friendship",
+   "rural",
+   "family",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "bb24ba996c1e10e1"
+  "fingerprint": "811261e958fa5165"
  },
  "685246": {
   "kinopoiskId": 685246,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "satirical",
+   "meta-ironic",
+   "episodic",
+   "philosophical"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1e5403f82b219211"
+  "fingerprint": "a65ba5f7086a375e"
  },
  "687595": {
   "kinopoiskId": 687595,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble",
+   "episodic",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "efa59ac36df157d6"
+  "fingerprint": "a4a6241fd2de86bb"
  },
  "689066": {
   "kinopoiskId": 689066,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "world-building",
+   "friendship",
+   "futuristic",
+   "ensemble",
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "20d156716aec5f44"
+  "fingerprint": "d6fbdd51fe20110d"
  },
  "690593": {
   "kinopoiskId": 690593,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "identity",
+   "urban",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ba62bb8193044361"
+  "fingerprint": "0cb072e1da9284be"
  },
  "692861": {
   "kinopoiskId": 692861,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "unreliable-narrator",
+   "twist-driven",
+   "tense",
+   "satirical",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "071d2a9ee03ae0f0"
+  "fingerprint": "8aece0b146f92fce"
  },
  "694633": {
   "kinopoiskId": 694633,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "world-building",
+   "expansive",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a3b4413ef8fd4dbe"
+  "fingerprint": "048db0fd8a710e71"
  },
  "695548": {
   "kinopoiskId": 695548,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "survival",
+   "tense",
+   "bleak",
+   "eerie"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d47359540494e430"
+  "fingerprint": "1be24269a90a18a3"
  },
  "714248": {
   "kinopoiskId": 714248,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "death-and-grief",
+   "visually-stylized",
+   "poetic",
+   "bittersweet",
+   "dreamlike"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "207b68449f3cb01a"
+  "fingerprint": "e0b1cb92c741f398"
  },
  "718562": {
   "kinopoiskId": 718562,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "single-location",
+   "dialogue-driven",
+   "friendship",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a3268fdc7c9eb993"
+  "fingerprint": "5b039d2956edc2b8"
  },
  "718811": {
   "kinopoiskId": 718811,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "non-linear",
+   "philosophical",
+   "slow-burn",
+   "death-and-grief",
+   "mind-bender",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1db2911041ca8da5"
+  "fingerprint": "8c4e98490dc11d3a"
  },
  "722827": {
   "kinopoiskId": 722827,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "meta-ironic",
+   "visually-stylized",
+   "character-study",
+   "identity",
+   "satirical",
+   "dark-comedy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4c4bbe4e380d6d01"
+  "fingerprint": "b203aa8494161199"
  },
  "738974": {
   "kinopoiskId": 738974,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "single-location",
+   "dialogue-driven",
+   "dark-comedy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a1a5a0fa1acd839d"
+  "fingerprint": "09eae6044d9247f6"
  },
  "739642": {
   "kinopoiskId": 739642,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "wintry",
+   "tense",
+   "bleak",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a2647eb510c6277b"
+  "fingerprint": "64fbc24160fc4992"
  },
  "749540": {
   "kinopoiskId": 749540,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "visually-stylized",
+   "coming-of-age",
+   "satirical",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1d9f684b7ca8548f"
+  "fingerprint": "c9e0b9550e629a9e"
  },
  "760326": {
   "kinopoiskId": 760326,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "brisk",
+   "visually-stylized",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ffc85a8f98794029"
+  "fingerprint": "777511e0eb0a4bb8"
  },
  "762373": {
   "kinopoiskId": 762373,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "episodic",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b2bf22b68baf6af8"
+  "fingerprint": "097510f17db417af"
  },
  "762381": {
   "kinopoiskId": 762381,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "episodic",
+   "philosophical",
+   "epic",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "21bbd04184982860"
+  "fingerprint": "2a2ded8ae9e3dd9e"
  },
  "762738": {
   "kinopoiskId": 762738,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "martial-arts",
+   "visually-stylized",
+   "relentless",
+   "death-and-grief"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d028fc13fcc25b22"
+  "fingerprint": "ef85116f7713854a"
  },
  "767379": {
   "kinopoiskId": 767379,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "wintry",
+   "moral-ambiguity",
+   "slow-burn",
+   "episodic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d3fc13e150308699"
+  "fingerprint": "6143d31eb5eb18ee"
  },
  "775273": {
   "kinopoiskId": 775273,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "philosophical",
+   "identity",
+   "bittersweet",
+   "uplifting",
+   "world-building"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2dee324b64b262f6"
+  "fingerprint": "125fafa056836994"
  },
  "775276": {
   "kinopoiskId": 775276,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "investigation",
+   "urban",
+   "world-building",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0118f69adb683314"
+  "fingerprint": "98c1fd04c7dee1a1"
  },
  "796660": {
   "kinopoiskId": 796660,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "moral-ambiguity",
+   "character-study",
+   "slow-burn",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a7f11bccef5bee22"
+  "fingerprint": "cced92bc705f5543"
  },
  "804662": {
   "kinopoiskId": 804662,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "visually-stylized",
+   "period",
+   "brisk",
+   "class-divide"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "32c17f13ea61737f"
+  "fingerprint": "91f1dcd897c03e07"
  },
  "807682": {
   "kinopoiskId": 807682,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "gritty",
+   "bleak",
+   "redemption",
+   "family",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2ea800e9485c0985"
+  "fingerprint": "ddeb68b1bb0f93d6"
  },
  "817509": {
   "kinopoiskId": 817509,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "gritty",
+   "martial-arts",
+   "corruption",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "dab07a68d64fe679"
+  "fingerprint": "6d9d8008710a1529"
  },
  "818708": {
   "kinopoiskId": 818708,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "gritty",
+   "obsession",
+   "character-study"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c1c82e257aeb8b2c"
+  "fingerprint": "161b2e7bf0dd4a47"
  },
  "818981": {
   "kinopoiskId": 818981,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "mockumentary",
+   "dark-comedy",
+   "absurd",
+   "meta-ironic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e3e13814d5d8c574"
+  "fingerprint": "01c9727ea5242610"
  },
  "819101": {
   "kinopoiskId": 819101,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "single-location",
+   "tense",
+   "dialogue-driven",
+   "wintry",
+   "slow-burn",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a3bb5817ce0fe1a7"
+  "fingerprint": "b7b74166979255f1"
  },
  "823956": {
   "kinopoiskId": 823956,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "family",
+   "revenge",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "abcfe43359c93f63"
+  "fingerprint": "e62d370c31681d20"
  },
  "824954": {
   "kinopoiskId": 824954,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "visually-stylized",
+   "meta-ironic",
+   "martial-arts"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a0c9035da92a1c91"
+  "fingerprint": "aa34fc5213ef157b"
  },
  "835086": {
   "kinopoiskId": 835086,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "friendship",
+   "obsession",
+   "bittersweet",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4fd9e36ebab49510"
+  "fingerprint": "3d7cdfd1e8318494"
  },
  "838050": {
   "kinopoiskId": 838050,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "episodic",
+   "eerie",
+   "gritty",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2b6af522f8e94116"
+  "fingerprint": "f07099ca1f8d63ce"
  },
  "839818": {
   "kinopoiskId": 839818,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "disaster",
+   "survival",
+   "tense",
+   "redemption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "03caafb4cc81465e"
+  "fingerprint": "eab79d62e140ee35"
  },
  "840821": {
   "kinopoiskId": 840821,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "visually-stylized",
+   "death-and-grief",
+   "friendship",
+   "identity",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "accecace5f0db489"
+  "fingerprint": "938c0b9098230dac"
  },
  "841152": {
   "kinopoiskId": 841152,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "investigation",
+   "period",
+   "dialogue-driven",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "06d296fd7c54b65a"
+  "fingerprint": "44732561e28f1248"
  },
  "841263": {
   "kinopoiskId": 841263,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "friendship",
+   "expansive",
+   "bittersweet",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "47c5e1cf011dc092"
+  "fingerprint": "1a4c9e80b66800f9"
  },
  "841700": {
   "kinopoiskId": 841700,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "expansive",
+   "technology",
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9f0b1db5d40afaaf"
+  "fingerprint": "1410b9e7eac714be"
  },
  "843207": {
   "kinopoiskId": 843207,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "dreamlike",
+   "mind-bender",
+   "slow-burn",
+   "rural",
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "64503ccf62b9cf49"
+  "fingerprint": "7b836886f5fc2540"
  },
  "843649": {
   "kinopoiskId": 843649,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "ensemble",
+   "relentless",
+   "bleak"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "aa2738a5a0f41f17"
+  "fingerprint": "e525423b7320278d"
  },
  "843650": {
   "kinopoiskId": 843650,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "ensemble",
+   "death-and-grief",
+   "bittersweet",
+   "redemption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "bfca4a828eda654b"
+  "fingerprint": "c0c2cdcc588581f7"
  },
  "885658": {
   "kinopoiskId": 885658,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "martial-arts",
+   "relentless",
+   "urban",
+   "visually-stylized",
+   "world-building"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7665195f297dd3e3"
+  "fingerprint": "080deb608723488b"
  },
  "915196": {
   "kinopoiskId": 915196,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "eerie",
+   "friendship",
+   "period",
+   "rural"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ad508b86eca2a6d0"
+  "fingerprint": "613d6fea6a400257"
  },
  "918087": {
   "kinopoiskId": 918087,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "dark-comedy",
+   "buddy",
+   "philosophical",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a83e1a42f2657c13"
+  "fingerprint": "d707ed54f6dcbffa"
  },
  "920265": {
   "kinopoiskId": 920265,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "visually-stylized",
+   "coming-of-age",
+   "identity",
+   "family",
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1d4221e24d485d24"
+  "fingerprint": "6394eeb01e7e9c99"
  },
  "927898": {
   "kinopoiskId": 927898,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "gritty",
+   "tense",
+   "survival",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a03ac58d344a266c"
+  "fingerprint": "a928204347cc0aa7"
  },
  "931677": {
   "kinopoiskId": 931677,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "tense",
+   "relentless",
+   "non-linear",
+   "ensemble",
+   "period"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a01215a3d9dac6c6"
+  "fingerprint": "172ee11a1a0a40d7"
  },
  "938644": {
   "kinopoiskId": 938644,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "satirical",
+   "dark-comedy",
+   "moral-ambiguity",
+   "visually-stylized",
+   "dialogue-driven"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e6fc24f80fda5008"
+  "fingerprint": "a265393ed4cd899e"
  },
  "939785": {
   "kinopoiskId": 939785,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "visually-stylized",
+   "satirical",
+   "friendship",
+   "absurd",
+   "world-building"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4d7a2754b8e1b9fe"
+  "fingerprint": "330428429c042398"
  },
  "944098": {
   "kinopoiskId": 944098,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "death-and-grief",
+   "moral-ambiguity",
+   "redemption",
+   "dark-comedy",
+   "rural",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "5f3376f873a91255"
+  "fingerprint": "636dd65a6fa1cf77"
  },
  "958541": {
   "kinopoiskId": 958541,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "visually-stylized",
+   "coming-of-age",
+   "friendship",
+   "family",
+   "period"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4ed3613396b25b74"
+  "fingerprint": "684f98b7bcc79cf8"
  },
  "964318": {
   "kinopoiskId": 964318,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "revenge",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ce50e05439594e7d"
+  "fingerprint": "9b078b03c5dffd57"
  },
  "966036": {
   "kinopoiskId": 966036,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "uplifting",
+   "class-divide",
+   "technology"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d3c0dc51e9c7e9e3"
+  "fingerprint": "3043c3ec420b0494"
  },
  "968501": {
   "kinopoiskId": 968501,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "wintry",
+   "tense",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "af8a53c21cef7b6e"
+  "fingerprint": "e218cb110210834b"
  },
  "968767": {
   "kinopoiskId": 968767,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "investigation",
+   "buddy",
+   "mind-bender"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ac0550a912aef320"
+  "fingerprint": "979fa60f4ca940f7"
  },
  "972889": {
   "kinopoiskId": 972889,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "meta-ironic",
+   "episodic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f74b5ea6e8aa9ab1"
+  "fingerprint": "bc317a1294226ff9"
  },
  "982730": {
   "kinopoiskId": 982730,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "episodic",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a98e90fdaf64ff33"
+  "fingerprint": "3a87e60ecce45b54"
  },
  "1007472": {
   "kinopoiskId": 1007472,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "expansive",
+   "episodic",
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "179be9aefbfda52f"
+  "fingerprint": "dc0995645ef48356"
  },
  "1008444": {
   "kinopoiskId": 1008444,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "meta-ironic",
+   "absurd",
+   "dark-comedy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c503f68176161e52"
+  "fingerprint": "5cf1c5af00375263"
  },
  "1008445": {
   "kinopoiskId": 1008445,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "death-and-grief",
+   "twist-driven",
+   "identity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "62e1fe291b133566"
+  "fingerprint": "ef7862c8927cfb8f"
  },
  "1008477": {
   "kinopoiskId": 1008477,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "ensemble",
+   "absurd",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9aa2ca27bb4875ce"
+  "fingerprint": "779f5e1dc3f81b86"
  },
  "1009017": {
   "kinopoiskId": 1009017,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "redemption",
+   "moral-ambiguity",
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ab877168c9e3e60d"
+  "fingerprint": "252b1999b0e1e644"
  },
  "1009784": {
   "kinopoiskId": 1009784,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "technology",
+   "revenge",
+   "twist-driven",
+   "futuristic",
+   "gritty"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fe423f7d298c7cf2"
+  "fingerprint": "911a9cf7d301c278"
  },
  "1013343": {
   "kinopoiskId": 1013343,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "uplifting",
+   "class-divide",
+   "visually-stylized",
+   "cozy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c1edf90742a87296"
+  "fingerprint": "a6f4388c8be471c3"
  },
  "1015471": {
   "kinopoiskId": 1015471,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "world-building",
+   "martial-arts",
+   "friendship",
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7e7039ff806d91f4"
+  "fingerprint": "bc0c6888366bb83e"
  },
  "1032606": {
   "kinopoiskId": 1032606,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "mind-bender",
+   "non-linear",
+   "slow-reveal",
+   "eerie"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "15648f430950f886"
+  "fingerprint": "e2c3217c0d34824c"
  },
  "1038789": {
   "kinopoiskId": 1038789,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "face7dc908e5dca4"
+  "fingerprint": "d65fe291a5ecca3a"
  },
  "1043758": {
   "kinopoiskId": 1043758,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "class-divide",
+   "dark-comedy",
+   "twist-driven",
+   "tense",
+   "satirical"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3a29b1f9557c719b"
+  "fingerprint": "ccd16be7c25a86ac"
  },
  "1044279": {
   "kinopoiskId": 1044279,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "death-and-grief",
+   "family",
+   "non-linear"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "81f1c661670f4f73"
+  "fingerprint": "2c17307005d99a79"
  },
  "1044280": {
   "kinopoiskId": 1044280,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "death-and-grief",
+   "bittersweet",
+   "ensemble",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "958bcdd9c715af57"
+  "fingerprint": "0ed5411757a4c435"
  },
  "1045017": {
   "kinopoiskId": 1045017,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "family",
+   "identity",
+   "cozy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "bffafa0fe20c297e"
+  "fingerprint": "0ab563a74c31fae9"
  },
  "1047883": {
   "kinopoiskId": 1047883,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "buddy",
+   "slow-burn",
+   "dialogue-driven",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "aa166c954004d16e"
+  "fingerprint": "36f6725a271d21cd"
  },
  "1048334": {
   "kinopoiskId": 1048334,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "character-study",
+   "bleak",
+   "gritty",
+   "class-divide",
+   "unreliable-narrator",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0a16485ed78e1c95"
+  "fingerprint": "ca9127abf34bb2f2"
  },
  "1101569": {
   "kinopoiskId": 1101569,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "mind-bender",
+   "relentless",
+   "brisk",
+   "dark-comedy",
+   "revenge"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "5da7602908cecf99"
+  "fingerprint": "e3052189a5b76118"
  },
  "1108577": {
   "kinopoiskId": 1108577,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "period",
+   "class-divide",
+   "friendship",
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1b60312992b94f06"
+  "fingerprint": "7ad718604c71986b"
  },
  "1109271": {
   "kinopoiskId": 1109271,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "investigation",
+   "corruption",
+   "urban",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "066ad312a89bfc98"
+  "fingerprint": "9051613eafab7ece"
  },
  "1114927": {
   "kinopoiskId": 1114927,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "claustrophobic",
+   "single-location",
+   "slow-burn",
+   "eerie",
+   "visually-stylized",
+   "period"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "211ff4fa16a2a9a9"
+  "fingerprint": "52e532fa0a2bb071"
  },
  "1115117": {
   "kinopoiskId": 1115117,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "friendship",
+   "period",
+   "visually-stylized",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4e8d369f5a063b51"
+  "fingerprint": "819c45b03ce7f3fb"
  },
  "1118138": {
   "kinopoiskId": 1118138,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "world-building",
+   "episodic",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d9e2784dadfac20d"
+  "fingerprint": "d1e5350a59fbed40"
  },
  "1134778": {
   "kinopoiskId": 1134778,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "claustrophobic",
+   "single-location",
+   "bleak",
+   "class-divide",
+   "philosophical",
+   "satirical"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "40845aa2580b4a4a"
+  "fingerprint": "50ef47a1ce951f9b"
  },
  "1143242": {
   "kinopoiskId": 1143242,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dialogue-driven",
+   "frame-story",
+   "ensemble",
+   "brisk",
+   "non-linear"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9a5803c4ffca7abc"
+  "fingerprint": "b840b854ed9c67bf"
  },
  "1147693": {
   "kinopoiskId": 1147693,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "friendship",
+   "identity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "5152c02750c668d9"
+  "fingerprint": "01d5def370c8d33f"
  },
  "1178137": {
   "kinopoiskId": 1178137,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "slow-burn",
+   "death-and-grief",
+   "rural",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "74337cc17b13817a"
+  "fingerprint": "ac2903d473796b4c"
  },
  "1188529": {
   "kinopoiskId": 1188529,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble",
+   "twist-driven",
+   "class-divide",
+   "satirical"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "42d89356c7eede46"
+  "fingerprint": "9593e5ed35e7604a"
  },
  "1199100": {
   "kinopoiskId": 1199100,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "identity",
+   "meta-ironic",
+   "uplifting",
+   "world-building",
+   "technology"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "65df3e9bf2e431b3"
+  "fingerprint": "e2cb6691683396ee"
  },
  "1200189": {
   "kinopoiskId": 1200189,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "rural",
+   "identity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7b84042a3066f00f"
+  "fingerprint": "09029b06e517c87e"
  },
  "1203039": {
   "kinopoiskId": 1203039,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "mind-bender",
+   "world-building",
+   "buddy",
+   "identity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d338936dba0b48d1"
+  "fingerprint": "3e031bbeea5cedb0"
  },
  "1219177": {
   "kinopoiskId": 1219177,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "visually-stylized",
+   "coming-of-age",
+   "world-building",
+   "identity",
+   "family",
+   "philosophical"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f510f5d44d67e943"
+  "fingerprint": "24907a75e3ee0f4f"
  },
  "1219909": {
   "kinopoiskId": 1219909,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "world-building",
+   "mind-bender",
+   "eerie",
+   "death-and-grief",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "17dba40ee28c15fc"
+  "fingerprint": "a33ed7357ae1172f"
  },
  "1224067": {
   "kinopoiskId": 1224067,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "investigation",
+   "family",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6b71d2e6d9dc40a9"
+  "fingerprint": "7953ba9355c2ed73"
  },
  "1227803": {
   "kinopoiskId": 1227803,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "disaster",
+   "bleak",
+   "corruption",
+   "tense",
+   "investigation"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3411d55329f00496"
+  "fingerprint": "b2f185583638926f"
  },
  "1227967": {
   "kinopoiskId": 1227967,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "dark-comedy",
+   "relentless",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "48c0542e637553f0"
+  "fingerprint": "20bd9815494d51fb"
  },
  "1236063": {
   "kinopoiskId": 1236063,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "mind-bender",
+   "tense",
+   "non-linear",
+   "futuristic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "db74457610a636bb"
+  "fingerprint": "f73289660aba7eba"
  },
  "1245524": {
   "kinopoiskId": 1245524,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "mind-bender",
+   "philosophical",
+   "absurd",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f526434b31a0d74e"
+  "fingerprint": "a208c990f365c6c0"
  },
  "1253633": {
   "kinopoiskId": 1253633,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "character-study",
+   "period",
+   "obsession",
+   "coming-of-age"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1aaa68f51b9833d6"
+  "fingerprint": "a99e4a16bbb12180"
  },
  "1263067": {
   "kinopoiskId": 1263067,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "bleak",
+   "wintry",
+   "gritty",
+   "survival",
+   "period"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "af6c08fcc2cc2b72"
+  "fingerprint": "106f87aa467f3db6"
  },
  "1267348": {
   "kinopoiskId": 1267348,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "martial-arts",
+   "relentless",
+   "visually-stylized",
+   "revenge",
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d30d8347757cab81"
+  "fingerprint": "eda9b4983008f8c2"
  },
  "1283945": {
   "kinopoiskId": 1283945,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "futuristic",
+   "family",
+   "survival",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "04b41bee766eae15"
+  "fingerprint": "23f7a7541091c21b"
  },
  "1294123": {
   "kinopoiskId": 1294123,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "meta-ironic",
+   "philosophical",
+   "mind-bender",
+   "futuristic",
+   "world-building"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f9fd5df1dc1b797b"
+  "fingerprint": "198a930117d833ea"
  },
  "1309570": {
   "kinopoiskId": 1309570,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "death-and-grief",
+   "moral-ambiguity",
+   "redemption",
+   "world-building"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "deffbaace099aa56"
+  "fingerprint": "f341d1b326398e00"
  },
  "1309596": {
   "kinopoiskId": 1309596,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "martial-arts",
+   "revenge",
+   "family",
+   "gritty",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f072436a84462760"
+  "fingerprint": "9cc17095dc44b2f7"
  },
  "1318972": {
   "kinopoiskId": 1318972,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "heist",
+   "tense",
+   "gritty",
+   "non-linear",
+   "death-and-grief"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "83a10cbc293c6567"
+  "fingerprint": "de378be2e6835c86"
  },
  "1322324": {
   "kinopoiskId": 1322324,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "family",
+   "martial-arts",
+   "philosophical",
+   "visually-stylized",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "7457f0be6af4a686"
+  "fingerprint": "234efb97117e99d5"
  },
  "1334852": {
   "kinopoiskId": 1334852,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "coming-of-age",
+   "brisk",
+   "technology"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b9434dd19d9890ad"
+  "fingerprint": "ceeeaaae8c1ab97f"
  },
  "1338480": {
   "kinopoiskId": 1338480,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "disaster",
+   "apocalypse",
+   "corruption",
+   "ensemble"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ab4f738b078ac577"
+  "fingerprint": "8084b17d697d78b3"
  },
  "1338502": {
   "kinopoiskId": 1338502,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "tense",
+   "relentless",
+   "buddy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "afd613fdee5228c6"
+  "fingerprint": "2d260ec0cf5e1c15"
  },
  "1343908": {
   "kinopoiskId": 1343908,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "investigation",
+   "satirical",
+   "class-divide",
+   "twist-driven",
+   "ensemble"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "49b5ffba02b5f552"
+  "fingerprint": "62a9251a3d80588a"
  },
  "1345617": {
   "kinopoiskId": 1345617,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "meta-ironic",
+   "buddy",
+   "spy",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "5078a8efb18ef773"
+  "fingerprint": "8e2d996e98f3b705"
  },
  "1348487": {
   "kinopoiskId": 1348487,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "class-divide",
+   "dark-comedy",
+   "absurd",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9162fea4f1f7dd44"
+  "fingerprint": "538224af405486aa"
  },
  "1354524": {
   "kinopoiskId": 1354524,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "melancholic",
+   "rural",
+   "friendship",
+   "dialogue-driven",
+   "period"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "283a0cf26865d465"
+  "fingerprint": "e2c75a3c053aef12"
  },
  "1355060": {
   "kinopoiskId": 1355060,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "rural",
+   "dreamlike",
+   "mind-bender"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2214797f527f88ec"
+  "fingerprint": "698493a41e9936f9"
  },
  "1382211": {
   "kinopoiskId": 1382211,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "claustrophobic",
+   "tense",
+   "ensemble"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ce7c6d3f897b43dd"
+  "fingerprint": "dc44a0ba77621c71"
  },
  "1382256": {
   "kinopoiskId": 1382256,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "expansive",
+   "technology",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6cb5edd2e9253e1c"
+  "fingerprint": "ef4655c720a86a05"
  },
  "1387021": {
   "kinopoiskId": 1387021,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "ensemble",
+   "visually-stylized",
+   "redemption",
+   "world-building"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1b7bb545038422f1"
+  "fingerprint": "01b6775ee59d02eb"
  },
  "1392550": {
   "kinopoiskId": 1392550,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "ensemble",
+   "claustrophobic",
+   "brisk",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f27f5cbe324a4140"
+  "fingerprint": "f826f22c3f47576b"
  },
  "1405508": {
   "kinopoiskId": 1405508,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "heist",
+   "brisk",
+   "meta-ironic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c7299db1fed66046"
+  "fingerprint": "42e137d97b35eb04"
  },
  "1447137": {
   "kinopoiskId": 1447137,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "tense",
+   "rural",
+   "family",
+   "slow-burn",
+   "satirical"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ad72ae5553be9700"
+  "fingerprint": "6dbd131597913731"
  },
  "4396438": {
   "kinopoiskId": 4396438,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "coming-of-age",
+   "visually-stylized",
+   "philosophical",
+   "satirical",
+   "identity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "59b651a4e6b3f8b3"
+  "fingerprint": "a84b0e435eb58f9c"
  },
  "4445150": {
   "kinopoiskId": 4445150,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "world-building",
+   "class-divide",
+   "family",
+   "visually-stylized",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0a2f45ab6e67b685"
+  "fingerprint": "2529be120d64234d"
  },
  "4499408": {
   "kinopoiskId": 4499408,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "technology",
+   "moral-ambiguity",
+   "epic",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fca8b94be8c1e291"
+  "fingerprint": "1c013ca225608641"
  },
  "4518799": {
   "kinopoiskId": 4518799,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "tense",
+   "expansive",
+   "character-study",
+   "obsession"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fdf6609ed04b2f74"
+  "fingerprint": "c6fa251e7708a47b"
  },
  "4540126": {
   "kinopoiskId": 4540126,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "world-building",
+   "expansive",
+   "faith",
+   "revenge",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ae1a8f9f8edb9b03"
+  "fingerprint": "a98c5fe72886d513"
  },
  "4542208": {
   "kinopoiskId": 4542208,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "tense",
+   "single-location",
+   "death-and-grief",
+   "twist-driven"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "30ede80df863840a"
+  "fingerprint": "2898cd48d4b06ea7"
  },
  "4647040": {
   "kinopoiskId": 4647040,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dreamlike",
+   "friendship",
+   "non-linear",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b5f831b849cab73a"
+  "fingerprint": "5c798d0386b7ba5b"
  },
  "4661216": {
   "kinopoiskId": 4661216,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "expansive",
+   "uplifting",
+   "wintry"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "dafe80d8e46795e6"
+  "fingerprint": "e9e191220d5e9cfc"
  },
  "4664634": {
   "kinopoiskId": 4664634,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "non-linear",
+   "moral-ambiguity",
+   "character-study",
+   "tense",
+   "period",
+   "obsession"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "bc35d3bdca6868c0"
+  "fingerprint": "a5c8035deb1781a6"
  },
  "4675164": {
   "kinopoiskId": 4675164,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "single-location",
+   "tense",
+   "moral-ambiguity",
+   "faith",
+   "claustrophobic",
+   "slow-reveal"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "996a14fe5510c9aa"
+  "fingerprint": "59f7eb62f2e7fd6b"
  },
  "4771048": {
   "kinopoiskId": 4771048,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "family",
+   "period",
+   "visually-stylized",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d268a840cfd061fd"
+  "fingerprint": "0fdf4217a5ca91b1"
  },
  "4860213": {
   "kinopoiskId": 4860213,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "obsession",
+   "visually-stylized",
+   "identity",
+   "dark-comedy",
+   "relentless"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a6d5435ca9f95063"
+  "fingerprint": "66fe9716a22870c2"
  },
  "4959134": {
   "kinopoiskId": 4959134,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "world-building",
+   "uplifting",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fdeaff45bf502b80"
+  "fingerprint": "1e8e6f8cd9343c49"
  },
  "5001443": {
   "kinopoiskId": 5001443,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble",
+   "redemption",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6e8a699780b3b891"
+  "fingerprint": "cee0d8457bb68a62"
  },
  "5102255": {
   "kinopoiskId": 5102255,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "coming-of-age",
+   "identity",
+   "visually-stylized",
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8380520af8eb0ada"
+  "fingerprint": "d794b30192e2ae70"
  },
  "5126797": {
   "kinopoiskId": 5126797,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "redemption",
+   "philosophical",
+   "bittersweet"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "159c00c396d976aa"
+  "fingerprint": "7fb57af085e2a5e1"
  },
  "5138530": {
   "kinopoiskId": 5138530,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "friendship",
+   "sentimental",
+   "uplifting",
+   "wintry",
+   "poetic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "46d004e8e3c6cfc3"
+  "fingerprint": "5b14d7c41d069cff"
  },
  "5230825": {
   "kinopoiskId": 5230825,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "eerie",
+   "tense",
+   "rural"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "bb27dce1661d58fc"
+  "fingerprint": "bb4ba8ccfbdc333a"
  },
  "5235968": {
   "kinopoiskId": 5235968,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "tense",
+   "urban",
+   "claustrophobic",
+   "twist-driven",
+   "slow-burn"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b6f0b854c4ec650f"
+  "fingerprint": "13559d9b0e0d0247"
  },
  "5304403": {
   "kinopoiskId": 5304403,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "gritty",
+   "coming-of-age",
+   "bleak"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "eb26b21f90da8a62"
+  "fingerprint": "8c8888fd38b72de6"
  },
  "5494049": {
   "kinopoiskId": 5494049,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "urban",
+   "identity",
+   "melancholic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "dd06947144206be6"
+  "fingerprint": "43a654f463ab2569"
  },
  "5506641": {
   "kinopoiskId": 5506641,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "meta-ironic",
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "48fd021b839a2eb4"
+  "fingerprint": "cd6896e9d84a5281"
  },
  "5582050": {
   "kinopoiskId": 5582050,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "relentless",
+   "corruption",
+   "investigation",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "402cebbc34edecff"
+  "fingerprint": "fdf912093c46ed8f"
  },
  "5610132": {
   "kinopoiskId": 5610132,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "tense",
+   "death-and-grief",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "290d25fda8e81146"
+  "fingerprint": "6fc2baae5b955b7b"
  },
  "6385370": {
   "kinopoiskId": 6385370,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "period",
+   "family",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "cb77068f929ebfdb"
+  "fingerprint": "09fafd23c84d3989"
  },
  "6446910": {
   "kinopoiskId": 6446910,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "period",
+   "spy",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f752af88d5afad99"
+  "fingerprint": "dcca953c07faa41b"
  },
  "7178187": {
   "kinopoiskId": 7178187,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "relentless",
+   "brisk",
+   "tense",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6e19764de5b62932"
+  "fingerprint": "003edfa0349164f4"
  },
  "7378605": {
   "kinopoiskId": 7378605,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "relentless",
+   "urban",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e906432b98da7a8a"
+  "fingerprint": "498851e22719fbf3"
  },
  "7518867": {
   "kinopoiskId": 7518867,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "heist",
+   "urban",
+   "tense",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "428255889524ca68"
+  "fingerprint": "cdf7baed7e419367"
  },
  "7859199": {
   "kinopoiskId": 7859199,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "buddy",
+   "dark-comedy",
+   "urban",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "10d317d56c2d657e"
+  "fingerprint": "a9ffc15dd756e3fd"
  },
  "10355286": {
   "kinopoiskId": 10355286,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "obsession",
+   "eerie",
+   "tense",
+   "claustrophobic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "2e09501e5e6e38d0"
+  "fingerprint": "2d20c412ab5f129d"
  },
  "13421214": {
   "kinopoiskId": 13421214,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "wintry",
+   "expansive",
+   "epic",
+   "period"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "929c46c7024dac18"
+  "fingerprint": "051927f2190fd9f9"
  },
  "298": {
   "kinopoiskId": 298,
@@ -15386,326 +17107,513 @@
  },
  "470689": {
   "kinopoiskId": 470689,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "moral-ambiguity",
+   "survival",
+   "technology"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f5101bb0806a3510"
+  "fingerprint": "fab502a2349d2dfe"
  },
  "535243": {
   "kinopoiskId": 535243,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "meta-ironic",
+   "investigation",
+   "brisk",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d072306ee772aa36"
+  "fingerprint": "7baa276f64949dc0"
  },
  "689960": {
   "kinopoiskId": 689960,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "visually-stylized",
+   "world-building",
+   "futuristic",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d7a010aca09d86d6"
+  "fingerprint": "b9f68ad8c42166e9"
  },
  "709862": {
   "kinopoiskId": 709862,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "absurd",
+   "satirical",
+   "episodic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "740b4f671b76fa74"
+  "fingerprint": "5cfe0cc628c73758"
  },
  "740644": {
   "kinopoiskId": 740644,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "gritty",
+   "bleak",
+   "claustrophobic",
+   "moral-ambiguity",
+   "period"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "89d9073b62ceca2c"
+  "fingerprint": "596185823b2db23b"
  },
  "749562": {
   "kinopoiskId": 749562,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "slow-burn",
+   "moral-ambiguity",
+   "epic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f3ae7e04942d1aed"
+  "fingerprint": "31351e1084530177"
  },
  "762646": {
   "kinopoiskId": 762646,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "heist",
+   "ensemble",
+   "world-building",
+   "uplifting"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f26a5662011cda08"
+  "fingerprint": "b6fe86fb36740436"
  },
  "797840": {
   "kinopoiskId": 797840,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "world-building",
+   "urban",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "bf1680d8898cc93f"
+  "fingerprint": "21b4a1a888dfbd2d"
  },
  "837552": {
   "kinopoiskId": 837552,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "satirical",
+   "brisk",
+   "corruption",
+   "moral-ambiguity"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "134f0a1f08c30ad3"
+  "fingerprint": "feed8fc7efc96502"
  },
  "915178": {
   "kinopoiskId": 915178,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "heist",
+   "ensemble"
+  ],
+  "status": "partial",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "29189a8d044ac465"
+  "fingerprint": "3ae10065e4c720e6"
  },
  "930534": {
   "kinopoiskId": 930534,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "claustrophobic",
+   "tense",
+   "identity",
+   "slow-reveal",
+   "twist-driven"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "4a75e7f091fb9a4c"
+  "fingerprint": "bb9d1d465f705a4b"
  },
  "942396": {
   "kinopoiskId": 942396,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "philosophical",
+   "bleak",
+   "character-study",
+   "meta-ironic",
+   "frame-story",
+   "dark-comedy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "02e3f2e3643a918b"
+  "fingerprint": "0693371aaa327ced"
  },
  "958442": {
   "kinopoiskId": 958442,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "investigation",
+   "wintry",
+   "bleak",
+   "gritty",
+   "rural",
+   "slow-burn"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d39e9b4fc5541e1e"
+  "fingerprint": "766c090f162f00e4"
  },
  "991739": {
   "kinopoiskId": 991739,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "character-study",
+   "dialogue-driven",
+   "death-and-grief",
+   "meta-ironic",
+   "dark-comedy"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "802434dd18b14e01"
+  "fingerprint": "303735b7cabd749f"
  },
  "1008879": {
   "kinopoiskId": 1008879,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "episodic",
+   "frame-story",
+   "dark-comedy",
+   "period"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "03a9cf091351794b"
+  "fingerprint": "3c5a5dcdf7b9f19f"
  },
  "1289738": {
   "kinopoiskId": 1289738,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "unreliable-narrator",
+   "moral-ambiguity",
+   "bleak",
+   "gritty"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ead24397e5559880"
+  "fingerprint": "b86e5b221d5b22aa"
  },
  "1309707": {
   "kinopoiskId": 1309707,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "uplifting",
+   "friendship",
+   "cozy",
+   "character-study"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "175fb245704fd133"
+  "fingerprint": "de4b8e26af5871f5"
  },
  "1311143": {
   "kinopoiskId": 1311143,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "absurd",
+   "world-building",
+   "gritty",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "701f56a764d89431"
+  "fingerprint": "292aad0d9982699f"
  },
  "1378893": {
   "kinopoiskId": 1378893,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "obsession",
+   "dark-comedy",
+   "moral-ambiguity",
+   "claustrophobic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "1017781488e7e741"
+  "fingerprint": "17f38152d95995a2"
  },
  "1435343": {
   "kinopoiskId": 1435343,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "family",
+   "class-divide",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "69407deca9df19a9"
+  "fingerprint": "9c1ee449d1e3902a"
  },
  "2040161": {
   "kinopoiskId": 2040161,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "dark-comedy",
+   "gritty",
+   "visually-stylized",
+   "absurd"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "b04a203ec9bf5d7b"
+  "fingerprint": "89296740a2e52269"
  },
  "4360157": {
   "kinopoiskId": 4360157,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "investigation",
+   "bleak",
+   "tense",
+   "gritty",
+   "death-and-grief"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9fd448af5c57f836"
+  "fingerprint": "6d5e84ef306d4775"
  },
  "4414587": {
   "kinopoiskId": 4414587,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "period",
+   "ensemble",
+   "dark-comedy",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8e62d3f741c8020a"
+  "fingerprint": "982c4d33e1bedb51"
  },
  "4421816": {
   "kinopoiskId": 4421816,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "investigation",
+   "faith",
+   "buddy",
+   "twist-driven"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "aa25ccbda9e38b3d"
+  "fingerprint": "29fc13c8eb816872"
  },
  "4476147": {
   "kinopoiskId": 4476147,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "claustrophobic",
+   "wintry",
+   "tense",
+   "survival"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "383eb38e76dd0a4b"
+  "fingerprint": "3546b7f394ddbdd9"
  },
  "4626783": {
   "kinopoiskId": 4626783,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "revenge",
+   "corruption",
+   "martial-arts",
+   "relentless",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "07dc9f6d186d7954"
+  "fingerprint": "1703b2eb02455935"
  },
  "4642708": {
   "kinopoiskId": 4642708,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "investigation",
+   "moral-ambiguity",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "df88b97e2880e72c"
+  "fingerprint": "67009701c17e7b07"
  },
  "5003510": {
   "kinopoiskId": 5003510,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "redemption",
+   "tense"
+  ],
+  "status": "partial",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c8695fe6381cb9e3"
+  "fingerprint": "486d154dcac73bc6"
  },
  "5098653": {
   "kinopoiskId": 5098653,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "eerie",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a1676357606a04f0"
+  "fingerprint": "793a09f7fa709d10"
  },
  "5281617": {
   "kinopoiskId": 5281617,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "world-building",
+   "buddy",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "c6845160b4f545be"
+  "fingerprint": "b78b33f2e8fd26cb"
  },
  "5406956": {
   "kinopoiskId": 5406956,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "non-linear",
+   "philosophical",
+   "bittersweet",
+   "character-study"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "caf9126e51d28114"
+  "fingerprint": "51c327bbc16097cc"
  },
  "5457899": {
   "kinopoiskId": 5457899,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "family",
+   "uplifting",
+   "technology",
+   "sentimental"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "bbd4ece678194e81"
+  "fingerprint": "e280becd9d54ee2a"
  },
  "5463792": {
   "kinopoiskId": 5463792,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "survival",
+   "buddy",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "d6c66dcc4dff84f9"
+  "fingerprint": "81f3ab1845badbc4"
  },
  "6408658": {
   "kinopoiskId": 6408658,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "period",
+   "character-study",
+   "melancholic",
+   "rural",
+   "poetic"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3174fccbf8a7626e"
+  "fingerprint": "7ce5866fd0fb532e"
  },
  "6589776": {
   "kinopoiskId": 6589776,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "ensemble",
+   "urban"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "fd7f7647e46bee13"
+  "fingerprint": "0caf3a19b2d4d618"
  },
  "6782779": {
   "kinopoiskId": 6782779,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "rural",
+   "slow-reveal",
+   "tense",
+   "ensemble"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "3c5b997856ee53db"
+  "fingerprint": "c71badbb47f23acd"
  }
 }
