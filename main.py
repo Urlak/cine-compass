@@ -5,7 +5,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from cinecompass import benchmark, config, enrich, library, llm, markdown, prompts, semantic, taste
+from cinecompass import benchmark, config, enrich, library, llm, markdown, prompts, semantic, taste, tmdb
 
 def _rows_and_overview():
     items = library.load_library()
@@ -116,10 +116,21 @@ def cmd_predict(args) -> None:
         print(f"\nСохранено: {config.PREDICTION_FILE}")
         return
 
-    rows = library.compact_rows(items)
-    overview = markdown._overview(items)
-    text = llm.generate(prompts.predict_prompt(rows, overview, query), op="predict")
-    doc = f"# Прогноз: {query}\n\n{text}"
+    # Компактный контекст: портрет зрителя + ближайшие по вкусу записи.
+    # Метаданные фильма-запроса берутся из TMDB (без квоты); при промахе
+    # соседей нет — прогноз строится по портрету.
+    cache = semantic.load_cache()
+    profile_md = (config.PROFILE_FILE.read_text(encoding="utf-8")
+                  if config.PROFILE_FILE.is_file()
+                  else markdown.taste_profile_markdown(taste.build_profile(items, cache)))
+    target = tmdb.find(query) or {"title": query, "originalTitle": "", "year": None,
+                                  "genres": [], "directors": []}
+    near = library.neighbours(items, cache, target)
+    tags_by_kid = {kid: rec["tags"] for kid, rec in cache.items() if rec["tags"]}
+    rows = library.tagged_rows(near, tags_by_kid) or "(записей-соседей не найдено)"
+    target_desc = library.query_label(query, target)
+    text = llm.generate(prompts.predict_prompt(profile_md, rows, target_desc), op="predict")
+    doc = f"# Прогноз: {target_desc}\n\n{text}"
     llm.write_markdown(config.PREDICTION_FILE, doc)
     print(doc)
     print(f"\nСохранено: {config.PREDICTION_FILE}")
@@ -128,6 +139,7 @@ def cmd_predict(args) -> None:
 def cmd_benchmark(args) -> None:
     summary = benchmark.run(per_rating=args.per_rating, min_history=args.min_history)
     print(f"MAE: {summary['mae']}, попадания ±1: {summary['hit1_share']}, "
+          f"токены: {summary['tokens']}, "
           f"распарсено: {summary['parsed']}/{summary['answered']} из {summary['targets']}")
 
 

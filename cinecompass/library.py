@@ -122,6 +122,47 @@ NEW_YEAR_MIN = 2020        # режим new: только свежие рели�
 CLASSICS_YEAR_MAX = 2000   # режим classics: только старые тайтлы
 
 
+NEIGHBOUR_LIMIT = 30  # сколько ближайших по вкусу записей передаётся в predict
+
+
+def query_label(query: str, target: dict) -> str:
+    """Описание фильма-запроса для predict: название + фактология (библиотека или TMDB)."""
+    inner = [p for p in (
+        target.get("originalTitle", "") if target.get("originalTitle", "") != target.get("title", "") else "",
+        str(target.get("year") or ""),
+    ) if p]
+    label = f"{query} ({', '.join(inner)})" if inner else query
+    if target.get("genres"):
+        label += " — жанры: " + ", ".join(target["genres"])
+    if target.get("directors"):
+        label += ", реж. " + ", ".join(target["directors"])
+    return label
+
+
+def neighbours(items: list[dict], cache: dict[int, dict], target: dict,
+               limit: int = NEIGHBOUR_LIMIT) -> list[dict]:
+    """Ближайшие по вкусу записи: совпадение режиссёра, семантических тегов и жанров.
+
+    target — метаданные фильма-запроса (из библиотеки или TMDB); у live-запроса
+    семантических тегов нет, оценка ведётся по режиссёру и жанрам.
+    """
+    t_dirs = set(target.get("directors", []))
+    t_genres = set(target.get("genres", []))
+    t_tags = set(cache.get(target.get("kinopoiskId"), {}).get("tags", [])) \
+        if target.get("kinopoiskId") else set()
+    scored = []
+    for item in items:
+        score = (
+            3 * len(t_dirs & set(item.get("directors", [])))
+            + 2 * len(t_tags & set(cache.get(item["kinopoiskId"], {}).get("tags", [])))
+            + len(t_genres & set(item.get("genres", [])))
+        )
+        if score:
+            scored.append((-score, -(item.get("userRating") or 0), item["title"], item))
+    scored.sort(key=lambda x: x[:3])
+    return [item for *_, item in scored[:limit]]
+
+
 def mode_candidates(items: list[dict], mode: str) -> list[dict]:
     """Детерминированный Python-отбор кандидатов по режиму recommend.
 

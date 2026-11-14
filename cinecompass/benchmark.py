@@ -1,16 +1,15 @@
-"""Ретроспективный benchmark для predict (Фаза 0 плана оптимизации).
+"""Ретроспективный benchmark для predict: тот же контекст, что у live-команды.
 
 Python строит профиль по записям, просмотренным строго ДО даты X, скрывает
 запись, реальную оценку которой нужно угадать, и сравнивает прогноз с фактом.
-Цель — получить базовые MAE / доля попаданий ±1 / средние токены и латентность
-текущей архитектуры, чтобы доказывать или опровергать пользу будущих изменений.
+Контекст — портрет зрителя + ближайшие соседи по вкусу (см. predict).
 """
 import json
 import random
 import re
 from datetime import datetime
 
-from cinecompass import config, library, llm, markdown, prompts
+from cinecompass import config, library, llm, markdown, prompts, semantic, taste
 
 FIXED_SEED = 42
 
@@ -51,15 +50,24 @@ def parse_score(text: str) -> int | None:
     return score if 1 <= score <= 10 else None
 
 
+def _portrait(items: list[dict], cache: dict[int, dict]) -> str:
+    """Портрет зрителя для predict: LLM-файл profile.md, без него — метрики из taste."""
+    if config.PROFILE_FILE.is_file():
+        return config.PROFILE_FILE.read_text(encoding="utf-8")
+    return markdown.taste_profile_markdown(taste.build_profile(items, cache))
+
+
 def run(per_rating: int = 3, min_history: int = 50) -> dict:
     items = library.load_library()
+    cache = semantic.load_cache()
     targets = build_sample(items, per_rating=per_rating)
     results = []
     total = len(targets)
+    usage_offset = _usage_row_count()
     print(f"Запуск бенчмарка: {total} целей (по {per_rating} на каждый балл от 4 до 10)...", flush=True)
     for idx, target in enumerate(targets, 1):
         history = profile_history(items, target)
-        title_full = target["title"] + (f" ({target['originalTitle']})" if target.get("originalTitle") else "")
+        title_full = library.query_label(target["title"], target)
         record = {
             "title": title_full,
             "year": target["year"],
@@ -77,12 +85,12 @@ def run(per_rating: int = 3, min_history: int = 50) -> dict:
             results.append(record)
             print(f"[{idx}/{total}] Пропуск: «{title_full}» ({target.get('year')}) — история всего {len(history)} (< {min_history})", flush=True)
             continue
-        print(f"[{idx}/{total}] Запрос к LLM: «{title_full}» ({target.get('year')}), факт: {target['userRating']}... (история: {len(history)})", flush=True)
-        rows = library.compact_rows(history)
-        # A1: передаем полную программную сводку вместо обрезанной
-        overview = markdown._overview(history)
-        question = title_full
-        prompt = prompts.predict_prompt(rows, overview, question)
+        print(f"[{idx}/{total}] Запрос к LLM: «{title_full}», факт: {target['userRating']}... (соседи из истории: {min(len(history), library.NEIGHBOUR_LIMIT)})", flush=True)
+        profile_md = _portrait(items, cache)
+        near = library.neighbours(history, cache, target)
+        tags_by_kid = {kid: rec["tags"] for kid, rec in cache.items() if rec["tags"]}
+        rows = library.tagged_rows(near, tags_by_kid) or "(записей-соседей не найдено)"
+        prompt = prompts.predict_prompt(profile_md, rows, title_full)
         text = llm.generate(prompt, op="benchmark")
         score = parse_score(text)
         record.update(
@@ -93,11 +101,31 @@ def run(per_rating: int = 3, min_history: int = 50) -> dict:
         )
         print(f"        -> Прогноз: {score}/10 (факт: {target['userRating']}) | Ошибка: {record['abs_err']}", flush=True)
         results.append(record)
-    _write(results)
-    return _summary(results)
+    usage = _run_usage(usage_offset)
+    _write(results, usage)
+    return _summary(results, usage)
 
 
-def _summary(results: list[dict]) -> dict:
+def _usage_row_count() -> int:
+    if not config.USAGE_FILE.is_file():
+        return 0
+    return len(config.USAGE_FILE.read_text(encoding="utf-8").strip().splitlines())
+
+
+def _run_usage(offset: int) -> dict:
+    """Суммарный расход токенов op=benchmark за этот прогон."""
+    tokens = 0
+    if config.USAGE_FILE.is_file():
+        lines = config.USAGE_FILE.read_text(encoding="utf-8").strip().splitlines()[offset:]
+        for line in lines:
+            row = json.loads(line)
+            if row.get("op") == "benchmark":
+                tokens += (row.get("prompt_tokens", 0) + row.get("thoughts_tokens", 0)
+                           + row.get("output_tokens", 0))
+    return {"tokens": tokens}
+
+
+def _summary(results: list[dict], usage: dict | None = None) -> dict:
     scored = [r for r in results if not r["skipped"]]
     valid = [r for r in scored if r["pred"] is not None]
     n = len(scored)
@@ -108,10 +136,11 @@ def _summary(results: list[dict]) -> dict:
         "unparsed": n - len(valid),
         "mae": round(sum(r["abs_err"] for r in valid) / len(valid), 2) if valid else None,
         "hit1_share": round(sum(r["hit1"] for r in valid) / len(valid), 2) if valid else None,
+        "tokens": usage.get("tokens", 0) if usage else 0,
     }
 
 
-def _write(results: list[dict]) -> None:
+def _write(results: list[dict], usage: dict | None = None) -> None:
     stamp = datetime.now().strftime("%Y%m%d_%H%M")
     out_dir = config.DATA_DIR / "benchmark"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -119,13 +148,14 @@ def _write(results: list[dict]) -> None:
     with open(path, "w", encoding="utf-8") as f:
         for r in results:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
-    summary = _summary(results)
+    summary = _summary(results, usage)
     lines = [
         f"# Benchmark predict ({stamp})",
         "",
         f"Целей: {summary['targets']}, отвечено: {summary['answered']}, "
         f"распарсено: {summary['parsed']}, не распарсено: {summary['unparsed']}.",
-        f"MAE: {summary['mae']}, доля попаданий ±1: {summary['hit1_share']}.",
+        f"MAE: {summary['mae']}, доля попаданий ±1: {summary['hit1_share']}, "
+        f"токенов за прогон: {summary['tokens']}.",
         "",
         "| Название | Год | Факт | Прогноз | Ошибка | Размер истории |",
         "| --- | --- | --- | --- | --- | --- |",

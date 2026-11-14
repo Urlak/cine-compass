@@ -1,15 +1,17 @@
 # AGENTS.md
 
 cine-compass: личная кинобиблиотека из экспорта Кинопоиска. CLI (`main.py`): `import`/`clean`,
-`enrich` (обогащение через kinopoisk.dev — эндпоинт `api.poiskkino.dev/v1.5/movie/{id}`),
+`enrich` (основной источник — TMDB по `tmdbId` из экспорта, без суточной квоты; kinopoisk.dev —
+фолбэк для записей без tmdbId; кэш `data/caches/enrich_cache.json`),
 `build` (маркдаун-каталог), `semantic`/`taste` (семантические теги и Taste Profile, без LLM
 в расчётах профиля), `stats`/`profile`/`recommend`/`predict` (Gemini через `google-genai`,
 модель — `LLM_MODEL` из `.env`, сейчас `gemini-3.8-flash`).
 
 Контексты LLM: `stats`/`profile`/`recommend` получают компактные программные сводки
 (`stats_context`, `taste_profile.md`, Python-кандидаты по режиму), НЕ полную библиотеку;
-`predict` — единственная операция с full context (baseline, осознанно не сокращён — см.
-«Этап 6» в `optimizing-plan-v4.md`). Словарь тегов `taxonomy.json` v1.1 заморожен;
+`predict` и `benchmark` — портрет зрителя (`profile.md`-подобный вкус: Approval/Lift) +
+до 30 ближайших по вкусу записей (режиссёр/теги/жанры; метаданные фильма-запроса —
+через TMDB `/search/multi`). Словарь тегов `taxonomy.json` v1.1 заморожен;
 промпт классификации (PROMPT_VERSION r4) заморожен — правки текста требуют согласования.
 
 ## Commands

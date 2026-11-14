@@ -2,7 +2,7 @@
 from collections import Counter
 from pathlib import Path
 
-from cinecompass import config, library
+from cinecompass import config, library, taste
 
 _RATING_TIERS = [
     ("Любимое", [9, 10]),
@@ -190,103 +190,114 @@ def stats_context(items: list[dict]) -> str:
     return "\n".join(lines)
 
 
-_SLICE_TITLES = [
-    ("library", "Библиотека в целом (все фильмы с семантическими тегами)"),
-    ("rated", "Только фильмы с личной оценкой"),
-    ("high_rated", "Высоко оценённые (8–10)"),
-    ("low_rated", "Низко оценённые (1–5)"),
-]
-
-_CAT_LABELS = {
-    "genre": "Жанровые подвиды",
-    "mood": "Настроение",
-    "atmosphere": "Атмосфера",
-    "setting": "Сеттинг",
-    "themes": "Темы",
-    "pacing": "Темп",
-    "narrative": "Повествование",
-    "style": "Визуальный стиль",
-}
-
-
 def _pct(n: int, total: int) -> str:
     return f"{100 * n / total:.0f}%" if total else "0%"
+
+
+def _apct(rate: float) -> str:
+    """Approval Rate в процентах для маркдаун-таблиц."""
+    return f"{100 * rate:.0f}%"
 
 
 def taste_profile_markdown(profile: dict) -> str:
     """Человекочитаемый самодостаточный профиль из готового JSON (Этап 4)."""
     cov = profile["coverage"]
-    sig = profile["rating_signal"]
+    base = profile["baseline"]
     lines = [
         "# Taste Profile — профиль зрительских предпочтений",
         "",
         f"Составлен программно из кинобиблиотеки и English-семантических тегов "
-        f"(taxonomy {profile['taxonomy_version']}), без участия LLM.",
-        f"Названия фильмов приведены как «Русское название» (Original Title).",
+        f"(taxonomy {profile['taxonomy_version']}, prompt {profile['prompt_version']}), без участия LLM. "
+        f"Фильмы упоминаются в формате «Название» (Original, YYYY) [оценка].",
         "",
-        "## Покрытие данных",
+        "## Метаданные",
         "",
-        f"- Всего записей в библиотеке: **{cov['library_total']}**.",
-        f"- Записей с семантическими тегами: **{cov['with_tags']}** "
-        f"({_pct(cov['with_tags'], cov['library_total'])} библиотеки).",
-        f"- Оценённых фильмов с тегами: **{cov['rated_with_tags']}**.",
-        f"- Статусы классификации в кэше: {cov['cache_status_counts']}.",
+        f"- tagged_count: **{cov['with_tags']}** из {cov['library_total']} записей "
+        f"({_pct(cov['with_tags'], cov['library_total'])}); rated_count: **{cov['rated_with_tags']}** "
+        f"из {cov['rated_total']} оценённых.",
+        f"- generated_at: **{profile['generated']}**. Статусы классификации: {cov['cache_status_counts']}.",
+        f"- Корзины оценок (все оценённые с тегами): "
+        + ", ".join(
+            f"{label} — {profile['buckets_counts'].get(name, 0)} "
+            f"({_apct(profile['buckets_counts'].get(name, 0) / cov['rated_with_tags']) if cov['rated_with_tags'] else '0%'})"
+            for name, label in profile["buckets"].items()
+        ) + ".",
         f"- {cov['note']}",
         "",
-        f"⚠️ Покрытие данных частичное ({_pct(cov['with_tags'], cov['library_total'])} библиотеки): "
-        "выводы ниже описывают только тегированную часть коллекции, а не полный вкус зрителя.",
+        f"⚠️ Покрытие частичное ({_pct(cov['with_tags'], cov['library_total'])}): выводы описывают "
+        "тегированную часть коллекции, а не весь вкус зрителя.",
         "",
     ]
-    for key, title in _SLICE_TITLES:
-        sl = profile["slices"][key]
-        n = sl["films_with_tags"]
-        lines += [f"## {title}", ""]
-        if key != "library":
-            share = _pct(n, profile["slices"]["library"]["films_with_tags"]) if n else "0%"
-            lines.append(f"Фильмов с тегами в срезе: **{n}** ({share} от тегированной библиотеки).")
-            lines.append("")
-        if key == "library":
-            # по категориям: подвиды, настроение, атмосфера, темы, стиль…
-            for cat in sorted(sl["by_category"]):
-                cat_counts = sorted(sl["by_category"][cat].items(), key=lambda kv: (-kv[1], kv[0]))
-                lines += [f"### {_CAT_LABELS.get(cat, cat)} ({cat})", ""]
-                for tag, cnt in cat_counts[:6]:
-                    ex = "; ".join(sl["examples"].get(tag, [])[:2])
-                    lines.append(f"- **{tag}** — {cnt} ({_pct(cnt, n)}){f', например: {ex}' if ex else ''}")
-                if len(cat_counts) > 6:
-                    lines.append(f"- …ещё {len(cat_counts) - 6} тегов категории в JSON.")
-                lines.append("")
-        else:
-            lines += ["Самые частые теги (реальные количества):", ""]
-            for tag, cnt in list(sl["tag_counts"].items())[:10]:
-                ex = "; ".join(sl["examples"].get(tag, [])[:2])
-                lines.append(f"- **{tag}** — {cnt} ({_pct(cnt, n)}){f', например: {ex}' if ex else ''}")
-            if len(sl["tag_counts"]) > 10:
-                lines.append(f"- …остальные {len(sl['tag_counts']) - 10} тегов приведены полным списком в JSON.")
-            lines.append("")
+    supported = [r for r in profile["tag_stats"] if r["n"] >= taste.SUPPORT_MIN]
     lines += [
-        "## Связь тегов с оценками: высоко оценённые против низко оценённых",
+        "## Связь тегов с оценками: Approval Rate и Lift",
         "",
-        f"Срезы: {sig['high_rated_films']} фильмов с оценкой {sig['thresholds']['high']}, "
-        f"{sig['low_rated_films']} с оценкой {sig['thresholds']['low']}.",
+        f"Approval — доля фильмов с тегом в корзине (сглаживание Лапласа +1/+2); "
+        f"Lift — отношение к базовой доле по всей тегированной библиотеке "
+        f"(8–10: {_apct(base.get('8_10', 0))}, 9–10: {_apct(base.get('9_10', 0))}, "
+        f"1–5: {_apct(base.get('1_5', 0))}). "
+        f"В таблице теги с поддержкой n ≥ {taste.SUPPORT_MIN}, сортировка по Lift 8–10.",
         "",
-        f"{sig['note']}",
-        "",
-        "| Тег | high: n (доля) | low: n (доля) | Δ долей |",
-        "| --- | --- | --- | --- |",
+        "| Тег | n | 8–10 % | 9–10 % | 1–5 % | Lift 8–10 | Примеры |",
+        "| --- | --- | --- | --- | --- | --- | --- |",
     ]
-    for row in sig["share_table"][:24]:
+    for r in supported:
         lines.append(
-            f"| {row['tag']} | {row['high_count']} ({_pct(row['high_count'], sig['high_rated_films'])}) "
-            f"| {row['low_count']} ({_pct(row['low_count'], sig['low_rated_films'])}) "
-            f"| {row['share_diff']:+.2f} |"
+            f"| {r['tag']} | {r['n']} | {_apct(r['approval_8_10'])} | {_apct(r['approval_9_10'])} "
+            f"| {_apct(r['approval_1_5'])} | {r['lift_8_10']:.2f} | {_esc('; '.join(r['examples'][:2]))} |"
         )
-    if sig["share_table"][24:]:
-        lines.append(f"| … | | | ещё {len(sig['share_table']) - 24} тегов в JSON |")
+    if len(profile["tag_stats"]) > len(supported):
+        lines.append(f"| … | | | | | | ещё {len(profile['tag_stats']) - len(supported)} тегов с n < "
+                     f"{taste.SUPPORT_MIN} в JSON |")
+    lines += ["", "Approval/Lift — наводка, а не вывод о предпочтении: тег может просто "
+              "отражать состав библиотеки.", ""]
+    if profile["niche_tags"]:
+        lines += ["## Нишевые теги: мало просмотров, высокий одобрение", ""]
+        for r in profile["niche_tags"]:
+            lines.append(f"- **{r['tag']}** — n={r['n']}, 8–10: {_apct(r['approval_8_10_raw'])} (сырая доля), "
+                         f"Lift {r['lift_8_10']:.2f}; примеры: {'; '.join(r['examples'][:2])}")
+        lines.append("")
+    for key, title in (("best", "Пары тегов с максимальным одобрением"), ("worst", "Пары тегов с минимальным одобрением")):
+        lines += [f"## {title}", ""]
+        rows = profile["pairs"][key]
+        if rows:
+            lines += ["| Пара | n | 8–10 % | Примеры |", "| --- | --- | --- | --- |"]
+            for r in rows:
+                lines.append(f"| {r['tags'][0]} + {r['tags'][1]} | {r['n']} | {_apct(r['approval_8_10'])} "
+                             f"| {_esc('; '.join(r['examples'][:2]))} |")
+        else:
+            lines.append("— (нет пар с достаточной поддержкой).")
+        lines.append("")
+    facts = profile["facts"]
+    lines += [
+        "## Фактологические срезы (по всем оценённым записям)",
+        "",
+        "### Десятилетия выпуска",
+        "",
+        "| Десятилетие | n | 8–10 | 9–10 | Пример |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for r in facts["decades"]:
+        lines.append(f"| {r['decade']} | {r['n']} | {_apct(r['approval_8_10'])} | {_apct(r['approval_9_10'])} "
+                     f"| {_esc(r['example'])} |")
+    lines += ["", "### Режиссёры (не менее 3 оценённых фильмов, по средней оценке)", ""]
+    lines += [f"- {r['director']} — {r['n']} фильм(ов), средняя {r['avg_rating']:.2f}" for r in facts["directors"][:15]]
+    kd = facts["kp_delta"]
     lines += [
         "",
-        "Теги, встречающиеся в обеих группах: "
-        + (", ".join(sig["in_both_groups"]) if sig["in_both_groups"] else "—") + ".",
+        "### Расхождение с рейтингом Кинопоиска (личная − КП)",
         "",
+        "Недооценённые рынком (+Δ): " + "; ".join(f"{r['title']} (КП {r['kp_rating']})" for r in kd["underrated"][:8]),
+        "",
+        "Переоценённые лично (−Δ): " + "; ".join(f"{r['title']} (КП {r['kp_rating']})" for r in kd["overrated"][:8]),
+        "",
+        "### Формат и хронометраж",
+        "",
+        f"- Фильмы: n={facts['format']['films']['n']}, 8–10: {_apct(facts['format']['films']['approval_8_10'])}; "
+        f"сериалы: n={facts['format']['series']['n']}, 8–10: {_apct(facts['format']['series']['approval_8_10'])}.",
     ]
+    lines += [f"- {r['bucket']} мин: n={r['n']}, 8–10: {_apct(r['approval_8_10'])}, "
+              f"9–10: {_apct(r['approval_9_10'])}" for r in facts["format"]["length"]]
+    lines.append("")
     return "\n".join(lines).rstrip() + "\n"
+

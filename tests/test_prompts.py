@@ -1,17 +1,26 @@
-"""Тесты промпта profile (Этап 5): интерпретация Taste Profile, обязательные оговорки."""
+"""Тесты промпта profile (Этап 5): 6-секционная схема, негативные ограничения."""
 from cinecompass import prompts
 
 
-def test_profile_prompt_embeds_taste_profile_and_cautions():
-    md = "# Taste Profile\n\n## Покрытие данных\n\n- Всего записей: **1155**."
+def test_profile_prompt_embeds_taste_profile_and_schema():
+    md = "# Taste Profile\n\n## Метаданные\n\n- tagged_count: **853**."
     p = prompts.profile_prompt(md)
     assert md in p
-    assert "Не пересчитывай статистику самостоятельно" in p
-    assert "частый тег не означает любовь" in p
-    assert "Покрытие данных частичное" in p
-    assert "Маленькие срезы" in p
-    assert "Не придумывай психологические характеристики" in p
-    assert "«Русское название» (Original Title)" in p
+    for section in ("## 0. Snapshot", "## 1. Core Drivers", "## 2. Conditional Rules (IF / THEN)",
+                    "## 3. Hard Red Flags", "## 4. Rating Calibration", "## 5. Exploration Vectors"):
+        assert section in p
+    assert "1200–1600 токенов" in p
+    assert "фильма-якоря" in p
+
+
+def test_profile_prompt_negative_constraints():
+    p = prompts.profile_prompt("x")
+    assert "никаких вводных и заключительных абзацев" in p
+    assert "«вероятно»" in p and "указывает на то, что" in p
+    assert "не рассуждай о размере" in p
+    assert "с годом и оценкой [N]" in p
+    assert "Не пересчитывай статистику" in p
+    assert "смотри на Lift, а не на n" in p
 
 
 def test_recommend_prompt_embeds_profile_and_cautions():

@@ -8,7 +8,7 @@ import time
 
 import requests
 
-from cinecompass import config, library
+from cinecompass import config, library, tmdb
 
 
 # Обе базы kinopoisk.dev отдают одинаковые данные; домен фиксирован,
@@ -54,17 +54,13 @@ def _extract(data: dict) -> dict:
 def enrich_library(limit: int | None = None) -> dict:
     """Дозаполняет library.json данными API. Возвращает сводку по количеству.
 
-    Нет ключа или нет подключения — работа продолжается на одном кэше.
+    Основной источник — TMDB (tmdbId уже есть в экспорте, суточной квоты нет);
+    kinopoisk.dev остаётся фолбэком для записей без tmdbId или при промахе TMDB.
     """
     if config.ENRICH_INTERVAL < 0:
         raise SystemExit("ENRICH_INTERVAL должен быть числом >= 0 (см. .env)")
     items = library.load_library()
     cache = _load_cache()
-    if not config.KINOPOISK_API_KEY:
-        print("KINOPOISK_API_KEY не задан — применяю только кэш, без запросов к API.")
-        _apply_cache(items, cache)
-        library.save_library(items)
-        return {"fetched": 0, "failed": 0, "quota_exceeded": False}
     todo = [
         it for it in items
         if library.missing_enrichment(it) and str(it["kinopoiskId"]) not in cache
@@ -77,38 +73,49 @@ def enrich_library(limit: int | None = None) -> dict:
     quota_exceeded = False
     for i, item in enumerate(todo, 1):
         kp_id = item["kinopoiskId"]
-        try:
-            resp = session.get(
-                f"{API_BASE}/v1.5/movie/{kp_id}",
-                headers=headers,
-                timeout=20,
-            )
-            if resp.status_code in (403, 429):
-                # 403 — суточный лимит демо-тарифа, 429 — флуд-ограничение
-                quota_exceeded = True
-                print(f"Лимит API исчерпан на {i}-й записи из {len(todo)}. Прогресс сохранён.")
-                break
-            resp.raise_for_status()
-            detail = _extract(resp.json())
+        detail = tmdb.detail(item)
+        if detail is not None:
             cache[str(kp_id)] = detail
             item.update(detail)
             fetched += 1
-        except requests.ConnectionError as exc:
-            # Сеть недоступна целиком — бессмысленно перебирать остальные записи
-            failed += 1
-            print(f"Нет подключения к API ({exc.__class__.__name__}) — "
-                  f"продолжаю только с кэшем; прогресс сохранён.")
-            break
-        except (requests.RequestException, ValueError) as exc:
-            # ValueError сюда попадает из resp.json() на невалидном теле ответа
-            failed += 1
-            print(f"[WARN] {kp_id} {item['title']}: {exc}")
+            print(f"TMDB [{i}/{len(todo)}] {kp_id} {item['title']}")
+        else:
+            if detail is None and not config.KINOPOISK_API_KEY:
+                print(f"[WARN] {kp_id} {item['title']}: нет ни карточки TMDB, ни KINOPOISK_API_KEY")
+                failed += 1
+                continue
+            try:
+                resp = session.get(
+                    f"{API_BASE}/v1.5/movie/{kp_id}",
+                    headers=headers,
+                    timeout=20,
+                )
+                if resp.status_code in (403, 429):
+                    # 403 — суточный лимит демо-тарифа, 429 — флуд-ограничение
+                    quota_exceeded = True
+                    print(f"Лимит API исчерпан на {i}-й записи из {len(todo)}. Прогресс сохранён.")
+                    break
+                resp.raise_for_status()
+                detail = _extract(resp.json())
+                cache[str(kp_id)] = detail
+                item.update(detail)
+                fetched += 1
+            except requests.ConnectionError as exc:
+                # Сеть недоступна целиком — бессмысленно перебирать остальные записи
+                failed += 1
+                print(f"Нет подключения к API ({exc.__class__.__name__}) — "
+                      f"продолжаю только с кэшем; прогресс сохранён.")
+                break
+            except (requests.RequestException, ValueError) as exc:
+                # ValueError сюда попадает из resp.json() на невалидном теле ответа
+                failed += 1
+                print(f"[WARN] {kp_id} {item['title']}: {exc}")
+            time.sleep(config.ENRICH_INTERVAL)
         if i % 25 == 0:
             _save_cache(cache)
             _apply_cache(items, cache)
             library.save_library(items)
             print(f"Готово {i}/{len(todo)} (успех: {fetched}, ошибки: {failed})")
-        time.sleep(config.ENRICH_INTERVAL)
     _save_cache(cache)
     _apply_cache(items, cache)
     library.save_library(items)

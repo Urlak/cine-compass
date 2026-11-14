@@ -56,6 +56,7 @@ def set_user(name: str) -> None:
     TASTE_PROFILE_MD = USER_DIR / "taste_profile.md"
 
 KINOPOISK_API_KEY = os.getenv("KINOPOISK_API_KEY", "")
+TMDB_API_KEY = os.getenv("TMDB_API_KEY", "")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 LLM_MODEL = os.getenv("LLM_MODEL", "gemini-2.5-flash")
 
