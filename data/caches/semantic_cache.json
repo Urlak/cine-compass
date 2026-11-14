@@ -6229,147 +6229,229 @@
  },
  "445952": {
   "kinopoiskId": 445952,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "episodic",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "6a2f782f078ccc38"
+  "fingerprint": "77176e77c0c00c12"
  },
  "447284": {
   "kinopoiskId": 447284,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "tense",
+   "brisk",
+   "identity",
+   "twist-driven"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "94a80cd68b2c23ae"
+  "fingerprint": "11946f81197d0656"
  },
  "447301": {
   "kinopoiskId": 447301,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "heist",
+   "mind-bender",
+   "dreamlike",
+   "ambiguous-ending",
+   "world-building",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "32a2e56d892d4dba"
+  "fingerprint": "89ffc411244fd413"
  },
  "450186": {
   "kinopoiskId": 450186,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "survival",
+   "episodic",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "40885bac742010b6"
+  "fingerprint": "3c63f3affa60ec4c"
  },
  "450204": {
   "kinopoiskId": 450204,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "melancholic",
+   "bleak",
+   "identity",
+   "friendship",
+   "philosophical",
+   "slow-burn"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "77cdd1bc6ec86847"
+  "fingerprint": "93a84345d6d8ad70"
  },
  "450213": {
   "kinopoiskId": 450213,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "uplifting",
+   "family",
+   "class-divide",
+   "sentimental"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "5ef46d80f2b11846"
+  "fingerprint": "39151bab946a00a8"
  },
  "450237": {
   "kinopoiskId": 450237,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "ensemble",
+   "buddy",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e8a09410b28850f4"
+  "fingerprint": "081bc8e13f69a705"
  },
  "450289": {
   "kinopoiskId": 450289,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "absurd",
+   "period",
+   "friendship"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "eff58c97c7608b8e"
+  "fingerprint": "06c2cfe6c381e13b"
  },
  "450753": {
   "kinopoiskId": 450753,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "martial-arts",
+   "period",
+   "family"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e7925337656b7eef"
+  "fingerprint": "2bd3e99eaf8dc308"
  },
  "450760": {
   "kinopoiskId": 450760,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "uplifting",
+   "cozy",
+   "urban",
+   "minimalist"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "8f07a11242f89adf"
+  "fingerprint": "088e4176ebcda064"
  },
  "450765": {
   "kinopoiskId": 450765,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "philosophical",
+   "world-building",
+   "urban",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "a1dca290fb94687c"
+  "fingerprint": "89afbf9f69918acd"
  },
  "452899": {
   "kinopoiskId": 452899,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "technology",
+   "urban",
+   "visually-stylized"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "ce00b1c204a7e50d"
+  "fingerprint": "ec2a56773729f835"
  },
  "453374": {
   "kinopoiskId": 453374,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "futuristic",
+   "identity",
+   "urban",
+   "tense",
+   "world-building"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "0e5bc7d5c0f368d2"
+  "fingerprint": "747891d3d450741e"
  },
  "453406": {
   "kinopoiskId": 453406,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "apocalypse",
+   "relentless",
+   "survival",
+   "visually-stylized",
+   "expansive"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "55b32790d2975937"
+  "fingerprint": "cf48ee4a025532b8"
  },
  "455165": {
   "kinopoiskId": 455165,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "epic",
+   "futuristic",
+   "friendship",
+   "revenge",
+   "corruption"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "9ec84a54cd07e291"
+  "fingerprint": "6efede3bd0ad5c92"
  },
  "455188": {
   "kinopoiskId": 455188,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "spy",
+   "buddy",
+   "brisk"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "f66f48bbbfa2d765"
+  "fingerprint": "d814ca904545d9ff"
  },
  "455194": {
   "kinopoiskId": 455194,
@@ -15289,12 +15371,18 @@
  },
  "453397": {
   "kinopoiskId": 453397,
-  "tags": [],
-  "status": "insufficient_data",
+  "tags": [
+   "eerie",
+   "coming-of-age",
+   "friendship",
+   "period",
+   "tense"
+  ],
+  "status": "complete",
   "taxonomy_version": "1.1",
   "prompt_version": "r4",
   "model": "gemini-3.8-flash",
-  "fingerprint": "e1f2aba2c0638776"
+  "fingerprint": "7c716f9e5587dc25"
  },
  "470689": {
   "kinopoiskId": 470689,
