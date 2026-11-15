@@ -74,6 +74,11 @@ def cmd_profile(_args) -> None:
     profile = taste.build_profile(library.load_library(), semantic.load_cache())
     context = markdown.taste_profile_markdown(profile)
     text = llm.generate(prompts.profile_prompt(context), op="profile")
+    if config.PROFILE_FILE.is_file() and config.PROFILE_FILE.stat().st_size:
+        stamp = datetime.fromtimestamp(config.PROFILE_FILE.stat().st_mtime).strftime("%Y%m%d_%H%M%S")
+        backup = config.PROFILE_FILE.with_name(f"profile_{stamp}.md")
+        shutil.copy2(config.PROFILE_FILE, backup)
+        print(f"Бэкап предыдущего профайла: {backup}")
     out = llm.write_markdown(config.PROFILE_FILE, text)
     print(f"Профайл: {out}")
 
