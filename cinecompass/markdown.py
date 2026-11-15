@@ -230,10 +230,13 @@ def taste_profile_markdown(profile: dict) -> str:
         ) + ".",
         f"- {cov['note']}",
         "",
-        f"⚠️ Покрытие частичное ({_pct(cov['with_tags'], cov['library_total'])}): выводы описывают "
-        "тегированную часть коллекции, а не весь вкус зрителя.",
-        "",
     ]
+    if cov["with_tags"] < cov["library_total"]:
+        lines += [
+            f"⚠️ Покрытие частичное ({_pct(cov['with_tags'], cov['library_total'])}): выводы описывают "
+            "тегированную часть коллекции, а не весь вкус зрителя.",
+            "",
+        ]
     supported = [r for r in profile["tag_stats"] if r["n"] >= taste.SUPPORT_MIN]
     lines += [
         "## Связь тегов с оценками: Approval Rate и Lift",
@@ -257,12 +260,27 @@ def taste_profile_markdown(profile: dict) -> str:
                      f"{taste.SUPPORT_MIN} в JSON |")
     lines += ["", "Approval/Lift — наводка, а не вывод о предпочтении: тег может просто "
               "отражать состав библиотеки.", ""]
-    if profile["niche_tags"]:
-        lines += ["## Нишевые теги: мало просмотров, высокий одобрение", ""]
-        for r in profile["niche_tags"]:
-            lines.append(f"- **{r['tag']}** — n={r['n']}, 8–10: {_apct(r['approval_8_10_raw'])} (сырая доля), "
-                         f"Lift {r['lift_8_10']:.2f}; примеры: {'; '.join(r['examples'][:2])}")
-        lines.append("")
+    roles = profile.get("tag_roles") or {}
+    role_sections = (
+        ("core", "Ядро вкуса (Core: n ≥ 20, высокий Lift, низкий брак)"),
+        ("growth", "Точки роста и ниши (Exploration: малая выборка или высокий Lift 9–10)"),
+        ("ceilings", "Потолки оценки (застревание в 6–7, низкая конверсия в 9–10)"),
+        ("red_flags", "Красные флаги (риск провала в 1–5)"),
+    )
+    if any(roles.values()):
+        lines += ["## Роли тегов (рассчитаны программно)", ""]
+        for key, heading in role_sections:
+            items_role = roles.get(key) or []
+            if not items_role:
+                continue
+            lines.append(f"### {heading}")
+            for r in items_role[:10]:
+                lines.append(
+                    f"- **{r['tag']}** — n={r['n']}, 8–10: {_apct(r['approval_8_10'])} (Lift {r['lift_8_10']:.2f}), "
+                    f"9–10: {_apct(r['approval_9_10'])} (Lift {r['lift_9_10']:.2f}), "
+                    f"1–5: {_apct(r['approval_1_5'])}; примеры: {'; '.join(r['examples'][:2])}"
+                )
+            lines.append("")
     for key, title in (("best", "Пары тегов с максимальным одобрением"), ("worst", "Пары тегов с минимальным одобрением")):
         lines += [f"## {title}", ""]
         rows = profile["pairs"][key]
@@ -271,6 +289,17 @@ def taste_profile_markdown(profile: dict) -> str:
             for r in rows:
                 lines.append(f"| {r['tags'][0]} + {r['tags'][1]} | {r['n']} | {_apct(r['approval_8_10'])} "
                              f"| {_esc('; '.join(r['examples'][:2]))} |")
+            if key == "worst":
+                rescues = [r for r in rows if r.get("rescue")]
+                if rescues:
+                    lines.append("")
+                    for r in rescues:
+                        rs = r["rescue"]
+                        lines.append(
+                            f"- Конфликт **{r['tags'][0]} + {r['tags'][1]}** ({_apct(r['approval_8_10'])}) "
+                            f"→ смягчается при **{rs['tags'][0]} + {rs['tags'][1]}** "
+                            f"({_apct(rs['approval_8_10'])}, n={rs['n']}: {'; '.join(rs['examples'][:2])})"
+                        )
         else:
             lines.append("— (нет пар с достаточной поддержкой).")
         lines.append("")
@@ -302,16 +331,6 @@ def taste_profile_markdown(profile: dict) -> str:
             f"{r['title']} ({src[r['consensus_source']]} {r['consensus_rating']})"
             for r in kd["overrated"][:8]),
         "",
-        "### Мейнстримность: одобрение по квартилям числа голосов TMDB", "",
-    ]
-    if facts["votes"]:
-        lines += ["| Голосов (диапазон квартиля) | n | 8–10 | 9–10 |", "| --- | --- | --- | --- |"]
-        lines += [f"| {r['votes_range']} | {r['n']} | {_apct(r['approval_8_10'])} | {_apct(r['approval_9_10'])} |"
-                  for r in facts["votes"]]
-    else:
-        lines.append("— (нет записей с числом голосов TMDB).")
-    lines += [
-        "",
         "### Формат и хронометраж",
         "",
         f"- Фильмы: n={facts['format']['films']['n']}, 8–10: {_apct(facts['format']['films']['approval_8_10'])}; "
@@ -319,6 +338,12 @@ def taste_profile_markdown(profile: dict) -> str:
     ]
     lines += [f"- {r['bucket']} мин: n={r['n']}, 8–10: {_apct(r['approval_8_10'])}, "
               f"9–10: {_apct(r['approval_9_10'])}" for r in facts["format"]["length"]]
+    anchors = profile.get("bucket_anchors") or {}
+    if any(anchors.values()):
+        lines += ["", "### Якоря по корзинам оценок (по семантической выраженности)", ""]
+        for name, label in profile["buckets"].items():
+            if anchors.get(name):
+                lines.append(f"- **{label}**: {'; '.join(anchors[name])}")
     lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 

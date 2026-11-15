@@ -95,26 +95,27 @@ def test_facts_aggregates():
         _item(3, rating=4, year=2004, type="film", directors=["Иванов"], kpRating=8.5, movieLength=160, tmdbVotes=10),
         _item(4, rating=8, year=2004, type="series", directors=["Петров"], tmdbRating=7.0, tmdbVotes=1),
         _item(5, rating=7, year=2004, type="film", kpRating=6.0, tmdbRating=8.0),
+        _item(6, rating=8, year=2004, type="film", tmdbRating=7.0, tmdbVotes=50),
     ]
-    profile = taste.build_profile(items, {k: _rec(["t"]) for k in range(1, 6)})
+    profile = taste.build_profile(items, {k: _rec(["t"]) for k in range(1, 7)})
     facts = profile["facts"]
-    assert {r["decade"]: r["n"] for r in facts["decades"]} == {"1990-е": 2, "2000-е": 3}
+    assert {r["decade"]: r["n"] for r in facts["decades"]} == {"1990-е": 2, "2000-е": 4}
     assert facts["directors"][0]["director"] == "Иванов" and facts["directors"][0]["avg_rating"] == 7.67
     # Петров: 1 фильм — в списке режиссёров отсутствует
     assert all(r["director"] != "Петров" for r in facts["directors"])
-    # КП-рейтинг при отсутствии TMDB; при обеих оценках — среднее
+    # Запись 4 с tmdbVotes=1 отфильтрована как шум; запись 6 (tmdbVotes=50) попадает в consensus_delta
+    # Приоритет в underrated у более высокой личной оценки (10 перед 8 и 7)
     assert facts["consensus_delta"]["underrated"][0]["delta"] == 3.0    # 10 − 7
     assert facts["consensus_delta"]["overrated"][0]["delta"] == -4.5    # 4 − 8.5
-    tmdb_row = next(r for r in facts["consensus_delta"]["underrated"] if r["consensus_source"] == "tmdb")
-    assert tmdb_row["delta"] == 1.0 and tmdb_row["consensus_rating"] == 7.0   # 8 − 7 (TMDB)
+    tmdb_rows = [r for r in facts["consensus_delta"]["underrated"] if r["consensus_source"] == "tmdb"]
+    assert len(tmdb_rows) == 1 and tmdb_rows[0]["delta"] == 1.0 and tmdb_rows[0]["consensus_rating"] == 7.0
     both_row = next(r for r in facts["consensus_delta"]["underrated"] if r["consensus_source"] == "both")
     assert both_row["consensus_rating"] == 7.0 and both_row["delta"] == 0.0   # 7 − (6+8)/2
-    assert facts["format"]["films"]["n"] == 4 and facts["format"]["series"]["n"] == 1
+    assert facts["format"]["films"]["n"] == 5 and facts["format"]["series"]["n"] == 1
     buckets = {r["bucket"]: r["n"] for r in facts["format"]["length"]}
     assert buckets == {"<100": 1, "100-140": 1, ">140": 1}
-    # Квартили голосов: отсортированы по возрастанию, по записи в каждом
-    assert [r["votes_range"] for r in facts["votes"]] == ["1–1", "10–10", "100–100", "1000–1000"]
-    assert sum(r["n"] for r in facts["votes"]) == 4
+    # Квартили голосов: отсортированы по возрастанию, все 5 записей с tmdbVotes
+    assert len(facts["votes"]) == 4 and sum(r["n"] for r in facts["votes"]) == 5
 
 
 def test_markdown_self_contained():
@@ -129,6 +130,7 @@ def test_markdown_self_contained():
     assert "нет пар с достаточной поддержкой" in md
     assert "### Десятилетия выпуска" in md
     assert "Недооценённые рынком" in md
+    assert "Мейнстримность" not in md
 
 
 def test_markdown_tag_table_row():
@@ -138,3 +140,65 @@ def test_markdown_tag_table_row():
     md = markdown.taste_profile_markdown(taste.build_profile(items, cache))
     # tense: 8–10 (13/14), 9–10 (13/14), 1–5 (1/14), lift = 0.93/0.75
     assert "| tense | 12 | 93% | 93% | 7% | 1.24 |" in md
+    assert "Покрытие частичное" not in md
+    assert "### Якоря по корзинам оценок" in md
+
+
+def test_niche_by_lift_and_neutral_contrast_examples():
+    # Строгий зритель: база 5/20 = 25%, но ниша "niche" имеет 4/6 (Lift > 2)
+    items = [_item(k, title=f"N{k}", rating=9 if k <= 4 else 5) for k in range(1, 7)]
+    items += [_item(k, title=f"M{k}", rating=9 if k == 7 else 6) for k in range(7, 21)]
+    cache = {k: _rec(["niche"] if k <= 6 else ["mid"]) for k in range(1, 21)}
+    # mid: (1+1)/(14+2) = 0.125; добавим тег "mix" с 1/6 (approval 0.25, Lift = 1.0)
+    for k in (1, 8, 9, 10, 11, 12):
+        cache[k]["tags"].append("mix")
+    profile = taste.build_profile(items, cache)
+    assert [r["tag"] for r in profile["niche_tags"]] == ["niche"]
+    mix_row = next(r for r in profile["tag_stats"] if r["tag"] == "mix")
+    assert mix_row["examples"] == ["N1 (Orig, 2000) [9]", "M10 (Orig, 2000) [6]"]
+
+
+def test_tag_roles_rescue_and_anchor_diversity():
+    items, cache = [], {}
+    # 20 фильмов с core (9-10) и 20 проходных/провальных для реалистичной базы
+    for k in range(1, 21):
+        items.append(_item(k, f"Core{k}", rating=9))
+        cache[k] = _rec(["core_tag"])
+    for k in range(21, 31):
+        items.append(_item(k, f"Fail{k}", rating=3))
+        cache[k] = _rec(["bad_tag"])
+    for k in range(31, 41):
+        items.append(_item(k, f"Ceil{k}", rating=7))
+        cache[k] = _rec(["ceil_tag"])
+    # Конфликтная пара bad_tag + mid (8 провалов на 6) и спасающая mid + core_tag (8 успехов на 9)
+    for k in range(41, 49):
+        items.append(_item(k, f"Conf{k}", rating=6))
+        cache[k] = _rec(["bad_tag", "mid"])
+    for k in range(49, 57):
+        items.append(_item(k, f"Resc{k}", rating=9))
+        cache[k] = _rec(["mid", "core_tag"])
+    # Два разножанровых фильма в корзине 8 с разными тегами: оба должны попасть в якоря раньше дублей
+    for k in range(57, 63):
+        items.append(_item(k, f"G_A{k}", rating=8, genres=["Драма"]))
+        cache[k] = _rec(["core_tag"])
+    items.append(_item(63, "G_SciFi", rating=8, genres=["Фантастика"]))
+    cache[63] = _rec(["alt_tag"])
+    for k in range(64, 68):
+        items.append(_item(k, f"AltHit{k}", rating=9, genres=["Фантастика"]))
+        cache[k] = _rec(["alt_tag"])
+
+    profile = taste.build_profile(items, cache)
+    roles = {k: {r["tag"] for r in v} for k, v in profile["tag_roles"].items()}
+    assert "core_tag" in roles["core"]
+    assert "bad_tag" in roles["red_flags"]
+    assert "ceil_tag" in roles["ceilings"] and "ceil_tag" not in roles["red_flags"]
+    assert "alt_tag" in roles["growth"]
+
+    worst = profile["pairs"]["worst"]
+    assert worst and worst[0].get("rescue")
+    assert worst[0]["rescue"]["tags"] == ["core_tag", "mid"]
+
+    anchors_8 = profile["bucket_anchors"]["good"]
+    assert "G_SciFi (Orig, 2000) [8]" in anchors_8
+    md = markdown.taste_profile_markdown(profile)
+    assert "## Роли тегов" in md and "→ смягчается при" in md

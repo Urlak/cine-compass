@@ -20,9 +20,9 @@ cine-compass: личная кинобиблиотека из экспорта К
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
-pytest                                             # 36 тестов (таксономия, семантика, профиль, библиотека, промпты), без сети
+pytest                                             # 47 тестов (таксономия, семантика, профиль, библиотека, обогащение, промпты), без сети
 .\.venv\Scripts\python.exe main.py [--user NAME] import <путь к library_export.json>
-.\.venv\Scripts\python.exe main.py [--user NAME] enrich [--limit N]   # возобновляемо, кэш в data/caches/enrich_cache.json
+.\.venv\Scripts\python.exe main.py [--user NAME] enrich [--limit N] [--kp]   # возобновляемо, кэш в data/caches/enrich_cache.json; --kp дотягивает kpRating
 .\.venv\Scripts\python.exe main.py [--user NAME] build
 .\.venv\Scripts\python.exe main.py [--user NAME] semantic [--limit N] # пакетная классификация тегами → data/caches/semantic_cache.json
 .\.venv\Scripts\python.exe main.py [--user NAME] taste                # Taste Profile → data/users/<NAME>/taste_profile.json/.md

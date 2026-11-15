@@ -15,10 +15,15 @@ from cinecompass import config, semantic, taxonomy
 BUCKETS = {"great": "9–10", "good": "8", "neutral": "6–7", "bad": "1–5"}
 HIGH_RATING_MIN = 8      # используется library.mode_candidates: нижняя граница «любимого»
 SUPPORT_MIN = 10         # минимальная поддержка тега в основной таблице
-NICHE_MAX_N = 30         # ниша: тег реже этого количества
-NICHE_MIN_APPROVAL = 0.9 # ниша: сырая доля 8–10 не ниже
+CORE_MIN_N = 20          # минимальная поддержка для Core Drivers
+NICHE_MAX_N = 40         # ниша: тег реже этого количества
+NICHE_MIN_APPROVAL = 0.85 # ниша: сырая доля 8–10 (для высоких баз)
+NICHE_MIN_LIFT = 1.2     # Lift 8–10 ≥ 1.2 относительно базы зрителя
+NICHE_MIN_LIFT_9_10 = 1.5 # или высокая конверсия в 9–10 (например, slow-reveal)
 NICHE_MIN_N = 5
 PAIR_MIN_N = 8           # минимальная совместная частота пары тегов
+PAIR_RESCUE_DELTA = 0.25 # минимальный прирост одобрения для «спасающей» пары
+CONSENSUS_MIN_VOTES = 50 # порог голосов TMDB для расчёта консенсуса без КП
 SMOOTHING = 1            # сглаживание Лапласа: +1 успех, +2 наблюдения
 
 
@@ -39,14 +44,19 @@ def film_label(item: dict) -> str:
     return f"{name} [{rating}]" if rating is not None else name
 
 
-def _examples(tag: str, rows: list, descending: bool, k: int = 3) -> list[str]:
-    """Примеры фильмов с тегом: по убыванию оценки для «любимого», по возрастанию для «провального»."""
+def _examples(tag: str, rows: list, lift: float, k: int = 3) -> list[str]:
+    """Примеры фильмов с тегом: по убыванию для высокого Lift, по возрастанию для низкого,
+    и контрастная пара (лучший + худший) для пограничной зоны 0.9 < Lift < 1.1."""
     films = [(item, item.get("userRating")) for item, rec in rows if tag in rec["tags"]]
-    if descending:
-        films.sort(key=lambda x: (-x[1], x[0]["title"]))
-    else:
-        films.sort(key=lambda x: (x[1], x[0]["title"]))
-    return [film_label(item) for item, _ in films[:k]]
+    if not films:
+        return []
+    asc = sorted(films, key=lambda x: (x[1], x[0]["title"]))
+    desc = sorted(films, key=lambda x: (-x[1], x[0]["title"]))
+    if 0.9 < lift < 1.1 and len(films) >= 2:
+        best, worst = desc[0][0], asc[0][0]
+        return [film_label(best)] if best is worst else [film_label(best), film_label(worst)]
+    chosen = desc if lift >= 1.1 else asc
+    return [film_label(item) for item, _ in chosen[:k]]
 
 
 def build_profile(items: list[dict], cache: dict[int, dict]) -> dict:
@@ -68,7 +78,9 @@ def build_profile(items: list[dict], cache: dict[int, dict]) -> dict:
         "bad": [(i, r) for i, r in rated if 1 <= rating(i) <= 5],
     }
 
-    status_counts = Counter(rec["status"] for rec in cache.values())
+    status_counts = Counter(
+        rec["status"] for item in items if (rec := cache.get(item["kinopoiskId"]))
+    )
     coverage = {
         "library_total": len(items),
         "cache_records": len(cache),
@@ -105,18 +117,22 @@ def build_profile(items: list[dict], cache: dict[int, dict]) -> dict:
             appr = _rate(hits[name].get(tag, 0), n)
             row[f"approval_{name}"] = round(appr, 3)
             row[f"lift_{name}"] = round(appr / baseline[name], 2) if baseline.get(name) else 0
-        row["examples"] = _examples(tag, rated, row["approval_8_10"] >= baseline.get("8_10", 0))
+        row["examples"] = _examples(tag, rated, row["lift_8_10"])
         tag_stats.append(row)
     tag_stats.sort(key=lambda r: (-r["lift_8_10"], -r["n"]))
 
-    # Ниши: высокая сырая доля одобрения при малой выборке (сглаживание тут занижает).
+    # Ниши: высокий Lift относительно базы (или конверсия в 9–10) при малой выборке.
     niche = [
         {**r, "approval_8_10_raw": round(hits["8_10"].get(r["tag"], 0) / r["n"], 2)}
         for r in tag_stats
         if NICHE_MIN_N <= r["n"] < NICHE_MAX_N
-        and hits["8_10"].get(r["tag"], 0) / r["n"] >= NICHE_MIN_APPROVAL
+        and (
+            r["lift_8_10"] >= NICHE_MIN_LIFT
+            or r["lift_9_10"] >= NICHE_MIN_LIFT_9_10
+            or hits["8_10"].get(r["tag"], 0) / r["n"] >= NICHE_MIN_APPROVAL
+        )
     ]
-    niche.sort(key=lambda r: (-r["approval_8_10_raw"], -r["n"]))
+    niche.sort(key=lambda r: (-r["lift_8_10"], -r["n"]))
 
     # Пары тегов: совместная частота и approval 8–10.
     pair_total: Counter = Counter()
@@ -134,24 +150,6 @@ def build_profile(items: list[dict], cache: dict[int, dict]) -> dict:
             elif r <= 5:
                 pair_bad[pair] += 1
 
-    def _pair_rows(order: str, k: int = 10) -> list[dict]:
-        rows = []
-        for (a, b), n in pair_total.items():
-            if n < PAIR_MIN_N:
-                continue
-            appr = _rate(pair_ok[(a, b)], n)
-            rows.append({
-                "tags": [a, b], "n": n,
-                "approval_8_10": round(appr, 3),
-                "lift_8_10": round(appr / baseline["8_10"], 2) if baseline.get("8_10") else 0,
-                "examples": _examples_pair(a, b, rated, appr >= baseline.get("8_10", 0)),
-            })
-        if order == "best":
-            rows.sort(key=lambda r: (-r["approval_8_10"], -r["n"]))
-        else:
-            rows.sort(key=lambda r: (r["approval_8_10"], -r["n"]))
-        return rows[:k]
-
     def _examples_pair(a: str, b: str, rows: list, descending: bool, k: int = 3) -> list[str]:
         films = [(item, item.get("userRating")) for item, rec in rows
                  if a in rec["tags"] and b in rec["tags"]]
@@ -161,22 +159,153 @@ def build_profile(items: list[dict], cache: dict[int, dict]) -> dict:
             films.sort(key=lambda x: (x[1], x[0]["title"]))
         return [film_label(item) for item, _ in films[:k]]
 
+    base_8_10 = baseline.get("8_10", 0)
+    all_pairs = []
+    for (a, b), n in pair_total.items():
+        if n < PAIR_MIN_N:
+            continue
+        appr = _rate(pair_ok[(a, b)], n)
+        all_pairs.append({
+            "tags": [a, b], "n": n,
+            "approval_8_10": round(appr, 3),
+            "lift_8_10": round(appr / base_8_10, 2) if base_8_10 else 0,
+            "examples": _examples_pair(a, b, rated, appr >= base_8_10),
+        })
+
+    pairs_best = sorted(
+        (r for r in all_pairs if r["approval_8_10"] > base_8_10),
+        key=lambda r: (-r["approval_8_10"], -r["n"]),
+    )[:10]
+    best_tags = {tuple(b["tags"]) for b in pairs_best}
+    pairs_worst = [
+        dict(r) for r in sorted(
+            (r for r in all_pairs if r["approval_8_10"] < base_8_10),
+            key=lambda r: (r["approval_8_10"], -r["n"]),
+        )[:10]
+        if tuple(r["tags"]) not in best_tags
+    ]
+    for row in pairs_worst:
+        pair_set = set(row["tags"])
+        candidates = [
+            p for p in all_pairs
+            if (pair_set & set(p["tags"])) and tuple(p["tags"]) != tuple(row["tags"])
+            and p["approval_8_10"] >= max(base_8_10, 0.50)
+            and p["approval_8_10"] - row["approval_8_10"] >= PAIR_RESCUE_DELTA
+        ]
+        if candidates:
+            top = max(candidates, key=lambda p: (p["approval_8_10"], p["n"]))
+            row["rescue"] = {
+                "tags": top["tags"], "n": top["n"],
+                "approval_8_10": top["approval_8_10"], "examples": top["examples"],
+            }
+
     facts = _facts(items)
-    pairs_best = _pair_rows("best")
-    pairs_worst = [r for r in _pair_rows("worst") if r["tags"] not in [b["tags"] for b in pairs_best]]
+    lift_8 = {r["tag"]: r["lift_8_10"] for r in tag_stats}
+    lift_9 = {r["tag"]: r["lift_9_10"] for r in tag_stats}
+    lift_1 = {r["tag"]: r["lift_1_5"] for r in tag_stats}
+    bucket_anchors = {
+        name: _diverse_anchors(rows, name, lift_8, lift_9, lift_1)
+        for name, rows in buckets.items()
+    }
+    tag_roles = _classify_tag_roles(tag_stats, hits["1_5"], baseline, niche)
     return {
         "generated": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "taxonomy_version": tax["version"],
         "prompt_version": semantic.PROMPT_VERSION,
         "buckets": BUCKETS,
         "buckets_counts": buckets_counts,
+        "bucket_anchors": bucket_anchors,
         "coverage": coverage,
         "baseline": {name: round(share, 3) for name, share in baseline.items()},
         "tag_stats": tag_stats,
         "niche_tags": niche,
+        "tag_roles": tag_roles,
         "pairs": {"best": pairs_best, "worst": pairs_worst},
         "facts": facts,
     }
+
+
+def _diverse_anchors(rows: list, bucket: str, lift_8: dict, lift_9: dict,
+                     lift_1: dict, k: int = 5) -> list[str]:
+    """Жадный отбор якорей корзины со штрафом за повтор тегов и жанров."""
+    def _weight(t: str) -> float:
+        l8, l9, l1 = lift_8.get(t, 1.0), lift_9.get(t, 1.0), lift_1.get(t, 1.0)
+        if bucket == "great":
+            return l9 - 1.0
+        if bucket == "good":
+            return (l8 - 1.0) - 0.5 * max(0.0, l1 - 1.2)
+        if bucket == "neutral":
+            return (1.0 - l8) - max(0.0, l1 - 1.3)
+        return (l1 - 1.0) + 0.5 * max(0.0, 1.0 - l8)
+
+    remaining = list(rows)
+    seen_tags: Counter = Counter()
+    seen_genres: Counter = Counter()
+    picked = []
+    while remaining and len(picked) < k:
+        best_idx = max(
+            range(len(remaining)),
+            key=lambda idx: (
+                sum(w / (1 + seen_tags[t]) if (w := _weight(t)) > 0 else w
+                    for t in remaining[idx][1]["tags"])
+                - 0.2 * sum(seen_genres[g] for g in remaining[idx][0].get("genres", [])),
+                len(remaining[idx][1]["tags"]),
+                # Детерминированный обратный порядок по названию при прочих равных.
+                tuple(-ord(c) for c in remaining[idx][0]["title"]),
+            ),
+        )
+        item, rec = remaining.pop(best_idx)
+        picked.append(film_label(item))
+        seen_tags.update(rec["tags"])
+        seen_genres.update(item.get("genres", []))
+    return picked
+
+
+def _classify_tag_roles(tag_stats: list[dict], bad_hits: Counter,
+                        baseline: dict, niche: list[dict]) -> dict:
+    """Разделяет теги на 4 роли: Core, Exploration/Growth, Потолки (6–7) и Красные флаги (1–5)."""
+    base_1_5 = baseline.get("1_5", 0)
+    red_flags = [
+        r for r in tag_stats
+        if r["n"] >= SUPPORT_MIN and bad_hits.get(r["tag"], 0) >= 2
+        and (
+            (r["lift_8_10"] < 0.90 and r["approval_1_5"] >= base_1_5 + 0.04)
+            or (r["lift_8_10"] < 1.0 and r["approval_1_5"] >= base_1_5 + 0.08)
+        )
+    ]
+    red_flags.sort(key=lambda r: (-r["lift_1_5"], r["lift_8_10"], -r["n"]))
+    red_set = {r["tag"] for r in red_flags}
+
+    ceilings = [
+        r for r in tag_stats
+        if r["n"] >= SUPPORT_MIN and r["tag"] not in red_set
+        and (r["lift_8_10"] <= 0.85 or (r["lift_9_10"] <= 0.55 and r["lift_8_10"] < 1.05))
+    ]
+    ceilings.sort(key=lambda r: (r["lift_8_10"], r["lift_9_10"], -r["n"]))
+    ceil_set = {r["tag"] for r in ceilings}
+
+    core = [
+        r for r in tag_stats
+        if r["n"] >= CORE_MIN_N and r["tag"] not in red_set and r["tag"] not in ceil_set
+        and r["lift_8_10"] >= 1.15
+        and (r["lift_9_10"] >= 1.15 or r["lift_8_10"] >= 1.30)
+        and r["approval_1_5"] <= base_1_5 + 0.06
+    ]
+    core.sort(key=lambda r: (-r["lift_8_10"], -r["lift_9_10"], -r["n"]))
+    core_set = {r["tag"] for r in core}
+
+    niche_set = {r["tag"] for r in niche}
+    growth = [
+        r for r in tag_stats
+        if r["n"] >= NICHE_MIN_N and r["tag"] not in core_set
+        and r["tag"] not in red_set and r["tag"] not in ceil_set
+        and (
+            r["tag"] in niche_set
+            or (r["lift_9_10"] >= NICHE_MIN_LIFT_9_10 and r["approval_1_5"] <= base_1_5 + 0.06)
+        )
+    ]
+    growth.sort(key=lambda r: (-r["lift_9_10"], -r["lift_8_10"], -r["n"]))
+    return {"core": core, "growth": growth, "ceilings": ceilings, "red_flags": red_flags}
 
 
 def _facts(items: list[dict]) -> dict:
@@ -208,7 +337,8 @@ def _facts(items: list[dict]) -> dict:
 
     deltas = []
     for i in rated:
-        kp, tm = i.get("kpRating"), i.get("tmdbRating")
+        kp = i.get("kpRating")
+        tm = i.get("tmdbRating") if (i.get("tmdbVotes") is None or i.get("tmdbVotes", 0) >= CONSENSUS_MIN_VOTES) else None
         consensus = (kp + tm) / 2 if kp and tm else (kp or tm)
         if not consensus:
             continue
@@ -219,7 +349,7 @@ def _facts(items: list[dict]) -> dict:
             "consensus_source": source,
             "delta": round(i["userRating"] - consensus, 1),
         })
-    underrated = sorted(deltas, key=lambda r: -r["delta"])[:10]
+    underrated = sorted(deltas, key=lambda r: (-r["user_rating"], -r["delta"]))[:10]
     overrated = sorted(deltas, key=lambda r: r["delta"])[:10]
 
     def _bucket(rows: list) -> dict:

@@ -11,6 +11,9 @@ def test_profile_prompt_embeds_taste_profile_and_schema():
         assert section in p
     assert "1200–1600 токенов" in p
     assert "фильма-якоря" in p
+    assert "формат (фильмы vs сериалы)" in p
+    assert "Роли тегов" in p or "Ядро вкуса (Core)" in p
+    assert "смягчается при" in p
 
 
 def test_profile_prompt_negative_constraints():

@@ -29,8 +29,8 @@ Copy-Item .env.template .env   # и заполнить ключи
 
 ```powershell
 python main.py import "C:\Users\roman\Downloads\Temp\library_export_1794175310215.json"
-python main.py enrich            # дотянуть жанр/режиссёра/рейтинг (возобновляемо, кэш в data/caches/enrich_cache.json;
-                                 # нет ключа или сети — работа продолжается на одном кэше)
+python main.py enrich            # дотянуть жанр/режиссёра/рейтинг (TMDB без квоты + фолбэк kinopoisk.dev)
+python main.py enrich --kp       # дотянуть kpRating через kinopoisk.dev для записей без него (до 200/сутки)
 python main.py build             # маркдаун-каталог data/users/me/catalog.md
 
 # семантический слой (цикл после каждого enrich — fingerprint пересчитает изменившиеся записи)
@@ -39,7 +39,7 @@ python main.py taste             # Taste Profile из тегов и оценок
 
 # LLM-операции (получают компактные программные контексты, не всю библиотеку)
 python main.py stats             # статистика просмотров → data/users/me/stats.md
-python main.py profile           # портрет зрителя по Taste Profile → data/users/me/profile.md
+python main.py profile           # портрет зрителя по Taste Profile → data/users/me/profile.md (с бэкапом предыдущего в profile_<mtime>.md)
 python main.py predict Сталкер   # прогноз личной оценки + почему (без спойлеров) → data/users/me/prediction.md
 
 python main.py recommend --mode old      # любимое из старого
@@ -62,14 +62,16 @@ python main.py --user friend taste && python main.py --user friend profile
 
 ## Как это работает
 
-1. **Factual слой** (kinopoisk.dev): жанры, режиссёры, страны, описания — `enrich`, кэш возобновляемый.
+1. **Factual слой** (TMDB основной + kinopoisk.dev фолбэк и `--kp` для добора `kpRating`): жанры, режиссёры, страны, рейтинги, голоса, описания — `enrich`, кэш возобновляемый.
 2. **Семантический слой** (Gemini): каждый фильм классифицируется английскими тегами из
    `taxonomy.json` (66 тегов: жанровые подвиды, mood, atmosphere, themes, narrative, pacing,
    setting, style). Статусы: `complete`/`partial`/`insufficient_data`; bare-записи
    (только название/год/тип) помечаются без LLM. Fingerprint всех входов гарантирует,
    что повторный `semantic` обрабатывает только изменившиеся записи.
-3. **Taste Profile**: частоты тегов по четырём срезам (библиотека / оценённые / 8–10 / 1–5),
-   связь тегов с оценками через разницу долей — без LLM и весов. `taste_profile.md`
+3. **Taste Profile**: Approval Rate (со сглаживанием Лапласа) и Lift по 4 корзинам оценок (`9–10`, `8`, `6–7`, `1–5`),
+   программная классификация ролей тегов (Core / Exploration / Потолки 6–7 / Красные флаги 1–5), контрастные
+   пары с условиями смягчения конфликтов, диверсифицированные якоря корзин и фактологические срезы
+   (десятилетия, режиссёры, формат/хронометраж, консенсус КП/TMDB) — без LLM. `taste_profile.md`
    самодостаточен и пригоден для передачи другой LLM.
 4. **LLM-операции на компактных контекстах** (замеры 2026-11-11, ~47 % покрытия тегами):
 
