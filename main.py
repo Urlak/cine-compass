@@ -50,7 +50,7 @@ def _print_clean_stats(items: list[dict]) -> None:
 
 
 def cmd_enrich(args) -> None:
-    stats = enrich.enrich_library(limit=args.limit)
+    stats = enrich.enrich_library(limit=args.limit, kp=args.kp)
     print(f"Обогащение завершено. Загружено: {stats['fetched']}, ошибок: {stats['failed']}")
     if stats["quota_exceeded"]:
         print("Суточный лимит kinopoisk.dev исчерпан — запустите ещё раз завтра.")
@@ -187,8 +187,9 @@ def main(argv: list[str] | None = None) -> None:
 
     sub.add_parser("clean", help="перечистить data/users/<user>/raw/library_export.json").set_defaults(func=cmd_clean)
 
-    p = sub.add_parser("enrich", help="дотянуть жанры/режиссёра/рейтинг через kinopoisk.dev")
+    p = sub.add_parser("enrich", help="дотянуть жанры/режиссёра/рейтинг (TMDB, фолбэк kinopoisk.dev)")
     p.add_argument("--limit", type=int, default=None, help="сколько записей обработать за запуск")
+    p.add_argument("--kp", action="store_true", help="дотянуть kpRating через kinopoisk.dev для записей без него")
     p.set_defaults(func=cmd_enrich)
 
     sub.add_parser("build", help="собрать маркдаун-каталог data/users/<user>/catalog.md").set_defaults(func=cmd_build)

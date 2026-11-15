@@ -51,46 +51,60 @@ def _extract(data: dict) -> dict:
     }
 
 
-def enrich_library(limit: int | None = None) -> dict:
+def _merge_cache(existing: dict | None, incoming: dict) -> dict:
+    """Объединяет кэш с новыми данными без потери рейтингов, жанров и заполненных полей."""
+    if not existing:
+        return incoming
+    merged = dict(existing)
+    for key, val in incoming.items():
+        if key == "genres":
+            merged["genres"] = list(dict.fromkeys(existing.get("genres", []) + val))
+        elif val not in (None, "", []) and merged.get(key) in (None, "", []):
+            merged[key] = val
+    return merged
+
+
+def enrich_library(limit: int | None = None, kp: bool = False) -> dict:
     """Дозаполняет library.json данными API. Возвращает сводку по количеству.
 
     Основной источник — TMDB (tmdbId уже есть в экспорте, суточной квоты нет);
-    kinopoisk.dev остаётся фолбэком для записей без tmdbId или при промахе TMDB.
-    Записи, у которых в кэше нет tmdbRating (обогащённые раньше появления
-    TMDB-рейтинга), до-обходятся: кэш мержится — данные kinopoisk.dev
-    (КП/IMDb) не затираются, жанры объединяются.
+    kinopoisk.dev остаётся фолбэком для записей без tmdbId или при промахе TMDB,
+    а с флагом kp=True также дотягивает kpRating для записей, где его ещё нет.
     """
     if config.ENRICH_INTERVAL < 0:
         raise SystemExit("ENRICH_INTERVAL должен быть числом >= 0 (см. .env)")
+    if kp and not config.KINOPOISK_API_KEY:
+        raise SystemExit("KINOPOISK_API_KEY не задан (см. .env.template)")
     items = library.load_library()
     cache = _load_cache()
-    todo = [
-        it for it in items
-        if (library.missing_enrichment(it) and str(it["kinopoiskId"]) not in cache)
-        or (it.get("tmdbId") and "tmdbRating" not in cache.get(str(it["kinopoiskId"]), {}))
-    ]
+    todo = []
+    for it in items:
+        cached = cache.get(str(it["kinopoiskId"]), {})
+        need_tmdb = (library.missing_enrichment(it) and str(it["kinopoiskId"]) not in cache) or (
+            bool(it.get("tmdbId")) and "tmdbRating" not in cached
+        )
+        need_kp = kp and cached.get("kpRating") is None
+        if need_tmdb or need_kp:
+            todo.append((it, need_tmdb, need_kp))
     if limit:
         todo = todo[:limit]
     session = requests.Session()
     headers = {"X-API-KEY": config.KINOPOISK_API_KEY}
     fetched, failed = 0, 0
     quota_exceeded = False
-    for i, item in enumerate(todo, 1):
+    for i, (item, need_tmdb, need_kp) in enumerate(todo, 1):
         kp_id = item["kinopoiskId"]
-        detail = tmdb.detail(item)
+        kid_str = str(kp_id)
+        item_fetched = False
+        detail = tmdb.detail(item) if need_tmdb else None
         if detail is not None:
-            cached = cache.get(str(kp_id))
-            if cached:
-                cached["tmdbRating"] = detail["tmdbRating"]
-                cached["tmdbVotes"] = detail["tmdbVotes"]
-                cached["genres"] += [g for g in detail["genres"] if g not in cached["genres"]]
-                detail = cached
-            cache[str(kp_id)] = detail
-            item.update(detail)
-            fetched += 1
+            merged = _merge_cache(cache.get(kid_str), detail)
+            cache[kid_str] = merged
+            item.update(merged)
+            item_fetched = True
             print(f"TMDB [{i}/{len(todo)}] {kp_id} {item['title']}")
-        else:
-            if detail is None and not config.KINOPOISK_API_KEY:
+        if (need_tmdb and detail is None) or (need_kp and cache.get(kid_str, {}).get("kpRating") is None):
+            if not config.KINOPOISK_API_KEY:
                 print(f"[WARN] {kp_id} {item['title']}: нет ни карточки TMDB, ни KINOPOISK_API_KEY")
                 failed += 1
                 continue
@@ -106,10 +120,11 @@ def enrich_library(limit: int | None = None) -> dict:
                     print(f"Лимит API исчерпан на {i}-й записи из {len(todo)}. Прогресс сохранён.")
                     break
                 resp.raise_for_status()
-                detail = _extract(resp.json())
-                cache[str(kp_id)] = detail
-                item.update(detail)
-                fetched += 1
+                merged = _merge_cache(cache.get(kid_str), _extract(resp.json()))
+                cache[kid_str] = merged
+                item.update(merged)
+                item_fetched = True
+                print(f"КП [{i}/{len(todo)}] {kp_id} {item['title']}")
             except requests.ConnectionError as exc:
                 # Сеть недоступна целиком — бессмысленно перебирать остальные записи
                 failed += 1
@@ -121,6 +136,8 @@ def enrich_library(limit: int | None = None) -> dict:
                 failed += 1
                 print(f"[WARN] {kp_id} {item['title']}: {exc}")
             time.sleep(config.ENRICH_INTERVAL)
+        if item_fetched:
+            fetched += 1
         if i % 25 == 0:
             _save_cache(cache)
             _apply_cache(items, cache)
@@ -135,5 +152,14 @@ def enrich_library(limit: int | None = None) -> dict:
 def _apply_cache(items: list[dict], cache: dict) -> None:
     for item in items:
         cached = cache.get(str(item["kinopoiskId"]))
-        if cached and library.missing_enrichment(item):
+        if not cached:
+            continue
+        if library.missing_enrichment(item):
             item.update(cached)
+            continue
+        if item.get("tmdbRating") is None and "tmdbRating" in cached:
+            item["tmdbRating"] = cached["tmdbRating"]
+            item["tmdbVotes"] = cached["tmdbVotes"]
+        if item.get("kpRating") is None and cached.get("kpRating") is not None:
+            item["kpRating"] = cached["kpRating"]
+            item["imdbRating"] = cached.get("imdbRating")

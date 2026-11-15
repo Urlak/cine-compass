@@ -94,19 +94,22 @@ def test_facts_aggregates():
         _item(2, rating=9, year=1994, type="film", directors=["Иванов"], kpRating=8.0, movieLength=120, tmdbVotes=100),
         _item(3, rating=4, year=2004, type="film", directors=["Иванов"], kpRating=8.5, movieLength=160, tmdbVotes=10),
         _item(4, rating=8, year=2004, type="series", directors=["Петров"], tmdbRating=7.0, tmdbVotes=1),
+        _item(5, rating=7, year=2004, type="film", kpRating=6.0, tmdbRating=8.0),
     ]
-    profile = taste.build_profile(items, {k: _rec(["t"]) for k in range(1, 5)})
+    profile = taste.build_profile(items, {k: _rec(["t"]) for k in range(1, 6)})
     facts = profile["facts"]
-    assert {r["decade"]: r["n"] for r in facts["decades"]} == {"1990-е": 2, "2000-е": 2}
+    assert {r["decade"]: r["n"] for r in facts["decades"]} == {"1990-е": 2, "2000-е": 3}
     assert facts["directors"][0]["director"] == "Иванов" and facts["directors"][0]["avg_rating"] == 7.67
     # Петров: 1 фильм — в списке режиссёров отсутствует
     assert all(r["director"] != "Петров" for r in facts["directors"])
-    # КП-рейтинг имеет приоритет; у записи без КП берётся TMDB
+    # КП-рейтинг при отсутствии TMDB; при обеих оценках — среднее
     assert facts["consensus_delta"]["underrated"][0]["delta"] == 3.0    # 10 − 7
     assert facts["consensus_delta"]["overrated"][0]["delta"] == -4.5    # 4 − 8.5
     tmdb_row = next(r for r in facts["consensus_delta"]["underrated"] if r["consensus_source"] == "tmdb")
     assert tmdb_row["delta"] == 1.0 and tmdb_row["consensus_rating"] == 7.0   # 8 − 7 (TMDB)
-    assert facts["format"]["films"]["n"] == 3 and facts["format"]["series"]["n"] == 1
+    both_row = next(r for r in facts["consensus_delta"]["underrated"] if r["consensus_source"] == "both")
+    assert both_row["consensus_rating"] == 7.0 and both_row["delta"] == 0.0   # 7 − (6+8)/2
+    assert facts["format"]["films"]["n"] == 4 and facts["format"]["series"]["n"] == 1
     buckets = {r["bucket"]: r["n"] for r in facts["format"]["length"]}
     assert buckets == {"<100": 1, "100-140": 1, ">140": 1}
     # Квартили голосов: отсортированы по возрастанию, по записи в каждом

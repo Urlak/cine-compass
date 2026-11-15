@@ -208,13 +208,15 @@ def _facts(items: list[dict]) -> dict:
 
     deltas = []
     for i in rated:
-        consensus = i.get("kpRating") or i.get("tmdbRating")
+        kp, tm = i.get("kpRating"), i.get("tmdbRating")
+        consensus = (kp + tm) / 2 if kp and tm else (kp or tm)
         if not consensus:
             continue
+        source = "kp" if kp and not tm else "tmdb" if tm and not kp else "both"
         deltas.append({
             "title": film_label(i), "user_rating": i["userRating"],
             "consensus_rating": round(consensus, 1),
-            "consensus_source": "kp" if i.get("kpRating") else "tmdb",
+            "consensus_source": source,
             "delta": round(i["userRating"] - consensus, 1),
         })
     underrated = sorted(deltas, key=lambda r: -r["delta"])[:10]

@@ -1,4 +1,5 @@
 """Генерация маркдаун-каталога библиотеки + локальная статистика."""
+import math
 from collections import Counter
 from pathlib import Path
 
@@ -28,18 +29,23 @@ def item_row(item: dict) -> str:
     rating = str(item["userRating"]) if item.get("userRating") is not None else "—"
     genres = _esc(", ".join(item.get("genres", []))) or "—"
     kp = f"{item['kpRating']:.1f}" if item.get("kpRating") else "—"
+    tmdb = f"{item['tmdbRating']:.1f}" if item.get("tmdbRating") else "—"
+    votes = item.get("tmdbVotes")
+    # Популярность 1–10 из числа голосов TMDB: ~2 голоса → 1, ~10 → 2, ~100 → 4,
+    # ~1 000 → 6, ~10 000 → 8, ~100 000 и больше → 10.
+    pop = str(min(10, max(1, round(math.log10(votes + 1) * 2)))) if votes else "—"
     directors = _esc(", ".join(item.get("directors", []))) or "—"
     dur = library.duration(item) or "—"
     watched = item["watchedDate"]
     url = item.get("kinopoiskUrl", "")
     name = f"[{title}]({url})" if url else title
     orig_cell = f" *({orig})*" if orig else ""
-    return f"| {name}{orig_cell} | {year} | {label} | {genres} | {directors} | {rating} | {kp} | {dur} | {watched} |"
+    return f"| {name}{orig_cell} | {year} | {label} | {genres} | {directors} | {rating} | {kp} | {tmdb} | {pop} | {dur} | {watched} |"
 
 
 _HEADER = (
-    "| Название | Год | Тип | Жанры | Режиссёр | Моя оценка | Рейтинг КП | Длительность | Просмотрено |\n"
-    "| --- | --- | --- | --- | --- | --- | --- | --- | --- |"
+    "| Название | Год | Тип | Жанры | Режиссёр | Моя оценка | Рейтинг КП | TMDB | Популярность | Длительность | Просмотрено |\n"
+    "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"
 )
 
 
@@ -283,16 +289,17 @@ def taste_profile_markdown(profile: dict) -> str:
     lines += ["", "### Режиссёры (не менее 3 оценённых фильмов, по средней оценке)", ""]
     lines += [f"- {r['director']} — {r['n']} фильм(ов), средняя {r['avg_rating']:.2f}" for r in facts["directors"][:15]]
     kd = facts["consensus_delta"]
+    src = {"kp": "КП", "tmdb": "TMDB", "both": "КП+TMDB"}
     lines += [
         "",
-        "### Расхождение с зрительским консенсусом (КП или TMDB; личная − консенсус)",
+        "### Расхождение с зрительским консенсусом (КП/TMDB или их среднее; личная − консенсус)",
         "",
         "Недооценённые рынком (+Δ): " + "; ".join(
-            f"{r['title']} ({'КП' if r['consensus_source'] == 'kp' else 'TMDB'} {r['consensus_rating']})"
+            f"{r['title']} ({src[r['consensus_source']]} {r['consensus_rating']})"
             for r in kd["underrated"][:8]),
         "",
         "Переоценённые лично (−Δ): " + "; ".join(
-            f"{r['title']} ({'КП' if r['consensus_source'] == 'kp' else 'TMDB'} {r['consensus_rating']})"
+            f"{r['title']} ({src[r['consensus_source']]} {r['consensus_rating']})"
             for r in kd["overrated"][:8]),
         "",
         "### Мейнстримность: одобрение по квартилям числа голосов TMDB", "",
